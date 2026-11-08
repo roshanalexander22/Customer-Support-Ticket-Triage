@@ -1,0 +1,220 @@
+{
+  "ticket_id": "TCK-1002",
+  "customer_id": "CUST-1002",
+  "customer_email": "marcus.vance@techcorp.io",
+  "subject": "Return request for NovaStudio 4K Webcam ($249.99)",
+  "description": "Hello, we purchased the NovaStudio 4K Webcam on order ORD-9940. It doesn't integrate with our legacy conference room codecs. The unit is in pristine condition. Please process a full refund of $249.99 and send a return label.",
+  "channel": "WEB_PORTAL",
+  "timestamp": "2026-11-08T10:30:00Z",
+  "category": "Billing & Refunds",
+  "urgency": "Medium",
+  "sentiment": "Neutral",
+  "intent": "Refund or subscription cancellation request",
+  "extracted_entities": {
+    "order_id": "ORD-9940",
+    "refund_amount": 249.99
+  },
+  "classification_confidence": 0.95,
+  "customer_profile": {
+    "customer_id": "CUST-1002",
+    "name": "Marcus Vance",
+    "email": "marcus.vance@techcorp.io",
+    "tier": "VIP_PLATINUM",
+    "account_status": "ACTIVE",
+    "lifetime_value": 3450.0,
+    "fraud_risk_score": 0.02,
+    "account_created": "2022-08-15",
+    "support_ticket_count_90d": 0,
+    "recent_orders": [
+      {
+        "order_id": "ORD-9940",
+        "date": "2026-10-18",
+        "amount": 249.99,
+        "items": [
+          "NovaStudio 4K Ultra Webcam"
+        ],
+        "status": "DELIVERED",
+        "delivery_date": "2026-10-21"
+      }
+    ],
+    "active_subscriptions": [
+      "ENTERPRISE_TEAM_ANNUAL"
+    ]
+  },
+  "retrieved_policies": [
+    {
+      "policy_id": "POL-REF-001",
+      "title": "Refund and Cancellation Policy - 3. Autonomous Refund Authority Limits",
+      "relevance_score": 0.2731,
+      "excerpt": "- **Autonomous Threshold:** Automated agent workflows may approve and disburse refunds up to **$50.00 USD** per order without human intervention, provided that:\n  - The customer account is in good standing (fraud risk score < 0.25).\n  - The request falls within the 30-day delivery window.\n  - The cu...",
+      "autonomous_limit": 50.0,
+      "consequential_trigger": "Human approval required above limit or for security/legal terms"
+    },
+    {
+      "policy_id": "POL-REF-001",
+      "title": "Refund and Cancellation Policy - 2. Standard 30-Day Return Window",
+      "relevance_score": 0.2689,
+      "excerpt": "Customers are entitled to request a full refund or exchange for physical merchandise and select digital purchases within thirty (30) calendar days from the date of physical delivery or digital license activation.",
+      "autonomous_limit": null,
+      "consequential_trigger": "Human approval required above limit or for security/legal terms"
+    },
+    {
+      "policy_id": "POL-LOG-003",
+      "title": "Shipping, Logistics and Return Policy - 5. Return Merchandise Authorization (RMA) Labels",
+      "relevance_score": 0.2123,
+      "excerpt": "- Automated agents are authorized to generate and email prepaid return shipping labels (RMA) for all valid return requests within the 30-day window.\n- Oversized or freight items (>50 lbs) require logistics scheduling and human specialist booking.",
+      "autonomous_limit": null,
+      "consequential_trigger": "Human approval required above limit or for security/legal terms"
+    }
+  ],
+  "retrieval_query": "Billing & Refunds Return request for NovaStudio 4K Webcam ($249.99) refund return policy autonomous threshold 30 day window",
+  "draft_response": "Hello Marcus,\n\nThank you for reaching out to NovaTech Support regarding order ORD-9940. We completely understand that the NovaStudio 4K Webcam does not fit your conference setup requirements.\n\nBecause this refund amount ($249.99) exceeds our automated threshold, our senior support team is finalizing the return authorization and prepaid insured RMA shipping label for you. You will receive the shipping documentation shortly.\n\nWarm regards,\nNovaTech Enterprise Support",
+  "proposed_action": "issue_refund",
+  "action_payload": {
+    "customer_id": "CUST-1002",
+    "order_id": "ORD-9940",
+    "amount": 249.99,
+    "reason": "Hardware return exceeding autonomous limit"
+  },
+  "resolution_notes": "Refund amount $249.99 exceeds $50.00 threshold (POL-REF-001). Requires Human Supervisor approval.",
+  "risk_score": 0.6,
+  "requires_human_approval": true,
+  "approval_reason": "Refund request of $249.99 exceeds autonomous limit of $50.00 (POL-REF-001)",
+  "safety_violations": [
+    "FINANCIAL_LIMIT_EXCEEDED: Refund $249.99 > $50.00"
+  ],
+  "human_decision": "APPROVED",
+  "human_feedback": "Automated supervisor validation granted under simulation protocol",
+  "supervisor_id": "SUPERVISOR-ON-DUTY",
+  "approval_timestamp": "2026-11-08T19:19:16.698926+00:00",
+  "executed_action": "issue_refund",
+  "execution_status": "SUCCESS",
+  "execution_result": {
+    "status": "SUCCESS",
+    "action": "issue_refund",
+    "transaction_id": "TX-5DC6ADAF",
+    "timestamp": "2026-11-08T19:19:16.699772+00:00",
+    "authorized_by": "SUPERVISOR-ON-DUTY",
+    "details": {
+      "customer_id": "CUST-1002",
+      "order_id": "ORD-9940",
+      "refunded_amount": 249.99,
+      "currency": "USD",
+      "refund_method": "ORIGINAL_PAYMENT_METHOD",
+      "message": "Successfully disbursed refund of $249.99 for order ORD-9940."
+    }
+  },
+  "audit_trail": [
+    {
+      "step": "CLASSIFY_TICKET",
+      "agent": "TicketClassificationAgent",
+      "action": "classify_ticket_content",
+      "details": {
+        "category": "Billing & Refunds",
+        "urgency": "Medium",
+        "sentiment": "Neutral",
+        "entities": {
+          "order_id": "ORD-9940",
+          "refund_amount": 249.99
+        },
+        "confidence": 0.95
+      },
+      "timestamp": "2026-11-08T19:19:16.695401+00:00",
+      "duration_ms": 0.06,
+      "status": "SUCCESS"
+    },
+    {
+      "step": "CRM_LOOKUP_TOOL",
+      "agent": "KnowledgeRetrievalAgent",
+      "action": "query_customer_profile",
+      "details": {
+        "customer_id": "CUST-1002",
+        "found": true,
+        "tier": "VIP_PLATINUM",
+        "fraud_risk_score": 0.02
+      },
+      "timestamp": "2026-11-08T19:19:16.695975+00:00",
+      "duration_ms": 0.0,
+      "status": "SUCCESS"
+    },
+    {
+      "step": "POLICY_RETRIEVER_TOOL",
+      "agent": "KnowledgeRetrievalAgent",
+      "action": "search_policy_knowledge_base",
+      "details": {
+        "query": "Billing & Refunds Return request for NovaStudio 4K Webcam ($249.99) refund return policy autonomous threshold 30 day window",
+        "chunks_retrieved": 3,
+        "top_policies": [
+          "POL-REF-001",
+          "POL-REF-001",
+          "POL-LOG-003"
+        ]
+      },
+      "timestamp": "2026-11-08T19:19:16.697139+00:00",
+      "duration_ms": 1.14,
+      "status": "SUCCESS"
+    },
+    {
+      "step": "DRAFT_RESOLUTION",
+      "agent": "ResolutionAgent",
+      "action": "propose_resolution_and_draft_response",
+      "details": {
+        "proposed_action": "issue_refund",
+        "action_payload": {
+          "customer_id": "CUST-1002",
+          "order_id": "ORD-9940",
+          "amount": 249.99,
+          "reason": "Hardware return exceeding autonomous limit"
+        },
+        "response_length": 469
+      },
+      "timestamp": "2026-11-08T19:19:16.697607+00:00",
+      "duration_ms": 0.01,
+      "status": "SUCCESS"
+    },
+    {
+      "step": "EVALUATE_ESCALATION",
+      "agent": "EscalationAgent",
+      "action": "evaluate_safety_boundaries",
+      "details": {
+        "requires_human_approval": true,
+        "risk_score": 0.6,
+        "violations_count": 1,
+        "approval_reason": "Refund request of $249.99 exceeds autonomous limit of $50.00 (POL-REF-001)"
+      },
+      "timestamp": "2026-11-08T19:19:16.698410+00:00",
+      "duration_ms": 0.01,
+      "status": "SUCCESS"
+    },
+    {
+      "step": "HUMAN_APPROVAL_GATE",
+      "agent": "HumanSupervisorGate",
+      "action": "process_human_oversight",
+      "details": {
+        "decision": "APPROVED",
+        "supervisor_id": "SUPERVISOR-ON-DUTY",
+        "feedback": "Automated supervisor validation granted under simulation protocol",
+        "timestamp": "2026-11-08T19:19:16.698926+00:00",
+        "consequential_action": "issue_refund"
+      },
+      "timestamp": "2026-11-08T19:19:16.698931+00:00",
+      "duration_ms": 0.01,
+      "status": "SUCCESS"
+    },
+    {
+      "step": "EXECUTE_ACTION_TOOL",
+      "agent": "ActionExecutionEngine",
+      "action": "execute_issue_refund",
+      "details": {
+        "action": "issue_refund",
+        "status": "SUCCESS",
+        "transaction_id": "TX-5DC6ADAF",
+        "authorized_by": "SUPERVISOR-ON-DUTY"
+      },
+      "timestamp": "2026-11-08T19:19:16.699797+00:00",
+      "duration_ms": 0.03,
+      "status": "SUCCESS"
+    }
+  ],
+  "current_step": "ACTION_EXECUTED"
+}

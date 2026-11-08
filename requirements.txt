@@ -1,0 +1,25 @@
+# Core Multi-Agent Orchestration & LLMs
+langgraph>=1.2.0
+langchain-core>=1.7.0
+google-genai>=2.25.0
+pydantic>=2.10.0
+
+# User Interface & Visuals
+streamlit>=1.40.0
+rich>=13.9.0
+pillow>=11.0.0
+
+# Data Science, Evaluation & Retrieval
+pandas>=2.2.0
+numpy>=2.0.0
+scikit-learn>=1.5.0
+matplotlib>=3.9.0
+seaborn>=0.13.0
+
+# PDF Report Generation
+reportlab>=4.2.0
+
+# Utilities, Environment & Testing
+python-dotenv>=1.0.0
+pytest>=8.0.0
+pytest-asyncio>=0.24.0

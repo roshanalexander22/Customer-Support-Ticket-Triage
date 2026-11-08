@@ -1,0 +1,2257 @@
+[
+  {
+    "ticket_id": "TCK-1001",
+    "customer_id": "CUST-1001",
+    "customer_email": "sarah.jenkins@example.com",
+    "subject": "Cable organizer arrived damaged - need refund",
+    "description": "Hi, I received order ORD-8821 two days ago, but the silicone clips are cracked and broken. The total was $28.50. I would like a refund to my original card please.",
+    "channel": "EMAIL",
+    "timestamp": "2026-11-08T09:15:00Z",
+    "category": "Billing & Refunds",
+    "urgency": "Medium",
+    "sentiment": "Neutral",
+    "intent": "Refund or subscription cancellation request",
+    "extracted_entities": {
+      "order_id": "ORD-8821",
+      "refund_amount": 28.5
+    },
+    "classification_confidence": 0.95,
+    "customer_profile": {
+      "customer_id": "CUST-1001",
+      "name": "Sarah Jenkins",
+      "email": "sarah.jenkins@example.com",
+      "tier": "STANDARD",
+      "account_status": "ACTIVE",
+      "lifetime_value": 145.5,
+      "fraud_risk_score": 0.04,
+      "account_created": "2024-03-12",
+      "support_ticket_count_90d": 1,
+      "recent_orders": [
+        {
+          "order_id": "ORD-8821",
+          "date": "2026-10-25",
+          "amount": 28.5,
+          "items": [
+            "Ergonomic Desk Cable Organizer"
+          ],
+          "status": "DELIVERED",
+          "delivery_date": "2026-10-29"
+        }
+      ],
+      "active_subscriptions": []
+    },
+    "retrieved_policies": [
+      {
+        "policy_id": "POL-REF-001",
+        "title": "Refund and Cancellation Policy - 3. Autonomous Refund Authority Limits",
+        "relevance_score": 0.3028,
+        "excerpt": "- **Autonomous Threshold:** Automated agent workflows may approve and disburse refunds up to **$50.00 USD** per order without human intervention, provided that:\n  - The customer account is in good standing (fraud risk score < 0.25).\n  - The request falls within the 30-day delivery window.\n  - The cu...",
+        "autonomous_limit": 50.0,
+        "consequential_trigger": "Human approval required above limit or for security/legal terms"
+      },
+      {
+        "policy_id": "POL-REF-001",
+        "title": "Refund and Cancellation Policy - 2. Standard 30-Day Return Window",
+        "relevance_score": 0.2527,
+        "excerpt": "Customers are entitled to request a full refund or exchange for physical merchandise and select digital purchases within thirty (30) calendar days from the date of physical delivery or digital license activation.",
+        "autonomous_limit": null,
+        "consequential_trigger": "Human approval required above limit or for security/legal terms"
+      },
+      {
+        "policy_id": "POL-LOG-003",
+        "title": "Shipping, Logistics and Return Policy - 5. Return Merchandise Authorization (RMA) Labels",
+        "relevance_score": 0.1647,
+        "excerpt": "- Automated agents are authorized to generate and email prepaid return shipping labels (RMA) for all valid return requests within the 30-day window.\n- Oversized or freight items (>50 lbs) require logistics scheduling and human specialist booking.",
+        "autonomous_limit": null,
+        "consequential_trigger": "Human approval required above limit or for security/legal terms"
+      }
+    ],
+    "retrieval_query": "Billing & Refunds Cable organizer arrived damaged - need refund refund return policy autonomous threshold 30 day window",
+    "draft_response": "Hello Sarah,\n\nThank you for contacting NovaTech Support. We are very sorry to hear that your items in order ORD-8821 arrived damaged. Under our 30-Day Customer Satisfaction Guarantee (POL-REF-001), I have processed a full refund of $28.50 back to your original payment method.\n\nPlease allow 3-5 business days for the credit to appear on your bank statement. There is no need to return the damaged item. We apologize for the inconvenience!\n\nBest regards,\nNovaTech Support Team",
+    "proposed_action": "issue_refund",
+    "action_payload": {
+      "customer_id": "CUST-1001",
+      "order_id": "ORD-8821",
+      "amount": 28.5,
+      "reason": "Damaged goods reimbursement under POL-REF-001"
+    },
+    "resolution_notes": "Refund is <= $50.00 autonomous threshold and within 30-day window. Autonomous approval recommended.",
+    "risk_score": 0.05,
+    "requires_human_approval": false,
+    "approval_reason": "No safety violations detected. Autonomous resolution approved.",
+    "safety_violations": [],
+    "human_decision": "NOT_REQUIRED",
+    "executed_action": "issue_refund",
+    "execution_status": "SUCCESS",
+    "execution_result": {
+      "status": "SUCCESS",
+      "action": "issue_refund",
+      "transaction_id": "TX-11B8D6B7",
+      "timestamp": "2026-11-08T19:19:16.690425+00:00",
+      "authorized_by": "SYSTEM_AUTONOMOUS",
+      "details": {
+        "customer_id": "CUST-1001",
+        "order_id": "ORD-8821",
+        "refunded_amount": 28.5,
+        "currency": "USD",
+        "refund_method": "ORIGINAL_PAYMENT_METHOD",
+        "message": "Successfully disbursed refund of $28.50 for order ORD-8821."
+      }
+    },
+    "final_response": "Hello Sarah,\n\nThank you for contacting NovaTech Support. We are very sorry to hear that your items in order ORD-8821 arrived damaged. Under our 30-Day Customer Satisfaction Guarantee (POL-REF-001), I have processed a full refund of $28.50 back to your original payment method.\n\nPlease allow 3-5 business days for the credit to appear on your bank statement. There is no need to return the damaged item. We apologize for the inconvenience!\n\nBest regards,\nNovaTech Support Team\n\n[Reference Transaction ID: TX-11B8D6B7]",
+    "audit_trail": [
+      {
+        "step": "CLASSIFY_TICKET",
+        "agent": "TicketClassificationAgent",
+        "action": "classify_ticket_content",
+        "details": {
+          "category": "Billing & Refunds",
+          "urgency": "Medium",
+          "sentiment": "Neutral",
+          "entities": {
+            "order_id": "ORD-8821",
+            "refund_amount": 28.5
+          },
+          "confidence": 0.95
+        },
+        "timestamp": "2026-11-08T19:19:16.685469+00:00",
+        "duration_ms": 0.46,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "CRM_LOOKUP_TOOL",
+        "agent": "KnowledgeRetrievalAgent",
+        "action": "query_customer_profile",
+        "details": {
+          "customer_id": "CUST-1001",
+          "found": true,
+          "tier": "STANDARD",
+          "fraud_risk_score": 0.04
+        },
+        "timestamp": "2026-11-08T19:19:16.686564+00:00",
+        "duration_ms": 0.0,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "POLICY_RETRIEVER_TOOL",
+        "agent": "KnowledgeRetrievalAgent",
+        "action": "search_policy_knowledge_base",
+        "details": {
+          "query": "Billing & Refunds Cable organizer arrived damaged - need refund refund return policy autonomous threshold 30 day window",
+          "chunks_retrieved": 3,
+          "top_policies": [
+            "POL-REF-001",
+            "POL-REF-001",
+            "POL-LOG-003"
+          ]
+        },
+        "timestamp": "2026-11-08T19:19:16.688065+00:00",
+        "duration_ms": 1.47,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "DRAFT_RESOLUTION",
+        "agent": "ResolutionAgent",
+        "action": "propose_resolution_and_draft_response",
+        "details": {
+          "proposed_action": "issue_refund",
+          "action_payload": {
+            "customer_id": "CUST-1001",
+            "order_id": "ORD-8821",
+            "amount": 28.5,
+            "reason": "Damaged goods reimbursement under POL-REF-001"
+          },
+          "response_length": 475
+        },
+        "timestamp": "2026-11-08T19:19:16.688666+00:00",
+        "duration_ms": 0.01,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "EVALUATE_ESCALATION",
+        "agent": "EscalationAgent",
+        "action": "evaluate_safety_boundaries",
+        "details": {
+          "requires_human_approval": false,
+          "risk_score": 0.05,
+          "violations_count": 0,
+          "approval_reason": "No safety violations detected. Autonomous resolution approved."
+        },
+        "timestamp": "2026-11-08T19:19:16.689672+00:00",
+        "duration_ms": 0.01,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "EXECUTE_ACTION_TOOL",
+        "agent": "ActionExecutionEngine",
+        "action": "execute_issue_refund",
+        "details": {
+          "action": "issue_refund",
+          "status": "SUCCESS",
+          "transaction_id": "TX-11B8D6B7",
+          "authorized_by": "SYSTEM_AUTONOMOUS"
+        },
+        "timestamp": "2026-11-08T19:19:16.690465+00:00",
+        "duration_ms": 0.04,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "FINALIZE_TICKET",
+        "agent": "WorkflowOrchestrator",
+        "action": "finalize_workflow_and_persist_state",
+        "details": {
+          "ticket_id": "TCK-1001",
+          "trace_path": "C:\\Users\\ROSHAN ALEXANDER\\Documents\\Projects\\Customer-Support-Ticket-Triage\\results\\logs\\ticket_TCK-1001.json",
+          "execution_status": "SUCCESS"
+        },
+        "timestamp": "2026-11-08T19:19:16.692119+00:00",
+        "duration_ms": 0.84,
+        "status": "SUCCESS"
+      }
+    ],
+    "current_step": "COMPLETED",
+    "completed": true
+  },
+  {
+    "ticket_id": "TCK-1002",
+    "customer_id": "CUST-1002",
+    "customer_email": "marcus.vance@techcorp.io",
+    "subject": "Return request for NovaStudio 4K Webcam ($249.99)",
+    "description": "Hello, we purchased the NovaStudio 4K Webcam on order ORD-9940. It doesn't integrate with our legacy conference room codecs. The unit is in pristine condition. Please process a full refund of $249.99 and send a return label.",
+    "channel": "WEB_PORTAL",
+    "timestamp": "2026-11-08T10:30:00Z",
+    "category": "Billing & Refunds",
+    "urgency": "Medium",
+    "sentiment": "Neutral",
+    "intent": "Refund or subscription cancellation request",
+    "extracted_entities": {
+      "order_id": "ORD-9940",
+      "refund_amount": 249.99
+    },
+    "classification_confidence": 0.95,
+    "customer_profile": {
+      "customer_id": "CUST-1002",
+      "name": "Marcus Vance",
+      "email": "marcus.vance@techcorp.io",
+      "tier": "VIP_PLATINUM",
+      "account_status": "ACTIVE",
+      "lifetime_value": 3450.0,
+      "fraud_risk_score": 0.02,
+      "account_created": "2022-08-15",
+      "support_ticket_count_90d": 0,
+      "recent_orders": [
+        {
+          "order_id": "ORD-9940",
+          "date": "2026-10-18",
+          "amount": 249.99,
+          "items": [
+            "NovaStudio 4K Ultra Webcam"
+          ],
+          "status": "DELIVERED",
+          "delivery_date": "2026-10-21"
+        }
+      ],
+      "active_subscriptions": [
+        "ENTERPRISE_TEAM_ANNUAL"
+      ]
+    },
+    "retrieved_policies": [
+      {
+        "policy_id": "POL-REF-001",
+        "title": "Refund and Cancellation Policy - 3. Autonomous Refund Authority Limits",
+        "relevance_score": 0.2731,
+        "excerpt": "- **Autonomous Threshold:** Automated agent workflows may approve and disburse refunds up to **$50.00 USD** per order without human intervention, provided that:\n  - The customer account is in good standing (fraud risk score < 0.25).\n  - The request falls within the 30-day delivery window.\n  - The cu...",
+        "autonomous_limit": 50.0,
+        "consequential_trigger": "Human approval required above limit or for security/legal terms"
+      },
+      {
+        "policy_id": "POL-REF-001",
+        "title": "Refund and Cancellation Policy - 2. Standard 30-Day Return Window",
+        "relevance_score": 0.2689,
+        "excerpt": "Customers are entitled to request a full refund or exchange for physical merchandise and select digital purchases within thirty (30) calendar days from the date of physical delivery or digital license activation.",
+        "autonomous_limit": null,
+        "consequential_trigger": "Human approval required above limit or for security/legal terms"
+      },
+      {
+        "policy_id": "POL-LOG-003",
+        "title": "Shipping, Logistics and Return Policy - 5. Return Merchandise Authorization (RMA) Labels",
+        "relevance_score": 0.2123,
+        "excerpt": "- Automated agents are authorized to generate and email prepaid return shipping labels (RMA) for all valid return requests within the 30-day window.\n- Oversized or freight items (>50 lbs) require logistics scheduling and human specialist booking.",
+        "autonomous_limit": null,
+        "consequential_trigger": "Human approval required above limit or for security/legal terms"
+      }
+    ],
+    "retrieval_query": "Billing & Refunds Return request for NovaStudio 4K Webcam ($249.99) refund return policy autonomous threshold 30 day window",
+    "draft_response": "Hello Marcus,\n\nThank you for reaching out to NovaTech Support regarding order ORD-9940. We completely understand that the NovaStudio 4K Webcam does not fit your conference setup requirements.\n\nBecause this refund amount ($249.99) exceeds our automated threshold, our senior support team is finalizing the return authorization and prepaid insured RMA shipping label for you. You will receive the shipping documentation shortly.\n\nWarm regards,\nNovaTech Enterprise Support",
+    "proposed_action": "issue_refund",
+    "action_payload": {
+      "customer_id": "CUST-1002",
+      "order_id": "ORD-9940",
+      "amount": 249.99,
+      "reason": "Hardware return exceeding autonomous limit"
+    },
+    "resolution_notes": "Refund amount $249.99 exceeds $50.00 threshold (POL-REF-001). Requires Human Supervisor approval.",
+    "risk_score": 0.6,
+    "requires_human_approval": true,
+    "approval_reason": "Refund request of $249.99 exceeds autonomous limit of $50.00 (POL-REF-001)",
+    "safety_violations": [
+      "FINANCIAL_LIMIT_EXCEEDED: Refund $249.99 > $50.00"
+    ],
+    "human_decision": "APPROVED",
+    "human_feedback": "Automated supervisor validation granted under simulation protocol",
+    "supervisor_id": "SUPERVISOR-ON-DUTY",
+    "approval_timestamp": "2026-11-08T19:19:16.698926+00:00",
+    "executed_action": "issue_refund",
+    "execution_status": "SUCCESS",
+    "execution_result": {
+      "status": "SUCCESS",
+      "action": "issue_refund",
+      "transaction_id": "TX-5DC6ADAF",
+      "timestamp": "2026-11-08T19:19:16.699772+00:00",
+      "authorized_by": "SUPERVISOR-ON-DUTY",
+      "details": {
+        "customer_id": "CUST-1002",
+        "order_id": "ORD-9940",
+        "refunded_amount": 249.99,
+        "currency": "USD",
+        "refund_method": "ORIGINAL_PAYMENT_METHOD",
+        "message": "Successfully disbursed refund of $249.99 for order ORD-9940."
+      }
+    },
+    "final_response": "Hello Marcus,\n\nThank you for reaching out to NovaTech Support regarding order ORD-9940. We completely understand that the NovaStudio 4K Webcam does not fit your conference setup requirements.\n\nBecause this refund amount ($249.99) exceeds our automated threshold, our senior support team is finalizing the return authorization and prepaid insured RMA shipping label for you. You will receive the shipping documentation shortly.\n\nWarm regards,\nNovaTech Enterprise Support\n\n[Reference Transaction ID: TX-5DC6ADAF]",
+    "audit_trail": [
+      {
+        "step": "CLASSIFY_TICKET",
+        "agent": "TicketClassificationAgent",
+        "action": "classify_ticket_content",
+        "details": {
+          "category": "Billing & Refunds",
+          "urgency": "Medium",
+          "sentiment": "Neutral",
+          "entities": {
+            "order_id": "ORD-9940",
+            "refund_amount": 249.99
+          },
+          "confidence": 0.95
+        },
+        "timestamp": "2026-11-08T19:19:16.695401+00:00",
+        "duration_ms": 0.06,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "CRM_LOOKUP_TOOL",
+        "agent": "KnowledgeRetrievalAgent",
+        "action": "query_customer_profile",
+        "details": {
+          "customer_id": "CUST-1002",
+          "found": true,
+          "tier": "VIP_PLATINUM",
+          "fraud_risk_score": 0.02
+        },
+        "timestamp": "2026-11-08T19:19:16.695975+00:00",
+        "duration_ms": 0.0,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "POLICY_RETRIEVER_TOOL",
+        "agent": "KnowledgeRetrievalAgent",
+        "action": "search_policy_knowledge_base",
+        "details": {
+          "query": "Billing & Refunds Return request for NovaStudio 4K Webcam ($249.99) refund return policy autonomous threshold 30 day window",
+          "chunks_retrieved": 3,
+          "top_policies": [
+            "POL-REF-001",
+            "POL-REF-001",
+            "POL-LOG-003"
+          ]
+        },
+        "timestamp": "2026-11-08T19:19:16.697139+00:00",
+        "duration_ms": 1.14,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "DRAFT_RESOLUTION",
+        "agent": "ResolutionAgent",
+        "action": "propose_resolution_and_draft_response",
+        "details": {
+          "proposed_action": "issue_refund",
+          "action_payload": {
+            "customer_id": "CUST-1002",
+            "order_id": "ORD-9940",
+            "amount": 249.99,
+            "reason": "Hardware return exceeding autonomous limit"
+          },
+          "response_length": 469
+        },
+        "timestamp": "2026-11-08T19:19:16.697607+00:00",
+        "duration_ms": 0.01,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "EVALUATE_ESCALATION",
+        "agent": "EscalationAgent",
+        "action": "evaluate_safety_boundaries",
+        "details": {
+          "requires_human_approval": true,
+          "risk_score": 0.6,
+          "violations_count": 1,
+          "approval_reason": "Refund request of $249.99 exceeds autonomous limit of $50.00 (POL-REF-001)"
+        },
+        "timestamp": "2026-11-08T19:19:16.698410+00:00",
+        "duration_ms": 0.01,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "HUMAN_APPROVAL_GATE",
+        "agent": "HumanSupervisorGate",
+        "action": "process_human_oversight",
+        "details": {
+          "decision": "APPROVED",
+          "supervisor_id": "SUPERVISOR-ON-DUTY",
+          "feedback": "Automated supervisor validation granted under simulation protocol",
+          "timestamp": "2026-11-08T19:19:16.698926+00:00",
+          "consequential_action": "issue_refund"
+        },
+        "timestamp": "2026-11-08T19:19:16.698931+00:00",
+        "duration_ms": 0.01,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "EXECUTE_ACTION_TOOL",
+        "agent": "ActionExecutionEngine",
+        "action": "execute_issue_refund",
+        "details": {
+          "action": "issue_refund",
+          "status": "SUCCESS",
+          "transaction_id": "TX-5DC6ADAF",
+          "authorized_by": "SUPERVISOR-ON-DUTY"
+        },
+        "timestamp": "2026-11-08T19:19:16.699797+00:00",
+        "duration_ms": 0.03,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "FINALIZE_TICKET",
+        "agent": "WorkflowOrchestrator",
+        "action": "finalize_workflow_and_persist_state",
+        "details": {
+          "ticket_id": "TCK-1002",
+          "trace_path": "C:\\Users\\ROSHAN ALEXANDER\\Documents\\Projects\\Customer-Support-Ticket-Triage\\results\\logs\\ticket_TCK-1002.json",
+          "execution_status": "SUCCESS"
+        },
+        "timestamp": "2026-11-08T19:19:16.701178+00:00",
+        "duration_ms": 1.04,
+        "status": "SUCCESS"
+      }
+    ],
+    "current_step": "COMPLETED",
+    "completed": true
+  },
+  {
+    "ticket_id": "TCK-1003",
+    "customer_id": "CUST-1003",
+    "customer_email": "elena.rostova@cyberdyn.com",
+    "subject": "URGENT: Suspicious logins from overseas and locked out of 2FA",
+    "description": "EMERGENCY: I received three push alerts from Frankfurt and Moscow that I did not initiate. Now my authenticator app TOTP code is rejected. I need my 2FA reset immediately so I can regain access before unauthorized charges occur!",
+    "channel": "URGENT_CHAT",
+    "timestamp": "2026-11-08T11:05:00Z",
+    "category": "Account & Security",
+    "urgency": "Critical",
+    "sentiment": "Urgent/Distressed",
+    "intent": "Account security incident or unauthorized access report",
+    "extracted_entities": {},
+    "classification_confidence": 0.95,
+    "customer_profile": {
+      "customer_id": "CUST-1003",
+      "name": "Elena Rostova",
+      "email": "elena.rostova@cyberdyn.com",
+      "tier": "GOLD",
+      "account_status": "FLAGGED_SECURITY",
+      "lifetime_value": 890.0,
+      "fraud_risk_score": 0.72,
+      "account_created": "2023-11-04",
+      "support_ticket_count_90d": 2,
+      "recent_orders": [
+        {
+          "order_id": "ORD-7612",
+          "date": "2026-11-01",
+          "amount": 120.0,
+          "items": [
+            "Developer Cloud Credits Voucher"
+          ],
+          "status": "DELIVERED",
+          "delivery_date": "2026-11-01"
+        }
+      ],
+      "active_subscriptions": [
+        "DEV_PRO_MONTHLY"
+      ]
+    },
+    "retrieved_policies": [
+      {
+        "policy_id": "POL-SEC-002",
+        "title": "Account Security and Authentication Policy - 1. Overview and Security Principles",
+        "relevance_score": 0.4433,
+        "excerpt": "This policy sets forth mandatory security and verification protocols for account recovery, credential re-issuance, two-factor authentication (2FA) resets, and suspicious session terminations. Customer account confidentiality and data protection are paramount.",
+        "autonomous_limit": null,
+        "consequential_trigger": "Human approval required above limit or for security/legal terms"
+      },
+      {
+        "policy_id": "POL-SEC-002",
+        "title": "Account Security and Authentication Policy - 3. Two-Factor Authentication (2FA) Reset Safeguards",
+        "relevance_score": 0.3634,
+        "excerpt": "- **Consequential Action Classification:** Resetting or bypassing Two-Factor Authentication (2FA) is classified as a **High-Risk Consequential Action**.\n- Automated agents are **strictly prohibited** from performing autonomous 2FA resets.\n- Every 2FA reset request must be routed to the Human Securit...",
+        "autonomous_limit": null,
+        "consequential_trigger": "Human approval required above limit or for security/legal terms"
+      },
+      {
+        "policy_id": "POL-SEC-002",
+        "title": "Account Security and Authentication Policy - General Overview",
+        "relevance_score": 0.3605,
+        "excerpt": "# Account Security and Authentication Policy (POL-SEC-002)",
+        "autonomous_limit": null,
+        "consequential_trigger": "Human approval required above limit or for security/legal terms"
+      }
+    ],
+    "retrieval_query": "Account & Security URGENT: Suspicious logins from overseas and locked out of 2FA security lockout two factor authentication session freeze",
+    "draft_response": "Hello Elena,\n\nWe have detected the unauthorized access alerts you reported. As an immediate safeguard, we have terminated all active sessions and placed a temporary security freeze on credential changes.\n\nIn strict compliance with our Account Security Policy (POL-SEC-002), automated 2FA resets are prohibited to prevent account hijacking. A security specialist has been assigned to verify your identity and guide you through secure credential recovery.\n\nSincerely,\nNovaTech Information Security Team",
+    "proposed_action": "escalate_security_and_freeze_sessions",
+    "action_payload": {
+      "customer_id": "CUST-1003",
+      "ticket_id": "TCK-1003",
+      "reason": "Suspicious overseas session alerts and 2FA lockout"
+    },
+    "resolution_notes": "POL-SEC-002 prohibits automated 2FA resets. High risk security action requiring Human Verification.",
+    "risk_score": 0.95,
+    "requires_human_approval": true,
+    "approval_reason": "Two-Factor Authentication (2FA) credential changes require mandatory Human Security Supervisor verification (POL-SEC-002); Account risk assessment score (0.72) indicates elevated fraud probability",
+    "safety_violations": [
+      "SECURITY_SENSITIVE_ACTION: Autonomous 2FA reset prohibited by POL-SEC-002",
+      "HIGH_FRAUD_RISK: Account risk score 0.72 >= threshold 0.25"
+    ],
+    "human_decision": "APPROVED",
+    "human_feedback": "Automated supervisor validation granted under simulation protocol",
+    "supervisor_id": "SUPERVISOR-ON-DUTY",
+    "approval_timestamp": "2026-11-08T19:19:16.709031+00:00",
+    "executed_action": "escalate_security_and_freeze_sessions",
+    "execution_status": "SUCCESS",
+    "execution_result": {
+      "status": "SUCCESS",
+      "action": "escalate_security_and_freeze_sessions",
+      "transaction_id": "TX-49103A86",
+      "timestamp": "2026-11-08T19:19:16.709812+00:00",
+      "authorized_by": "SUPERVISOR-ON-DUTY",
+      "details": {
+        "customer_id": "CUST-1003",
+        "sessions_revoked": 4,
+        "account_lock_status": "TEMPORARY_FREEZE",
+        "dispatch_alert": "Password reset and identity verification link sent to verified primary address for CUST-1003."
+      }
+    },
+    "final_response": "Hello Elena,\n\nWe have detected the unauthorized access alerts you reported. As an immediate safeguard, we have terminated all active sessions and placed a temporary security freeze on credential changes.\n\nIn strict compliance with our Account Security Policy (POL-SEC-002), automated 2FA resets are prohibited to prevent account hijacking. A security specialist has been assigned to verify your identity and guide you through secure credential recovery.\n\nSincerely,\nNovaTech Information Security Team\n\n[Reference Transaction ID: TX-49103A86]",
+    "audit_trail": [
+      {
+        "step": "CLASSIFY_TICKET",
+        "agent": "TicketClassificationAgent",
+        "action": "classify_ticket_content",
+        "details": {
+          "category": "Account & Security",
+          "urgency": "Critical",
+          "sentiment": "Urgent/Distressed",
+          "entities": {},
+          "confidence": 0.95
+        },
+        "timestamp": "2026-11-08T19:19:16.705357+00:00",
+        "duration_ms": 0.04,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "CRM_LOOKUP_TOOL",
+        "agent": "KnowledgeRetrievalAgent",
+        "action": "query_customer_profile",
+        "details": {
+          "customer_id": "CUST-1003",
+          "found": true,
+          "tier": "GOLD",
+          "fraud_risk_score": 0.72
+        },
+        "timestamp": "2026-11-08T19:19:16.705759+00:00",
+        "duration_ms": 0.0,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "POLICY_RETRIEVER_TOOL",
+        "agent": "KnowledgeRetrievalAgent",
+        "action": "search_policy_knowledge_base",
+        "details": {
+          "query": "Account & Security URGENT: Suspicious logins from overseas and locked out of 2FA security lockout two factor authentication session freeze",
+          "chunks_retrieved": 3,
+          "top_policies": [
+            "POL-SEC-002",
+            "POL-SEC-002",
+            "POL-SEC-002"
+          ]
+        },
+        "timestamp": "2026-11-08T19:19:16.706954+00:00",
+        "duration_ms": 1.18,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "DRAFT_RESOLUTION",
+        "agent": "ResolutionAgent",
+        "action": "propose_resolution_and_draft_response",
+        "details": {
+          "proposed_action": "escalate_security_and_freeze_sessions",
+          "action_payload": {
+            "customer_id": "CUST-1003",
+            "ticket_id": "TCK-1003",
+            "reason": "Suspicious overseas session alerts and 2FA lockout"
+          },
+          "response_length": 500
+        },
+        "timestamp": "2026-11-08T19:19:16.707548+00:00",
+        "duration_ms": 0.01,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "EVALUATE_ESCALATION",
+        "agent": "EscalationAgent",
+        "action": "evaluate_safety_boundaries",
+        "details": {
+          "requires_human_approval": true,
+          "risk_score": 0.95,
+          "violations_count": 2,
+          "approval_reason": "Two-Factor Authentication (2FA) credential changes require mandatory Human Security Supervisor verification (POL-SEC-002); Account risk assessment score (0.72) indicates elevated fraud probability"
+        },
+        "timestamp": "2026-11-08T19:19:16.708548+00:00",
+        "duration_ms": 0.01,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "HUMAN_APPROVAL_GATE",
+        "agent": "HumanSupervisorGate",
+        "action": "process_human_oversight",
+        "details": {
+          "decision": "APPROVED",
+          "supervisor_id": "SUPERVISOR-ON-DUTY",
+          "feedback": "Automated supervisor validation granted under simulation protocol",
+          "timestamp": "2026-11-08T19:19:16.709031+00:00",
+          "consequential_action": "escalate_security_and_freeze_sessions"
+        },
+        "timestamp": "2026-11-08T19:19:16.709037+00:00",
+        "duration_ms": 0.01,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "EXECUTE_ACTION_TOOL",
+        "agent": "ActionExecutionEngine",
+        "action": "execute_escalate_security_and_freeze_sessions",
+        "details": {
+          "action": "escalate_security_and_freeze_sessions",
+          "status": "SUCCESS",
+          "transaction_id": "TX-49103A86",
+          "authorized_by": "SUPERVISOR-ON-DUTY"
+        },
+        "timestamp": "2026-11-08T19:19:16.709832+00:00",
+        "duration_ms": 0.02,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "FINALIZE_TICKET",
+        "agent": "WorkflowOrchestrator",
+        "action": "finalize_workflow_and_persist_state",
+        "details": {
+          "ticket_id": "TCK-1003",
+          "trace_path": "C:\\Users\\ROSHAN ALEXANDER\\Documents\\Projects\\Customer-Support-Ticket-Triage\\results\\logs\\ticket_TCK-1003.json",
+          "execution_status": "SUCCESS"
+        },
+        "timestamp": "2026-11-08T19:19:16.710957+00:00",
+        "duration_ms": 0.79,
+        "status": "SUCCESS"
+      }
+    ],
+    "current_step": "COMPLETED",
+    "completed": true
+  },
+  {
+    "ticket_id": "TCK-1004",
+    "customer_id": "CUST-1004",
+    "customer_email": "david.cho@nexusdev.org",
+    "subject": "NovaCloud iOS App crashes immediately on payment submit",
+    "description": "Whenever I tap 'Confirm Payment' on iOS v4.2.1 build 109, the app instantly crashes to the home screen. Reproduced on iPhone 15 Pro running iOS 18.0. Cannot complete license renewal for my team.",
+    "channel": "IN_APP",
+    "timestamp": "2026-11-08T11:45:00Z",
+    "category": "Technical Support",
+    "urgency": "High",
+    "sentiment": "Frustrated",
+    "intent": "Software defect report and troubleshooting request",
+    "extracted_entities": {
+      "device_info": "Apple iOS Mobile"
+    },
+    "classification_confidence": 0.95,
+    "customer_profile": {
+      "customer_id": "CUST-1004",
+      "name": "David Cho",
+      "email": "david.cho@nexusdev.org",
+      "tier": "GOLD",
+      "account_status": "ACTIVE",
+      "lifetime_value": 620.0,
+      "fraud_risk_score": 0.05,
+      "account_created": "2024-01-20",
+      "support_ticket_count_90d": 1,
+      "recent_orders": [
+        {
+          "order_id": "ORD-6510",
+          "date": "2026-09-15",
+          "amount": 89.0,
+          "items": [
+            "NovaCloud SDK Toolkit License"
+          ],
+          "status": "DELIVERED",
+          "delivery_date": "2026-09-15"
+        }
+      ],
+      "active_subscriptions": [
+        "PRO_ANNUAL"
+      ]
+    },
+    "retrieved_policies": [
+      {
+        "policy_id": "POL-TECH-004",
+        "title": "Technical Support and SLA Policy - General Overview",
+        "relevance_score": 0.2367,
+        "excerpt": "# Technical Support and SLA Policy (POL-TECH-004)",
+        "autonomous_limit": null,
+        "consequential_trigger": "Human approval required above limit or for security/legal terms"
+      },
+      {
+        "policy_id": "POL-BIL-005",
+        "title": "Billing and Subscription Management Policy - 5. Chargebacks, Disputes, and Hostile Escalations",
+        "relevance_score": 0.2076,
+        "excerpt": "- If a customer explicitly threatens legal action, payment processor dispute (Stripe/PayPal), or credit card chargeback, the ticket priority is elevated to **Critical** and escalated immediately to the **Senior Retention & Legal Risk Team**.\n- Agents must offer an empathetic, de-escalating tone, ack...",
+        "autonomous_limit": null,
+        "consequential_trigger": "Human approval required above limit or for security/legal terms"
+      },
+      {
+        "policy_id": "POL-BIL-005",
+        "title": "Billing and Subscription Management Policy - General Overview",
+        "relevance_score": 0.1914,
+        "excerpt": "# Billing and Subscription Management Policy (POL-BIL-005)",
+        "autonomous_limit": null,
+        "consequential_trigger": "Human approval required above limit or for security/legal terms"
+      }
+    ],
+    "retrieval_query": "Technical Support NovaCloud iOS App crashes immediately on payment submit billing subscription renewal chargeback dispute hostile escalation",
+    "draft_response": "Hello David,\n\nThank you for bringing this to our attention and providing clear device reproduction details. We have logged this incident as a High Priority (P2) defect with our iOS Mobile Engineering Team.\n\nWhile our engineers deploy a patch for build 109, you can immediately complete your team license renewal without disruption by logging into the NovaCloud Web Portal at https://app.novatech.io/checkout. We will notify you the moment the mobile update is live in the App Store.\n\nBest regards,\nNovaTech Technical Support",
+    "proposed_action": "file_engineering_bug_and_workaround",
+    "action_payload": {
+      "customer_id": "CUST-1004",
+      "severity": "P2",
+      "component": "iOS Mobile Checkout",
+      "device_info": "Apple iOS Mobile",
+      "reproduction_notes": "Immediate crash upon payment confirmation tap on iOS 18"
+    },
+    "resolution_notes": "P2 software defect logged under POL-TECH-004. Engineering issue filed; workaround provided.",
+    "risk_score": 0.05,
+    "requires_human_approval": false,
+    "approval_reason": "No safety violations detected. Autonomous resolution approved.",
+    "safety_violations": [],
+    "human_decision": "NOT_REQUIRED",
+    "executed_action": "file_engineering_bug_and_workaround",
+    "execution_status": "SUCCESS",
+    "execution_result": {
+      "status": "SUCCESS",
+      "action": "file_engineering_bug_and_workaround",
+      "transaction_id": "TX-2986C98E",
+      "timestamp": "2026-11-08T19:19:16.717228+00:00",
+      "authorized_by": "SYSTEM_AUTONOMOUS",
+      "details": {
+        "bug_ticket_id": "BUG-D2231A",
+        "severity": "P2",
+        "component": "iOS Mobile Checkout",
+        "jira_url": "https://jira.internal.novatech.io/browse/BUG-D2231A",
+        "message": "Incident logged under BUG-D2231A. Workaround instructions prepared."
+      }
+    },
+    "final_response": "Hello David,\n\nThank you for bringing this to our attention and providing clear device reproduction details. We have logged this incident as a High Priority (P2) defect with our iOS Mobile Engineering Team.\n\nWhile our engineers deploy a patch for build 109, you can immediately complete your team license renewal without disruption by logging into the NovaCloud Web Portal at https://app.novatech.io/checkout. We will notify you the moment the mobile update is live in the App Store.\n\nBest regards,\nNovaTech Technical Support\n\n[Reference Transaction ID: TX-2986C98E]",
+    "audit_trail": [
+      {
+        "step": "CLASSIFY_TICKET",
+        "agent": "TicketClassificationAgent",
+        "action": "classify_ticket_content",
+        "details": {
+          "category": "Technical Support",
+          "urgency": "High",
+          "sentiment": "Frustrated",
+          "entities": {
+            "device_info": "Apple iOS Mobile"
+          },
+          "confidence": 0.95
+        },
+        "timestamp": "2026-11-08T19:19:16.713760+00:00",
+        "duration_ms": 0.03,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "CRM_LOOKUP_TOOL",
+        "agent": "KnowledgeRetrievalAgent",
+        "action": "query_customer_profile",
+        "details": {
+          "customer_id": "CUST-1004",
+          "found": true,
+          "tier": "GOLD",
+          "fraud_risk_score": 0.05
+        },
+        "timestamp": "2026-11-08T19:19:16.714158+00:00",
+        "duration_ms": 0.0,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "POLICY_RETRIEVER_TOOL",
+        "agent": "KnowledgeRetrievalAgent",
+        "action": "search_policy_knowledge_base",
+        "details": {
+          "query": "Technical Support NovaCloud iOS App crashes immediately on payment submit billing subscription renewal chargeback dispute hostile escalation",
+          "chunks_retrieved": 3,
+          "top_policies": [
+            "POL-TECH-004",
+            "POL-BIL-005",
+            "POL-BIL-005"
+          ]
+        },
+        "timestamp": "2026-11-08T19:19:16.715255+00:00",
+        "duration_ms": 1.08,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "DRAFT_RESOLUTION",
+        "agent": "ResolutionAgent",
+        "action": "propose_resolution_and_draft_response",
+        "details": {
+          "proposed_action": "file_engineering_bug_and_workaround",
+          "action_payload": {
+            "customer_id": "CUST-1004",
+            "severity": "P2",
+            "component": "iOS Mobile Checkout",
+            "device_info": "Apple iOS Mobile",
+            "reproduction_notes": "Immediate crash upon payment confirmation tap on iOS 18"
+          },
+          "response_length": 524
+        },
+        "timestamp": "2026-11-08T19:19:16.715793+00:00",
+        "duration_ms": 0.01,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "EVALUATE_ESCALATION",
+        "agent": "EscalationAgent",
+        "action": "evaluate_safety_boundaries",
+        "details": {
+          "requires_human_approval": false,
+          "risk_score": 0.05,
+          "violations_count": 0,
+          "approval_reason": "No safety violations detected. Autonomous resolution approved."
+        },
+        "timestamp": "2026-11-08T19:19:16.716709+00:00",
+        "duration_ms": 0.01,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "EXECUTE_ACTION_TOOL",
+        "agent": "ActionExecutionEngine",
+        "action": "execute_file_engineering_bug_and_workaround",
+        "details": {
+          "action": "file_engineering_bug_and_workaround",
+          "status": "SUCCESS",
+          "transaction_id": "TX-2986C98E",
+          "authorized_by": "SYSTEM_AUTONOMOUS"
+        },
+        "timestamp": "2026-11-08T19:19:16.717254+00:00",
+        "duration_ms": 0.03,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "FINALIZE_TICKET",
+        "agent": "WorkflowOrchestrator",
+        "action": "finalize_workflow_and_persist_state",
+        "details": {
+          "ticket_id": "TCK-1004",
+          "trace_path": "C:\\Users\\ROSHAN ALEXANDER\\Documents\\Projects\\Customer-Support-Ticket-Triage\\results\\logs\\ticket_TCK-1004.json",
+          "execution_status": "SUCCESS"
+        },
+        "timestamp": "2026-11-08T19:19:16.719290+00:00",
+        "duration_ms": 1.0,
+        "status": "SUCCESS"
+      }
+    ],
+    "current_step": "COMPLETED",
+    "completed": true
+  },
+  {
+    "ticket_id": "TCK-1005",
+    "customer_id": "CUST-1005",
+    "customer_email": "v.sterling@luxegroup.co",
+    "subject": "Delayed delivery for critical executive equipment ORD-9304",
+    "description": "Our $540 dual monitor arm shipment ORD-9304 via FedEx FX-998877665 was supposed to arrive 4 days ago. Tracking hasn't updated since Memphis hub. This is severely stalling our boardroom setup. Please investigate immediately.",
+    "channel": "VIP_CONCIERGE",
+    "timestamp": "2026-11-08T13:20:00Z",
+    "category": "Shipping & Logistics",
+    "urgency": "High",
+    "sentiment": "Dissatisfied",
+    "intent": "Shipment tracking inquiry or in-transit delivery adjustment",
+    "extracted_entities": {
+      "order_id": "ORD-9304",
+      "refund_amount": 540.0,
+      "tracking_number": "FX-998877665"
+    },
+    "classification_confidence": 0.95,
+    "customer_profile": {
+      "customer_id": "CUST-1005",
+      "name": "Victoria Sterling",
+      "email": "v.sterling@luxegroup.co",
+      "tier": "VIP_PLATINUM",
+      "account_status": "ACTIVE",
+      "lifetime_value": 4800.0,
+      "fraud_risk_score": 0.01,
+      "account_created": "2021-05-10",
+      "support_ticket_count_90d": 0,
+      "recent_orders": [
+        {
+          "order_id": "ORD-9304",
+          "date": "2026-10-31",
+          "amount": 540.0,
+          "items": [
+            "Dual Monitor Arm Heavy Duty",
+            "Mechanical Ergonomic Keyboard"
+          ],
+          "status": "SHIPPED_IN_TRANSIT",
+          "delivery_date": null,
+          "carrier": "FedEx",
+          "tracking_number": "FX-998877665"
+        }
+      ],
+      "active_subscriptions": [
+        "ENTERPRISE_TEAM_ANNUAL"
+      ]
+    },
+    "retrieved_policies": [
+      {
+        "policy_id": "POL-LOG-003",
+        "title": "Shipping, Logistics and Return Policy - General Overview",
+        "relevance_score": 0.3638,
+        "excerpt": "# Shipping, Logistics and Return Policy (POL-LOG-003)",
+        "autonomous_limit": null,
+        "consequential_trigger": "Human approval required above limit or for security/legal terms"
+      },
+      {
+        "policy_id": "POL-LOG-003",
+        "title": "Shipping, Logistics and Return Policy - 4. In-Transit Address Changes and Package Intercepts",
+        "relevance_score": 0.2427,
+        "excerpt": "- Package reroutes or address amendments requested after an order has reached carrier sortation hubs (Status: `In Transit` or `Out for Delivery`) cannot be executed autonomously.\n- Any carrier intercept action incurs a third-party fee ($17.50) and requires human authorization to confirm delivery sec...",
+        "autonomous_limit": 17.5,
+        "consequential_trigger": "Human approval required above limit or for security/legal terms"
+      },
+      {
+        "policy_id": "POL-LOG-003",
+        "title": "Shipping, Logistics and Return Policy - 1. Overview and Carrier Partners",
+        "relevance_score": 0.1967,
+        "excerpt": "NovaTech Solutions operates fulfillment through certified regional and national carriers (FedEx, UPS, DHL). Standard delivery SLA is 3 to 5 business days; expedited shipping SLA is 1 to 2 business days.",
+        "autonomous_limit": null,
+        "consequential_trigger": "Human approval required above limit or for security/legal terms"
+      }
+    ],
+    "retrieval_query": "Shipping & Logistics Delayed delivery for critical executive equipment ORD-9304 shipping logistics courier carrier transit delay intercept",
+    "draft_response": "Dear Victoria Sterling,\n\nThank you for reaching out through your VIP Concierge channel. We sincerely apologize for the delay with your executive shipment ORD-9304 via FedEx.\n\nWe have initiated an expedited courier tracer with FedEx Priority Logistics to inspect the Memphis transit hub. In accordance with POL-LOG-003, we have credited $15.00 to your corporate account as a courtesy for this breach in delivery SLA. If the package does not update within 24 hours, we will dispatch an overnight replacement.\n\nRespectfully,\nNovaTech VIP Client Success",
+    "proposed_action": "expedited_courier_trace_and_credit",
+    "action_payload": {
+      "customer_id": "CUST-1005",
+      "order_id": "ORD-9304",
+      "tracking_number": "FX-998877665",
+      "credit_amount": 15.0
+    },
+    "resolution_notes": "VIP Platinum account exceeding $1,000 LTV. Opened priority carrier tracer and applied courtesy SLA credit.",
+    "risk_score": 0.83,
+    "requires_human_approval": true,
+    "approval_reason": "Refund request of $540.00 exceeds autonomous limit of $50.00 (POL-REF-001); VIP Platinum customer order exceeding $500 requires Managerial tracer oversight",
+    "safety_violations": [
+      "FINANCIAL_LIMIT_EXCEEDED: Refund $540.00 > $50.00",
+      "VIP_HIGH_VALUE_ORDER_DELAY: Executive equipment delayed"
+    ],
+    "human_decision": "APPROVED",
+    "human_feedback": "Automated supervisor validation granted under simulation protocol",
+    "supervisor_id": "SUPERVISOR-ON-DUTY",
+    "approval_timestamp": "2026-11-08T19:19:16.725254+00:00",
+    "executed_action": "expedited_courier_trace_and_credit",
+    "execution_status": "SUCCESS",
+    "execution_result": {
+      "status": "SUCCESS",
+      "action": "expedited_courier_trace_and_credit",
+      "transaction_id": "TX-455245C7",
+      "timestamp": "2026-11-08T19:19:16.725962+00:00",
+      "authorized_by": "SUPERVISOR-ON-DUTY",
+      "details": {
+        "carrier_tracer_id": "TRC-FX-DF63C6",
+        "tracking_number": "FX-998877665",
+        "courtesy_credit_applied": 15.0,
+        "message": "Opened urgent tracer TRC-FX-DF63C6 with carrier dispatch. Courtesy credit applied."
+      }
+    },
+    "final_response": "Dear Victoria Sterling,\n\nThank you for reaching out through your VIP Concierge channel. We sincerely apologize for the delay with your executive shipment ORD-9304 via FedEx.\n\nWe have initiated an expedited courier tracer with FedEx Priority Logistics to inspect the Memphis transit hub. In accordance with POL-LOG-003, we have credited $15.00 to your corporate account as a courtesy for this breach in delivery SLA. If the package does not update within 24 hours, we will dispatch an overnight replacement.\n\nRespectfully,\nNovaTech VIP Client Success\n\n[Reference Transaction ID: TX-455245C7]",
+    "audit_trail": [
+      {
+        "step": "CLASSIFY_TICKET",
+        "agent": "TicketClassificationAgent",
+        "action": "classify_ticket_content",
+        "details": {
+          "category": "Shipping & Logistics",
+          "urgency": "High",
+          "sentiment": "Dissatisfied",
+          "entities": {
+            "order_id": "ORD-9304",
+            "refund_amount": 540.0,
+            "tracking_number": "FX-998877665"
+          },
+          "confidence": 0.95
+        },
+        "timestamp": "2026-11-08T19:19:16.722241+00:00",
+        "duration_ms": 0.03,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "CRM_LOOKUP_TOOL",
+        "agent": "KnowledgeRetrievalAgent",
+        "action": "query_customer_profile",
+        "details": {
+          "customer_id": "CUST-1005",
+          "found": true,
+          "tier": "VIP_PLATINUM",
+          "fraud_risk_score": 0.01
+        },
+        "timestamp": "2026-11-08T19:19:16.722603+00:00",
+        "duration_ms": 0.0,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "POLICY_RETRIEVER_TOOL",
+        "agent": "KnowledgeRetrievalAgent",
+        "action": "search_policy_knowledge_base",
+        "details": {
+          "query": "Shipping & Logistics Delayed delivery for critical executive equipment ORD-9304 shipping logistics courier carrier transit delay intercept",
+          "chunks_retrieved": 3,
+          "top_policies": [
+            "POL-LOG-003",
+            "POL-LOG-003",
+            "POL-LOG-003"
+          ]
+        },
+        "timestamp": "2026-11-08T19:19:16.723606+00:00",
+        "duration_ms": 0.99,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "DRAFT_RESOLUTION",
+        "agent": "ResolutionAgent",
+        "action": "propose_resolution_and_draft_response",
+        "details": {
+          "proposed_action": "expedited_courier_trace_and_credit",
+          "action_payload": {
+            "customer_id": "CUST-1005",
+            "order_id": "ORD-9304",
+            "tracking_number": "FX-998877665",
+            "credit_amount": 15.0
+          },
+          "response_length": 549
+        },
+        "timestamp": "2026-11-08T19:19:16.724075+00:00",
+        "duration_ms": 0.01,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "EVALUATE_ESCALATION",
+        "agent": "EscalationAgent",
+        "action": "evaluate_safety_boundaries",
+        "details": {
+          "requires_human_approval": true,
+          "risk_score": 0.83,
+          "violations_count": 2,
+          "approval_reason": "Refund request of $540.00 exceeds autonomous limit of $50.00 (POL-REF-001); VIP Platinum customer order exceeding $500 requires Managerial tracer oversight"
+        },
+        "timestamp": "2026-11-08T19:19:16.724811+00:00",
+        "duration_ms": 0.01,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "HUMAN_APPROVAL_GATE",
+        "agent": "HumanSupervisorGate",
+        "action": "process_human_oversight",
+        "details": {
+          "decision": "APPROVED",
+          "supervisor_id": "SUPERVISOR-ON-DUTY",
+          "feedback": "Automated supervisor validation granted under simulation protocol",
+          "timestamp": "2026-11-08T19:19:16.725254+00:00",
+          "consequential_action": "expedited_courier_trace_and_credit"
+        },
+        "timestamp": "2026-11-08T19:19:16.725259+00:00",
+        "duration_ms": 0.0,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "EXECUTE_ACTION_TOOL",
+        "agent": "ActionExecutionEngine",
+        "action": "execute_expedited_courier_trace_and_credit",
+        "details": {
+          "action": "expedited_courier_trace_and_credit",
+          "status": "SUCCESS",
+          "transaction_id": "TX-455245C7",
+          "authorized_by": "SUPERVISOR-ON-DUTY"
+        },
+        "timestamp": "2026-11-08T19:19:16.725987+00:00",
+        "duration_ms": 0.03,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "FINALIZE_TICKET",
+        "agent": "WorkflowOrchestrator",
+        "action": "finalize_workflow_and_persist_state",
+        "details": {
+          "ticket_id": "TCK-1005",
+          "trace_path": "C:\\Users\\ROSHAN ALEXANDER\\Documents\\Projects\\Customer-Support-Ticket-Triage\\results\\logs\\ticket_TCK-1005.json",
+          "execution_status": "SUCCESS"
+        },
+        "timestamp": "2026-11-08T19:19:16.727141+00:00",
+        "duration_ms": 0.81,
+        "status": "SUCCESS"
+      }
+    ],
+    "current_step": "COMPLETED",
+    "completed": true
+  },
+  {
+    "ticket_id": "TCK-1006",
+    "customer_id": "CUST-1006",
+    "customer_email": "rmiller88@gmail.com",
+    "subject": "UNACCEPTABLE SCAM! REFUND ME OR I AM FILING CFPB AND CHARGEBACK TODAY",
+    "description": "Your service is an absolute rip off. I was charged $45 for another month of Basic without my permission! If I do not get a full refund into my bank within 24 hours I am filing a fraud claim with my bank and reporting NovaTech to the CFPB and FTC!",
+    "channel": "EMAIL",
+    "timestamp": "2026-11-08T14:10:00Z",
+    "category": "Billing & Refunds",
+    "urgency": "Critical",
+    "sentiment": "Hostile/Angry",
+    "intent": "Disputed unauthorized charge and immediate escalation threat",
+    "extracted_entities": {
+      "refund_amount": 45.0
+    },
+    "classification_confidence": 0.95,
+    "customer_profile": {
+      "customer_id": "CUST-1006",
+      "name": "Robert Miller",
+      "email": "rmiller88@gmail.com",
+      "tier": "STANDARD",
+      "account_status": "ACTIVE",
+      "lifetime_value": 75.0,
+      "fraud_risk_score": 0.18,
+      "account_created": "2025-06-19",
+      "support_ticket_count_90d": 3,
+      "recent_orders": [
+        {
+          "order_id": "ORD-5541",
+          "date": "2026-10-12",
+          "amount": 45.0,
+          "items": [
+            "NovaCloud Basic Plan Monthly"
+          ],
+          "status": "COMPLETED",
+          "delivery_date": "2026-10-12"
+        }
+      ],
+      "active_subscriptions": [
+        "BASIC_MONTHLY"
+      ]
+    },
+    "retrieved_policies": [
+      {
+        "policy_id": "POL-BIL-005",
+        "title": "Billing and Subscription Management Policy - General Overview",
+        "relevance_score": 0.2413,
+        "excerpt": "# Billing and Subscription Management Policy (POL-BIL-005)",
+        "autonomous_limit": null,
+        "consequential_trigger": "Human approval required above limit or for security/legal terms"
+      },
+      {
+        "policy_id": "POL-BIL-005",
+        "title": "Billing and Subscription Management Policy - 5. Chargebacks, Disputes, and Hostile Escalations",
+        "relevance_score": 0.1848,
+        "excerpt": "- If a customer explicitly threatens legal action, payment processor dispute (Stripe/PayPal), or credit card chargeback, the ticket priority is elevated to **Critical** and escalated immediately to the **Senior Retention & Legal Risk Team**.\n- Agents must offer an empathetic, de-escalating tone, ack...",
+        "autonomous_limit": null,
+        "consequential_trigger": "Human approval required above limit or for security/legal terms"
+      },
+      {
+        "policy_id": "POL-BIL-005",
+        "title": "Billing and Subscription Management Policy - 1. Overview and Billing Cycle",
+        "relevance_score": 0.1773,
+        "excerpt": "NovaTech Solutions offers monthly and annual recurring software licenses. Subscriptions automatically renew at the conclusion of each billing cycle unless cancelled prior to the renewal date.",
+        "autonomous_limit": null,
+        "consequential_trigger": "Human approval required above limit or for security/legal terms"
+      }
+    ],
+    "retrieval_query": "Billing & Refunds UNACCEPTABLE SCAM! REFUND ME OR I AM FILING CFPB AND CHARGEBACK TODAY billing subscription renewal chargeback dispute hostile escalation",
+    "draft_response": "Dear Robert,\n\nWe have received your message regarding the recent subscription charge. We understand your frustration and want to assure you that resolving this matter fairly and swiftly is our highest priority.\n\nYour ticket has been escalated directly to our Senior Retention Management and Account Relations Team. A dedicated senior specialist is reviewing your billing records now to issue an appropriate resolution and prevent any unwanted future renewals. You will hear directly from them within the next hour.\n\nSincerely,\nNovaTech Executive Customer Relations",
+    "proposed_action": "escalate_to_senior_retention_and_legal",
+    "action_payload": {
+      "customer_id": "CUST-1006",
+      "disputed_amount": 45.0,
+      "reason": "Hostile chargeback and regulatory complaint threat"
+    },
+    "resolution_notes": "Hostile tone and legal/regulatory threats trigger mandatory escalation to Senior Retention per POL-BIL-005.",
+    "risk_score": 0.85,
+    "requires_human_approval": true,
+    "approval_reason": "Ticket involves formal chargeback or regulatory escalation risk (POL-BIL-005)",
+    "safety_violations": [
+      "LEGAL_REGULATORY_THREAT: Customer threatened chargeback or regulatory action"
+    ],
+    "human_decision": "APPROVED",
+    "human_feedback": "Automated supervisor validation granted under simulation protocol",
+    "supervisor_id": "SUPERVISOR-ON-DUTY",
+    "approval_timestamp": "2026-11-08T19:19:16.732808+00:00",
+    "executed_action": "escalate_to_senior_retention_and_legal",
+    "execution_status": "SUCCESS",
+    "execution_result": {
+      "status": "SUCCESS",
+      "action": "escalate_to_senior_retention_and_legal",
+      "transaction_id": "TX-9BC1AF22",
+      "timestamp": "2026-11-08T19:19:16.733730+00:00",
+      "authorized_by": "SUPERVISOR-ON-DUTY",
+      "details": {
+        "escalation_ticket_id": "ESC-LEGAL-9D493D",
+        "risk_tier": "HIGH_LEGAL_RISK",
+        "assigned_team": "Senior Retention & Risk Management",
+        "sla_target_minutes": 30,
+        "message": "Ticket escalated to Senior Retention Team under ESC-LEGAL-9D493D."
+      }
+    },
+    "final_response": "Dear Robert,\n\nWe have received your message regarding the recent subscription charge. We understand your frustration and want to assure you that resolving this matter fairly and swiftly is our highest priority.\n\nYour ticket has been escalated directly to our Senior Retention Management and Account Relations Team. A dedicated senior specialist is reviewing your billing records now to issue an appropriate resolution and prevent any unwanted future renewals. You will hear directly from them within the next hour.\n\nSincerely,\nNovaTech Executive Customer Relations\n\n[Reference Transaction ID: TX-9BC1AF22]",
+    "audit_trail": [
+      {
+        "step": "CLASSIFY_TICKET",
+        "agent": "TicketClassificationAgent",
+        "action": "classify_ticket_content",
+        "details": {
+          "category": "Billing & Refunds",
+          "urgency": "Critical",
+          "sentiment": "Hostile/Angry",
+          "entities": {
+            "refund_amount": 45.0
+          },
+          "confidence": 0.95
+        },
+        "timestamp": "2026-11-08T19:19:16.729626+00:00",
+        "duration_ms": 0.04,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "CRM_LOOKUP_TOOL",
+        "agent": "KnowledgeRetrievalAgent",
+        "action": "query_customer_profile",
+        "details": {
+          "customer_id": "CUST-1006",
+          "found": true,
+          "tier": "STANDARD",
+          "fraud_risk_score": 0.18
+        },
+        "timestamp": "2026-11-08T19:19:16.730035+00:00",
+        "duration_ms": 0.0,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "POLICY_RETRIEVER_TOOL",
+        "agent": "KnowledgeRetrievalAgent",
+        "action": "search_policy_knowledge_base",
+        "details": {
+          "query": "Billing & Refunds UNACCEPTABLE SCAM! REFUND ME OR I AM FILING CFPB AND CHARGEBACK TODAY billing subscription renewal chargeback dispute hostile escalation",
+          "chunks_retrieved": 3,
+          "top_policies": [
+            "POL-BIL-005",
+            "POL-BIL-005",
+            "POL-BIL-005"
+          ]
+        },
+        "timestamp": "2026-11-08T19:19:16.731062+00:00",
+        "duration_ms": 1.02,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "DRAFT_RESOLUTION",
+        "agent": "ResolutionAgent",
+        "action": "propose_resolution_and_draft_response",
+        "details": {
+          "proposed_action": "escalate_to_senior_retention_and_legal",
+          "action_payload": {
+            "customer_id": "CUST-1006",
+            "disputed_amount": 45.0,
+            "reason": "Hostile chargeback and regulatory complaint threat"
+          },
+          "response_length": 564
+        },
+        "timestamp": "2026-11-08T19:19:16.731493+00:00",
+        "duration_ms": 0.01,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "EVALUATE_ESCALATION",
+        "agent": "EscalationAgent",
+        "action": "evaluate_safety_boundaries",
+        "details": {
+          "requires_human_approval": true,
+          "risk_score": 0.85,
+          "violations_count": 1,
+          "approval_reason": "Ticket involves formal chargeback or regulatory escalation risk (POL-BIL-005)"
+        },
+        "timestamp": "2026-11-08T19:19:16.732339+00:00",
+        "duration_ms": 0.01,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "HUMAN_APPROVAL_GATE",
+        "agent": "HumanSupervisorGate",
+        "action": "process_human_oversight",
+        "details": {
+          "decision": "APPROVED",
+          "supervisor_id": "SUPERVISOR-ON-DUTY",
+          "feedback": "Automated supervisor validation granted under simulation protocol",
+          "timestamp": "2026-11-08T19:19:16.732808+00:00",
+          "consequential_action": "escalate_to_senior_retention_and_legal"
+        },
+        "timestamp": "2026-11-08T19:19:16.732813+00:00",
+        "duration_ms": 0.0,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "EXECUTE_ACTION_TOOL",
+        "agent": "ActionExecutionEngine",
+        "action": "execute_escalate_to_senior_retention_and_legal",
+        "details": {
+          "action": "escalate_to_senior_retention_and_legal",
+          "status": "SUCCESS",
+          "transaction_id": "TX-9BC1AF22",
+          "authorized_by": "SUPERVISOR-ON-DUTY"
+        },
+        "timestamp": "2026-11-08T19:19:16.733759+00:00",
+        "duration_ms": 0.04,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "FINALIZE_TICKET",
+        "agent": "WorkflowOrchestrator",
+        "action": "finalize_workflow_and_persist_state",
+        "details": {
+          "ticket_id": "TCK-1006",
+          "trace_path": "C:\\Users\\ROSHAN ALEXANDER\\Documents\\Projects\\Customer-Support-Ticket-Triage\\results\\logs\\ticket_TCK-1006.json",
+          "execution_status": "SUCCESS"
+        },
+        "timestamp": "2026-11-08T19:19:16.735256+00:00",
+        "duration_ms": 1.11,
+        "status": "SUCCESS"
+      }
+    ],
+    "current_step": "COMPLETED",
+    "completed": true
+  },
+  {
+    "ticket_id": "TCK-1007",
+    "customer_id": "CUST-1007",
+    "customer_email": "amina.mansoor@gulftech.ae",
+    "subject": "Cancel annual 2TB storage subscription renewal ORD-4490",
+    "description": "Hello, my annual cloud storage renewed 4 days ago for $199.00. We transitioned our storage to an internal SAN and no longer require this subscription. Can you please cancel it and refund the annual fee?",
+    "channel": "WEB_PORTAL",
+    "timestamp": "2026-11-08T15:00:00Z",
+    "category": "Billing & Refunds",
+    "urgency": "Medium",
+    "sentiment": "Neutral",
+    "intent": "Refund or subscription cancellation request",
+    "extracted_entities": {
+      "order_id": "ORD-4490",
+      "refund_amount": 199.0
+    },
+    "classification_confidence": 0.95,
+    "customer_profile": {
+      "customer_id": "CUST-1007",
+      "name": "Amina Al-Mansoor",
+      "email": "amina.mansoor@gulftech.ae",
+      "tier": "GOLD",
+      "account_status": "ACTIVE",
+      "lifetime_value": 1150.0,
+      "fraud_risk_score": 0.03,
+      "account_created": "2023-04-18",
+      "support_ticket_count_90d": 0,
+      "recent_orders": [
+        {
+          "order_id": "ORD-4490",
+          "date": "2026-11-04",
+          "amount": 199.0,
+          "items": [
+            "Annual Cloud Storage Expansion (2TB)"
+          ],
+          "status": "COMPLETED",
+          "delivery_date": "2026-11-04"
+        }
+      ],
+      "active_subscriptions": [
+        "CLOUD_ANNUAL_2TB"
+      ]
+    },
+    "retrieved_policies": [
+      {
+        "policy_id": "POL-BIL-005",
+        "title": "Billing and Subscription Management Policy - General Overview",
+        "relevance_score": 0.2832,
+        "excerpt": "# Billing and Subscription Management Policy (POL-BIL-005)",
+        "autonomous_limit": null,
+        "consequential_trigger": "Human approval required above limit or for security/legal terms"
+      },
+      {
+        "policy_id": "POL-BIL-005",
+        "title": "Billing and Subscription Management Policy - 1. Overview and Billing Cycle",
+        "relevance_score": 0.2337,
+        "excerpt": "NovaTech Solutions offers monthly and annual recurring software licenses. Subscriptions automatically renew at the conclusion of each billing cycle unless cancelled prior to the renewal date.",
+        "autonomous_limit": null,
+        "consequential_trigger": "Human approval required above limit or for security/legal terms"
+      },
+      {
+        "policy_id": "POL-BIL-005",
+        "title": "Billing and Subscription Management Policy - 2. Accidental Renewals and 48-Hour Grace Period",
+        "relevance_score": 0.1688,
+        "excerpt": "- If a customer contacts support within forty-eight (48) hours of an unwanted automatic renewal and has not logged more than 5 platform actions, they are entitled to an immediate full refund.\n- Autonomous refund is permitted if renewal value <= $50.00 USD. If renewal value > $50.00 USD, human manage...",
+        "autonomous_limit": 50.0,
+        "consequential_trigger": "Human approval required above limit or for security/legal terms"
+      }
+    ],
+    "retrieval_query": "Billing & Refunds Cancel annual 2TB storage subscription renewal ORD-4490 billing subscription renewal chargeback dispute hostile escalation",
+    "draft_response": "Hello Amina,\n\nThank you for contacting NovaTech. We have received your request to cancel the 2TB Cloud Storage subscription renewal for order ORD-4490.\n\nIn accordance with our Billing & Subscription Policy (POL-BIL-005), annual subscriptions cancelled after the initial 48-hour window are eligible for a prorated refund of the unused term minus standard processing ($15.00). We have calculated your net prorated refund at $184.00, submitted for billing management sign-off.\n\nBest regards,\nNovaTech Billing Services",
+    "proposed_action": "prorated_cancellation_approval",
+    "action_payload": {
+      "customer_id": "CUST-1007",
+      "order_id": "ORD-4490",
+      "amount": 184.0,
+      "subscription_id": "CLOUD_ANNUAL_2TB"
+    },
+    "resolution_notes": "Grace period elapsed; refund value $184.00 exceeds $50.00 limit. Submitted for Managerial Approval.",
+    "risk_score": 0.7,
+    "requires_human_approval": true,
+    "approval_reason": "Refund request of $184.00 exceeds autonomous limit of $50.00 (POL-REF-001); Prorated cancellation fee waiver and high-value refund require Billing Manager authorization",
+    "safety_violations": [
+      "FINANCIAL_LIMIT_EXCEEDED: Refund $184.00 > $50.00",
+      "PRORATED_REFUND_OVERRIDE: Non-standard cancellation outside 48hr window"
+    ],
+    "human_decision": "APPROVED",
+    "human_feedback": "Automated supervisor validation granted under simulation protocol",
+    "supervisor_id": "SUPERVISOR-ON-DUTY",
+    "approval_timestamp": "2026-11-08T19:19:16.741875+00:00",
+    "executed_action": "prorated_cancellation_approval",
+    "execution_status": "SUCCESS",
+    "execution_result": {
+      "status": "SUCCESS",
+      "action": "prorated_cancellation_approval",
+      "transaction_id": "TX-113912C8",
+      "timestamp": "2026-11-08T19:19:16.742628+00:00",
+      "authorized_by": "SUPERVISOR-ON-DUTY",
+      "details": {
+        "refund_amount": 184.0,
+        "administrative_fee": 15.0,
+        "message": "Prorated refund approved minus standard administrative fee."
+      }
+    },
+    "final_response": "Hello Amina,\n\nThank you for contacting NovaTech. We have received your request to cancel the 2TB Cloud Storage subscription renewal for order ORD-4490.\n\nIn accordance with our Billing & Subscription Policy (POL-BIL-005), annual subscriptions cancelled after the initial 48-hour window are eligible for a prorated refund of the unused term minus standard processing ($15.00). We have calculated your net prorated refund at $184.00, submitted for billing management sign-off.\n\nBest regards,\nNovaTech Billing Services\n\n[Reference Transaction ID: TX-113912C8]",
+    "audit_trail": [
+      {
+        "step": "CLASSIFY_TICKET",
+        "agent": "TicketClassificationAgent",
+        "action": "classify_ticket_content",
+        "details": {
+          "category": "Billing & Refunds",
+          "urgency": "Medium",
+          "sentiment": "Neutral",
+          "entities": {
+            "order_id": "ORD-4490",
+            "refund_amount": 199.0
+          },
+          "confidence": 0.95
+        },
+        "timestamp": "2026-11-08T19:19:16.738430+00:00",
+        "duration_ms": 0.04,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "CRM_LOOKUP_TOOL",
+        "agent": "KnowledgeRetrievalAgent",
+        "action": "query_customer_profile",
+        "details": {
+          "customer_id": "CUST-1007",
+          "found": true,
+          "tier": "GOLD",
+          "fraud_risk_score": 0.03
+        },
+        "timestamp": "2026-11-08T19:19:16.738859+00:00",
+        "duration_ms": 0.0,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "POLICY_RETRIEVER_TOOL",
+        "agent": "KnowledgeRetrievalAgent",
+        "action": "search_policy_knowledge_base",
+        "details": {
+          "query": "Billing & Refunds Cancel annual 2TB storage subscription renewal ORD-4490 billing subscription renewal chargeback dispute hostile escalation",
+          "chunks_retrieved": 3,
+          "top_policies": [
+            "POL-BIL-005",
+            "POL-BIL-005",
+            "POL-BIL-005"
+          ]
+        },
+        "timestamp": "2026-11-08T19:19:16.739957+00:00",
+        "duration_ms": 1.09,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "DRAFT_RESOLUTION",
+        "agent": "ResolutionAgent",
+        "action": "propose_resolution_and_draft_response",
+        "details": {
+          "proposed_action": "prorated_cancellation_approval",
+          "action_payload": {
+            "customer_id": "CUST-1007",
+            "order_id": "ORD-4490",
+            "amount": 184.0,
+            "subscription_id": "CLOUD_ANNUAL_2TB"
+          },
+          "response_length": 514
+        },
+        "timestamp": "2026-11-08T19:19:16.740373+00:00",
+        "duration_ms": 0.01,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "EVALUATE_ESCALATION",
+        "agent": "EscalationAgent",
+        "action": "evaluate_safety_boundaries",
+        "details": {
+          "requires_human_approval": true,
+          "risk_score": 0.7,
+          "violations_count": 2,
+          "approval_reason": "Refund request of $184.00 exceeds autonomous limit of $50.00 (POL-REF-001); Prorated cancellation fee waiver and high-value refund require Billing Manager authorization"
+        },
+        "timestamp": "2026-11-08T19:19:16.741289+00:00",
+        "duration_ms": 0.01,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "HUMAN_APPROVAL_GATE",
+        "agent": "HumanSupervisorGate",
+        "action": "process_human_oversight",
+        "details": {
+          "decision": "APPROVED",
+          "supervisor_id": "SUPERVISOR-ON-DUTY",
+          "feedback": "Automated supervisor validation granted under simulation protocol",
+          "timestamp": "2026-11-08T19:19:16.741875+00:00",
+          "consequential_action": "prorated_cancellation_approval"
+        },
+        "timestamp": "2026-11-08T19:19:16.741881+00:00",
+        "duration_ms": 0.0,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "EXECUTE_ACTION_TOOL",
+        "agent": "ActionExecutionEngine",
+        "action": "execute_prorated_cancellation_approval",
+        "details": {
+          "action": "prorated_cancellation_approval",
+          "status": "SUCCESS",
+          "transaction_id": "TX-113912C8",
+          "authorized_by": "SUPERVISOR-ON-DUTY"
+        },
+        "timestamp": "2026-11-08T19:19:16.742649+00:00",
+        "duration_ms": 0.02,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "FINALIZE_TICKET",
+        "agent": "WorkflowOrchestrator",
+        "action": "finalize_workflow_and_persist_state",
+        "details": {
+          "ticket_id": "TCK-1007",
+          "trace_path": "C:\\Users\\ROSHAN ALEXANDER\\Documents\\Projects\\Customer-Support-Ticket-Triage\\results\\logs\\ticket_TCK-1007.json",
+          "execution_status": "SUCCESS"
+        },
+        "timestamp": "2026-11-08T19:19:16.743840+00:00",
+        "duration_ms": 0.85,
+        "status": "SUCCESS"
+      }
+    ],
+    "current_step": "COMPLETED",
+    "completed": true
+  },
+  {
+    "ticket_id": "TCK-1008",
+    "customer_id": "CUST-1008",
+    "customer_email": "kzhang92@outlook.com",
+    "subject": "Change delivery address for ORD-3312 immediately",
+    "description": "Hi! My speakerphone package ORD-3312 is out for delivery today with UPS. I had an emergency and am staying at 742 Evergreen Terrace instead of my apartment. Please change the delivery address to the new address before the driver arrives!",
+    "channel": "LIVE_CHAT",
+    "timestamp": "2026-11-08T15:45:00Z",
+    "category": "Shipping & Logistics",
+    "urgency": "High",
+    "sentiment": "Urgent",
+    "intent": "Shipment tracking inquiry or in-transit delivery adjustment",
+    "extracted_entities": {
+      "order_id": "ORD-3312"
+    },
+    "classification_confidence": 0.95,
+    "customer_profile": {
+      "customer_id": "CUST-1008",
+      "name": "Kevin Zhang",
+      "email": "kzhang92@outlook.com",
+      "tier": "STANDARD",
+      "account_status": "ACTIVE",
+      "lifetime_value": 180.0,
+      "fraud_risk_score": 0.08,
+      "account_created": "2024-09-02",
+      "support_ticket_count_90d": 1,
+      "recent_orders": [
+        {
+          "order_id": "ORD-3312",
+          "date": "2026-11-07",
+          "amount": 79.99,
+          "items": [
+            "Wireless Conference Speakerphone"
+          ],
+          "status": "OUT_FOR_DELIVERY",
+          "delivery_date": null,
+          "carrier": "UPS",
+          "tracking_number": "1Z9999999999999999"
+        }
+      ],
+      "active_subscriptions": []
+    },
+    "retrieved_policies": [
+      {
+        "policy_id": "POL-LOG-003",
+        "title": "Shipping, Logistics and Return Policy - General Overview",
+        "relevance_score": 0.3532,
+        "excerpt": "# Shipping, Logistics and Return Policy (POL-LOG-003)",
+        "autonomous_limit": null,
+        "consequential_trigger": "Human approval required above limit or for security/legal terms"
+      },
+      {
+        "policy_id": "POL-LOG-003",
+        "title": "Shipping, Logistics and Return Policy - 4. In-Transit Address Changes and Package Intercepts",
+        "relevance_score": 0.2932,
+        "excerpt": "- Package reroutes or address amendments requested after an order has reached carrier sortation hubs (Status: `In Transit` or `Out for Delivery`) cannot be executed autonomously.\n- Any carrier intercept action incurs a third-party fee ($17.50) and requires human authorization to confirm delivery sec...",
+        "autonomous_limit": 17.5,
+        "consequential_trigger": "Human approval required above limit or for security/legal terms"
+      },
+      {
+        "policy_id": "POL-LOG-003",
+        "title": "Shipping, Logistics and Return Policy - 1. Overview and Carrier Partners",
+        "relevance_score": 0.1909,
+        "excerpt": "NovaTech Solutions operates fulfillment through certified regional and national carriers (FedEx, UPS, DHL). Standard delivery SLA is 3 to 5 business days; expedited shipping SLA is 1 to 2 business days.",
+        "autonomous_limit": null,
+        "consequential_trigger": "Human approval required above limit or for security/legal terms"
+      }
+    ],
+    "retrieval_query": "Shipping & Logistics Change delivery address for ORD-3312 immediately shipping logistics courier carrier transit delay intercept",
+    "draft_response": "Hello Kevin,\n\nWe received your urgent address change request for order ORD-3312. Because this package is already in transit and designated 'Out for Delivery' with UPS, automated routing is restricted to ensure package safety (POL-LOG-003).\n\nOur Logistics Dispatch Team is contacting the local UPS carrier depot to request an urgent package intercept to 742 Evergreen Terrace. We will update you with confirmation shortly.\n\nBest regards,\nNovaTech Logistics Support",
+    "proposed_action": "carrier_intercept_dispatch_review",
+    "action_payload": {
+      "customer_id": "CUST-1008",
+      "order_id": "ORD-3312",
+      "requested_address": "742 Evergreen Terrace",
+      "carrier": "UPS",
+      "carrier_fee": 17.5
+    },
+    "resolution_notes": "In-transit package cannot be rerouted autonomously per POL-LOG-003. Requires Logistics Dispatch review.",
+    "risk_score": 0.65,
+    "requires_human_approval": true,
+    "approval_reason": "In-transit address rerouting incurs third-party courier fee and requires Dispatcher authorization (POL-LOG-003)",
+    "safety_violations": [
+      "PHYSICAL_LOGISTICS_INTERCEPT: Package in transit requires carrier dispatch fee approval"
+    ],
+    "human_decision": "APPROVED",
+    "human_feedback": "Automated supervisor validation granted under simulation protocol",
+    "supervisor_id": "SUPERVISOR-ON-DUTY",
+    "approval_timestamp": "2026-11-08T19:19:16.749261+00:00",
+    "executed_action": "carrier_intercept_dispatch_review",
+    "execution_status": "SUCCESS",
+    "execution_result": {
+      "status": "SUCCESS",
+      "action": "carrier_intercept_dispatch_review",
+      "transaction_id": "TX-25F348B7",
+      "timestamp": "2026-11-08T19:19:16.750074+00:00",
+      "authorized_by": "SUPERVISOR-ON-DUTY",
+      "details": {
+        "intercept_reference": "INT-BF3803",
+        "carrier_intercept_fee": 17.5,
+        "message": "Carrier intercept dispatch submitted with fee waiver authorization."
+      }
+    },
+    "final_response": "Hello Kevin,\n\nWe received your urgent address change request for order ORD-3312. Because this package is already in transit and designated 'Out for Delivery' with UPS, automated routing is restricted to ensure package safety (POL-LOG-003).\n\nOur Logistics Dispatch Team is contacting the local UPS carrier depot to request an urgent package intercept to 742 Evergreen Terrace. We will update you with confirmation shortly.\n\nBest regards,\nNovaTech Logistics Support\n\n[Reference Transaction ID: TX-25F348B7]",
+    "audit_trail": [
+      {
+        "step": "CLASSIFY_TICKET",
+        "agent": "TicketClassificationAgent",
+        "action": "classify_ticket_content",
+        "details": {
+          "category": "Shipping & Logistics",
+          "urgency": "High",
+          "sentiment": "Urgent",
+          "entities": {
+            "order_id": "ORD-3312"
+          },
+          "confidence": 0.95
+        },
+        "timestamp": "2026-11-08T19:19:16.746511+00:00",
+        "duration_ms": 0.04,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "CRM_LOOKUP_TOOL",
+        "agent": "KnowledgeRetrievalAgent",
+        "action": "query_customer_profile",
+        "details": {
+          "customer_id": "CUST-1008",
+          "found": true,
+          "tier": "STANDARD",
+          "fraud_risk_score": 0.08
+        },
+        "timestamp": "2026-11-08T19:19:16.746872+00:00",
+        "duration_ms": 0.0,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "POLICY_RETRIEVER_TOOL",
+        "agent": "KnowledgeRetrievalAgent",
+        "action": "search_policy_knowledge_base",
+        "details": {
+          "query": "Shipping & Logistics Change delivery address for ORD-3312 immediately shipping logistics courier carrier transit delay intercept",
+          "chunks_retrieved": 3,
+          "top_policies": [
+            "POL-LOG-003",
+            "POL-LOG-003",
+            "POL-LOG-003"
+          ]
+        },
+        "timestamp": "2026-11-08T19:19:16.747837+00:00",
+        "duration_ms": 0.95,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "DRAFT_RESOLUTION",
+        "agent": "ResolutionAgent",
+        "action": "propose_resolution_and_draft_response",
+        "details": {
+          "proposed_action": "carrier_intercept_dispatch_review",
+          "action_payload": {
+            "customer_id": "CUST-1008",
+            "order_id": "ORD-3312",
+            "requested_address": "742 Evergreen Terrace",
+            "carrier": "UPS",
+            "carrier_fee": 17.5
+          },
+          "response_length": 463
+        },
+        "timestamp": "2026-11-08T19:19:16.748209+00:00",
+        "duration_ms": 0.01,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "EVALUATE_ESCALATION",
+        "agent": "EscalationAgent",
+        "action": "evaluate_safety_boundaries",
+        "details": {
+          "requires_human_approval": true,
+          "risk_score": 0.65,
+          "violations_count": 1,
+          "approval_reason": "In-transit address rerouting incurs third-party courier fee and requires Dispatcher authorization (POL-LOG-003)"
+        },
+        "timestamp": "2026-11-08T19:19:16.748829+00:00",
+        "duration_ms": 0.01,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "HUMAN_APPROVAL_GATE",
+        "agent": "HumanSupervisorGate",
+        "action": "process_human_oversight",
+        "details": {
+          "decision": "APPROVED",
+          "supervisor_id": "SUPERVISOR-ON-DUTY",
+          "feedback": "Automated supervisor validation granted under simulation protocol",
+          "timestamp": "2026-11-08T19:19:16.749261+00:00",
+          "consequential_action": "carrier_intercept_dispatch_review"
+        },
+        "timestamp": "2026-11-08T19:19:16.749267+00:00",
+        "duration_ms": 0.0,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "EXECUTE_ACTION_TOOL",
+        "agent": "ActionExecutionEngine",
+        "action": "execute_carrier_intercept_dispatch_review",
+        "details": {
+          "action": "carrier_intercept_dispatch_review",
+          "status": "SUCCESS",
+          "transaction_id": "TX-25F348B7",
+          "authorized_by": "SUPERVISOR-ON-DUTY"
+        },
+        "timestamp": "2026-11-08T19:19:16.750098+00:00",
+        "duration_ms": 0.02,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "FINALIZE_TICKET",
+        "agent": "WorkflowOrchestrator",
+        "action": "finalize_workflow_and_persist_state",
+        "details": {
+          "ticket_id": "TCK-1008",
+          "trace_path": "C:\\Users\\ROSHAN ALEXANDER\\Documents\\Projects\\Customer-Support-Ticket-Triage\\results\\logs\\ticket_TCK-1008.json",
+          "execution_status": "SUCCESS"
+        },
+        "timestamp": "2026-11-08T19:19:16.751334+00:00",
+        "duration_ms": 0.89,
+        "status": "SUCCESS"
+      }
+    ],
+    "current_step": "COMPLETED",
+    "completed": true
+  },
+  {
+    "ticket_id": "TCK-1009",
+    "customer_id": "CUST-1009",
+    "customer_email": "chloe.dupont@artisan.fr",
+    "subject": "Inquiry about NovaDraw vector compatibility with Adobe Illustrator",
+    "description": "Bonjour, I purchased the NovaDraw vector asset pack (ORD-2201). Can you confirm if SVG assets can be exported with embedded Pantone color swatches in the upcoming version? Thank you!",
+    "channel": "EMAIL",
+    "timestamp": "2026-11-08T16:30:00Z",
+    "category": "Product Inquiry",
+    "urgency": "Low",
+    "sentiment": "Positive",
+    "intent": "Product compatibility and feature roadmap inquiry",
+    "extracted_entities": {
+      "order_id": "ORD-2201"
+    },
+    "classification_confidence": 0.95,
+    "customer_profile": {
+      "customer_id": "CUST-1009",
+      "name": "Chloe Dupont",
+      "email": "chloe.dupont@artisan.fr",
+      "tier": "STANDARD",
+      "account_status": "ACTIVE",
+      "lifetime_value": 45.0,
+      "fraud_risk_score": 0.02,
+      "account_created": "2026-08-11",
+      "support_ticket_count_90d": 0,
+      "recent_orders": [
+        {
+          "order_id": "ORD-2201",
+          "date": "2026-10-01",
+          "amount": 35.0,
+          "items": [
+            "NovaDraw Vector Asset Pack"
+          ],
+          "status": "COMPLETED",
+          "delivery_date": "2026-10-01"
+        }
+      ],
+      "active_subscriptions": []
+    },
+    "retrieved_policies": [
+      {
+        "policy_id": "POL-TECH-004",
+        "title": "Technical Support and SLA Policy - General Overview",
+        "relevance_score": 0.3249,
+        "excerpt": "# Technical Support and SLA Policy (POL-TECH-004)",
+        "autonomous_limit": null,
+        "consequential_trigger": "Human approval required above limit or for security/legal terms"
+      },
+      {
+        "policy_id": "POL-TECH-004",
+        "title": "Technical Support and SLA Policy - 1. Incident Severity Definitions & Response SLAs",
+        "relevance_score": 0.1716,
+        "excerpt": "NovaTech Technical Support categorizes all software, API, and platform incidents into four severity levels:\n- **P1 - Critical Severity:** Complete production outage, system downtime, data corruption, or payment gateway failure affecting multiple users.\n  - Initial Response SLA: **1 Hour**\n  - Resolu...",
+        "autonomous_limit": null,
+        "consequential_trigger": "Human approval required above limit or for security/legal terms"
+      },
+      {
+        "policy_id": "POL-TECH-004",
+        "title": "Technical Support and SLA Policy - 2. Standard Troubleshooting Hierarchy",
+        "relevance_score": 0.134,
+        "excerpt": "1. Clear local application cache and browser cookies.\n2. Verify network connectivity and inspect WebSockets / CORS errors in developer console.\n3. Test on updated supported browser (Chrome 120+, Safari 17+, Firefox 122+).\n4. For mobile application crashes, capture device model, OS build number, and ...",
+        "autonomous_limit": null,
+        "consequential_trigger": "Human approval required above limit or for security/legal terms"
+      }
+    ],
+    "retrieval_query": "Product Inquiry Inquiry about NovaDraw vector compatibility with Adobe Illustrator technical support specifications software compatibility SLA troubleshooting",
+    "draft_response": "Bonjour Chloe,\n\nThank you for contacting NovaTech Creative Solutions! We are delighted that you are using the NovaDraw vector asset pack.\n\nTo answer your question: Yes, NovaDraw v4.3 supports full Pantone\u00ae Formula Guide color swatch embedding directly within standard SVG and EPS export profiles, ensuring 100% fidelity when importing into Adobe Illustrator.\n\nPlease let us know if you need any additional sample palettes or documentation!\n\nWarm regards,\nNovaTech Product Specialists",
+    "proposed_action": "provide_product_guidance",
+    "action_payload": {
+      "customer_id": "CUST-1009",
+      "inquiry_type": "Product Specifications"
+    },
+    "resolution_notes": "General product feature inquiry. Autonomous guidance provided.",
+    "risk_score": 0.05,
+    "requires_human_approval": false,
+    "approval_reason": "No safety violations detected. Autonomous resolution approved.",
+    "safety_violations": [],
+    "human_decision": "NOT_REQUIRED",
+    "executed_action": "provide_product_guidance",
+    "execution_status": "SUCCESS",
+    "execution_result": {
+      "status": "SUCCESS",
+      "action": "provide_product_guidance",
+      "transaction_id": "TX-96BE8AA7",
+      "timestamp": "2026-11-08T19:19:16.758322+00:00",
+      "authorized_by": "SYSTEM_AUTONOMOUS",
+      "details": {
+        "message": "Product documentation and architectural guidance dispatched to customer."
+      }
+    },
+    "final_response": "Bonjour Chloe,\n\nThank you for contacting NovaTech Creative Solutions! We are delighted that you are using the NovaDraw vector asset pack.\n\nTo answer your question: Yes, NovaDraw v4.3 supports full Pantone\u00ae Formula Guide color swatch embedding directly within standard SVG and EPS export profiles, ensuring 100% fidelity when importing into Adobe Illustrator.\n\nPlease let us know if you need any additional sample palettes or documentation!\n\nWarm regards,\nNovaTech Product Specialists\n\n[Reference Transaction ID: TX-96BE8AA7]",
+    "audit_trail": [
+      {
+        "step": "CLASSIFY_TICKET",
+        "agent": "TicketClassificationAgent",
+        "action": "classify_ticket_content",
+        "details": {
+          "category": "Product Inquiry",
+          "urgency": "Low",
+          "sentiment": "Positive",
+          "entities": {
+            "order_id": "ORD-2201"
+          },
+          "confidence": 0.95
+        },
+        "timestamp": "2026-11-08T19:19:16.754857+00:00",
+        "duration_ms": 0.04,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "CRM_LOOKUP_TOOL",
+        "agent": "KnowledgeRetrievalAgent",
+        "action": "query_customer_profile",
+        "details": {
+          "customer_id": "CUST-1009",
+          "found": true,
+          "tier": "STANDARD",
+          "fraud_risk_score": 0.02
+        },
+        "timestamp": "2026-11-08T19:19:16.755217+00:00",
+        "duration_ms": 0.0,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "POLICY_RETRIEVER_TOOL",
+        "agent": "KnowledgeRetrievalAgent",
+        "action": "search_policy_knowledge_base",
+        "details": {
+          "query": "Product Inquiry Inquiry about NovaDraw vector compatibility with Adobe Illustrator technical support specifications software compatibility SLA troubleshooting",
+          "chunks_retrieved": 3,
+          "top_policies": [
+            "POL-TECH-004",
+            "POL-TECH-004",
+            "POL-TECH-004"
+          ]
+        },
+        "timestamp": "2026-11-08T19:19:16.756194+00:00",
+        "duration_ms": 0.96,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "DRAFT_RESOLUTION",
+        "agent": "ResolutionAgent",
+        "action": "propose_resolution_and_draft_response",
+        "details": {
+          "proposed_action": "provide_product_guidance",
+          "action_payload": {
+            "customer_id": "CUST-1009",
+            "inquiry_type": "Product Specifications"
+          },
+          "response_length": 483
+        },
+        "timestamp": "2026-11-08T19:19:16.756858+00:00",
+        "duration_ms": 0.31,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "EVALUATE_ESCALATION",
+        "agent": "EscalationAgent",
+        "action": "evaluate_safety_boundaries",
+        "details": {
+          "requires_human_approval": false,
+          "risk_score": 0.05,
+          "violations_count": 0,
+          "approval_reason": "No safety violations detected. Autonomous resolution approved."
+        },
+        "timestamp": "2026-11-08T19:19:16.757682+00:00",
+        "duration_ms": 0.01,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "EXECUTE_ACTION_TOOL",
+        "agent": "ActionExecutionEngine",
+        "action": "execute_provide_product_guidance",
+        "details": {
+          "action": "provide_product_guidance",
+          "status": "SUCCESS",
+          "transaction_id": "TX-96BE8AA7",
+          "authorized_by": "SYSTEM_AUTONOMOUS"
+        },
+        "timestamp": "2026-11-08T19:19:16.758346+00:00",
+        "duration_ms": 0.02,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "FINALIZE_TICKET",
+        "agent": "WorkflowOrchestrator",
+        "action": "finalize_workflow_and_persist_state",
+        "details": {
+          "ticket_id": "TCK-1009",
+          "trace_path": "C:\\Users\\ROSHAN ALEXANDER\\Documents\\Projects\\Customer-Support-Ticket-Triage\\results\\logs\\ticket_TCK-1009.json",
+          "execution_status": "SUCCESS"
+        },
+        "timestamp": "2026-11-08T19:19:16.759889+00:00",
+        "duration_ms": 0.8,
+        "status": "SUCCESS"
+      }
+    ],
+    "current_step": "COMPLETED",
+    "completed": true
+  },
+  {
+    "ticket_id": "TCK-1010",
+    "customer_id": "CUST-1010",
+    "customer_email": "throwaway991@tempmail.in",
+    "subject": "Send cash refund for $399 gift card license pack ORD-1100",
+    "description": "I bought order ORD-1100 yesterday with gift card license pack for $399. I want you to refund the full money to my Western Union account or bitcoin wallet immediately, do not put it back on original payment card.",
+    "channel": "WEB_PORTAL",
+    "timestamp": "2026-11-08T17:15:00Z",
+    "category": "Account & Security",
+    "urgency": "Critical",
+    "sentiment": "Suspicious",
+    "intent": "Account security incident or unauthorized access report",
+    "extracted_entities": {
+      "order_id": "ORD-1100",
+      "refund_amount": 399.0
+    },
+    "classification_confidence": 0.95,
+    "customer_profile": {
+      "customer_id": "CUST-1010",
+      "name": "Anonymous / Suspicious Actor",
+      "email": "throwaway991@tempmail.in",
+      "tier": "STANDARD",
+      "account_status": "SUSPICIOUS",
+      "lifetime_value": 0.0,
+      "fraud_risk_score": 0.91,
+      "account_created": "2026-11-06",
+      "support_ticket_count_90d": 4,
+      "recent_orders": [
+        {
+          "order_id": "ORD-1100",
+          "date": "2026-11-06",
+          "amount": 399.0,
+          "items": [
+            "Bulk Gift Card License Pack"
+          ],
+          "status": "FLAGGED_REVIEW",
+          "delivery_date": null
+        }
+      ],
+      "active_subscriptions": []
+    },
+    "retrieved_policies": [
+      {
+        "policy_id": "POL-REF-001",
+        "title": "Refund and Cancellation Policy - 3. Autonomous Refund Authority Limits",
+        "relevance_score": 0.2399,
+        "excerpt": "- **Autonomous Threshold:** Automated agent workflows may approve and disburse refunds up to **$50.00 USD** per order without human intervention, provided that:\n  - The customer account is in good standing (fraud risk score < 0.25).\n  - The request falls within the 30-day delivery window.\n  - The cu...",
+        "autonomous_limit": 50.0,
+        "consequential_trigger": "Human approval required above limit or for security/legal terms"
+      },
+      {
+        "policy_id": "POL-REF-001",
+        "title": "Refund and Cancellation Policy - 2. Standard 30-Day Return Window",
+        "relevance_score": 0.2385,
+        "excerpt": "Customers are entitled to request a full refund or exchange for physical merchandise and select digital purchases within thirty (30) calendar days from the date of physical delivery or digital license activation.",
+        "autonomous_limit": null,
+        "consequential_trigger": "Human approval required above limit or for security/legal terms"
+      },
+      {
+        "policy_id": "POL-SEC-002",
+        "title": "Account Security and Authentication Policy - General Overview",
+        "relevance_score": 0.1467,
+        "excerpt": "# Account Security and Authentication Policy (POL-SEC-002)",
+        "autonomous_limit": null,
+        "consequential_trigger": "Human approval required above limit or for security/legal terms"
+      }
+    ],
+    "retrieval_query": "Account & Security Send cash refund for $399 gift card license pack ORD-1100 refund return policy autonomous threshold 30 day window",
+    "draft_response": "Hello,\n\nWe have received your refund inquiry regarding order ORD-1100. In accordance with federal financial regulations and NovaTech Refund Policy POL-REF-001, refunds cannot be remitted to third-party cash transmitters, cryptocurrency addresses, or alternate parties.\n\nYour account has been placed on a security verification hold pending formal identity confirmation from our Fraud Prevention and Risk Compliance Department.\n\nNovaTech Risk & Compliance",
+    "proposed_action": "freeze_fraudulent_claim_and_security_hold",
+    "action_payload": {
+      "customer_id": "CUST-1010",
+      "order_id": "ORD-1100",
+      "fraud_score": 0.91,
+      "requested_method": "Western Union / Bitcoin"
+    },
+    "resolution_notes": "High fraud score (>= 0.25) and prohibited alternate payment refund request. Mandatory Fraud Team Review.",
+    "risk_score": 0.95,
+    "requires_human_approval": true,
+    "approval_reason": "Refund request of $399.00 exceeds autonomous limit of $50.00 (POL-REF-001); Account risk assessment score (0.91) indicates elevated fraud probability",
+    "safety_violations": [
+      "FINANCIAL_LIMIT_EXCEEDED: Refund $399.00 > $50.00",
+      "HIGH_FRAUD_RISK: Account risk score 0.91 >= threshold 0.25"
+    ],
+    "human_decision": "APPROVED",
+    "human_feedback": "Automated supervisor validation granted under simulation protocol",
+    "supervisor_id": "SUPERVISOR-ON-DUTY",
+    "approval_timestamp": "2026-11-08T19:19:16.765618+00:00",
+    "executed_action": "freeze_fraudulent_claim_and_security_hold",
+    "execution_status": "SUCCESS",
+    "execution_result": {
+      "status": "SUCCESS",
+      "action": "freeze_fraudulent_claim_and_security_hold",
+      "transaction_id": "TX-FE4AE31C",
+      "timestamp": "2026-11-08T19:19:16.766379+00:00",
+      "authorized_by": "SUPERVISOR-ON-DUTY",
+      "details": {
+        "fraud_flag": "CONFIRMED_HIGH_RISK",
+        "payment_hold": "ACTIVE",
+        "message": "Account placed on security hold. Claim denied pending identity verification."
+      }
+    },
+    "final_response": "Hello,\n\nWe have received your refund inquiry regarding order ORD-1100. In accordance with federal financial regulations and NovaTech Refund Policy POL-REF-001, refunds cannot be remitted to third-party cash transmitters, cryptocurrency addresses, or alternate parties.\n\nYour account has been placed on a security verification hold pending formal identity confirmation from our Fraud Prevention and Risk Compliance Department.\n\nNovaTech Risk & Compliance\n\n[Reference Transaction ID: TX-FE4AE31C]",
+    "audit_trail": [
+      {
+        "step": "CLASSIFY_TICKET",
+        "agent": "TicketClassificationAgent",
+        "action": "classify_ticket_content",
+        "details": {
+          "category": "Account & Security",
+          "urgency": "Critical",
+          "sentiment": "Suspicious",
+          "entities": {
+            "order_id": "ORD-1100",
+            "refund_amount": 399.0
+          },
+          "confidence": 0.95
+        },
+        "timestamp": "2026-11-08T19:19:16.762456+00:00",
+        "duration_ms": 0.03,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "CRM_LOOKUP_TOOL",
+        "agent": "KnowledgeRetrievalAgent",
+        "action": "query_customer_profile",
+        "details": {
+          "customer_id": "CUST-1010",
+          "found": true,
+          "tier": "STANDARD",
+          "fraud_risk_score": 0.91
+        },
+        "timestamp": "2026-11-08T19:19:16.762812+00:00",
+        "duration_ms": 0.0,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "POLICY_RETRIEVER_TOOL",
+        "agent": "KnowledgeRetrievalAgent",
+        "action": "search_policy_knowledge_base",
+        "details": {
+          "query": "Account & Security Send cash refund for $399 gift card license pack ORD-1100 refund return policy autonomous threshold 30 day window",
+          "chunks_retrieved": 3,
+          "top_policies": [
+            "POL-REF-001",
+            "POL-REF-001",
+            "POL-SEC-002"
+          ]
+        },
+        "timestamp": "2026-11-08T19:19:16.763932+00:00",
+        "duration_ms": 1.1,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "DRAFT_RESOLUTION",
+        "agent": "ResolutionAgent",
+        "action": "propose_resolution_and_draft_response",
+        "details": {
+          "proposed_action": "freeze_fraudulent_claim_and_security_hold",
+          "action_payload": {
+            "customer_id": "CUST-1010",
+            "order_id": "ORD-1100",
+            "fraud_score": 0.91,
+            "requested_method": "Western Union / Bitcoin"
+          },
+          "response_length": 453
+        },
+        "timestamp": "2026-11-08T19:19:16.764467+00:00",
+        "duration_ms": 0.01,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "EVALUATE_ESCALATION",
+        "agent": "EscalationAgent",
+        "action": "evaluate_safety_boundaries",
+        "details": {
+          "requires_human_approval": true,
+          "risk_score": 0.95,
+          "violations_count": 2,
+          "approval_reason": "Refund request of $399.00 exceeds autonomous limit of $50.00 (POL-REF-001); Account risk assessment score (0.91) indicates elevated fraud probability"
+        },
+        "timestamp": "2026-11-08T19:19:16.765181+00:00",
+        "duration_ms": 0.01,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "HUMAN_APPROVAL_GATE",
+        "agent": "HumanSupervisorGate",
+        "action": "process_human_oversight",
+        "details": {
+          "decision": "APPROVED",
+          "supervisor_id": "SUPERVISOR-ON-DUTY",
+          "feedback": "Automated supervisor validation granted under simulation protocol",
+          "timestamp": "2026-11-08T19:19:16.765618+00:00",
+          "consequential_action": "freeze_fraudulent_claim_and_security_hold"
+        },
+        "timestamp": "2026-11-08T19:19:16.765623+00:00",
+        "duration_ms": 0.0,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "EXECUTE_ACTION_TOOL",
+        "agent": "ActionExecutionEngine",
+        "action": "execute_freeze_fraudulent_claim_and_security_hold",
+        "details": {
+          "action": "freeze_fraudulent_claim_and_security_hold",
+          "status": "SUCCESS",
+          "transaction_id": "TX-FE4AE31C",
+          "authorized_by": "SUPERVISOR-ON-DUTY"
+        },
+        "timestamp": "2026-11-08T19:19:16.766399+00:00",
+        "duration_ms": 0.02,
+        "status": "SUCCESS"
+      },
+      {
+        "step": "FINALIZE_TICKET",
+        "agent": "WorkflowOrchestrator",
+        "action": "finalize_workflow_and_persist_state",
+        "details": {
+          "ticket_id": "TCK-1010",
+          "trace_path": "C:\\Users\\ROSHAN ALEXANDER\\Documents\\Projects\\Customer-Support-Ticket-Triage\\results\\logs\\ticket_TCK-1010.json",
+          "execution_status": "SUCCESS"
+        },
+        "timestamp": "2026-11-08T19:19:16.767769+00:00",
+        "duration_ms": 1.03,
+        "status": "SUCCESS"
+      }
+    ],
+    "current_step": "COMPLETED",
+    "completed": true
+  }
+]

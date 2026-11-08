@@ -1,0 +1,228 @@
+{
+  "customers": {
+    "CUST-1001": {
+      "customer_id": "CUST-1001",
+      "name": "Sarah Jenkins",
+      "email": "sarah.jenkins@example.com",
+      "tier": "STANDARD",
+      "account_status": "ACTIVE",
+      "lifetime_value": 145.50,
+      "fraud_risk_score": 0.04,
+      "account_created": "2024-03-12",
+      "support_ticket_count_90d": 1,
+      "recent_orders": [
+        {
+          "order_id": "ORD-8821",
+          "date": "2026-10-25",
+          "amount": 28.50,
+          "items": ["Ergonomic Desk Cable Organizer"],
+          "status": "DELIVERED",
+          "delivery_date": "2026-10-29"
+        }
+      ],
+      "active_subscriptions": []
+    },
+    "CUST-1002": {
+      "customer_id": "CUST-1002",
+      "name": "Marcus Vance",
+      "email": "marcus.vance@techcorp.io",
+      "tier": "VIP_PLATINUM",
+      "account_status": "ACTIVE",
+      "lifetime_value": 3450.00,
+      "fraud_risk_score": 0.02,
+      "account_created": "2022-08-15",
+      "support_ticket_count_90d": 0,
+      "recent_orders": [
+        {
+          "order_id": "ORD-9940",
+          "date": "2026-10-18",
+          "amount": 249.99,
+          "items": ["NovaStudio 4K Ultra Webcam"],
+          "status": "DELIVERED",
+          "delivery_date": "2026-10-21"
+        }
+      ],
+      "active_subscriptions": ["ENTERPRISE_TEAM_ANNUAL"]
+    },
+    "CUST-1003": {
+      "customer_id": "CUST-1003",
+      "name": "Elena Rostova",
+      "email": "elena.rostova@cyberdyn.com",
+      "tier": "GOLD",
+      "account_status": "FLAGGED_SECURITY",
+      "lifetime_value": 890.00,
+      "fraud_risk_score": 0.72,
+      "account_created": "2023-11-04",
+      "support_ticket_count_90d": 2,
+      "recent_orders": [
+        {
+          "order_id": "ORD-7612",
+          "date": "2026-11-01",
+          "amount": 120.00,
+          "items": ["Developer Cloud Credits Voucher"],
+          "status": "DELIVERED",
+          "delivery_date": "2026-11-01"
+        }
+      ],
+      "active_subscriptions": ["DEV_PRO_MONTHLY"]
+    },
+    "CUST-1004": {
+      "customer_id": "CUST-1004",
+      "name": "David Cho",
+      "email": "david.cho@nexusdev.org",
+      "tier": "GOLD",
+      "account_status": "ACTIVE",
+      "lifetime_value": 620.00,
+      "fraud_risk_score": 0.05,
+      "account_created": "2024-01-20",
+      "support_ticket_count_90d": 1,
+      "recent_orders": [
+        {
+          "order_id": "ORD-6510",
+          "date": "2026-09-15",
+          "amount": 89.00,
+          "items": ["NovaCloud SDK Toolkit License"],
+          "status": "DELIVERED",
+          "delivery_date": "2026-09-15"
+        }
+      ],
+      "active_subscriptions": ["PRO_ANNUAL"]
+    },
+    "CUST-1005": {
+      "customer_id": "CUST-1005",
+      "name": "Victoria Sterling",
+      "email": "v.sterling@luxegroup.co",
+      "tier": "VIP_PLATINUM",
+      "account_status": "ACTIVE",
+      "lifetime_value": 4800.00,
+      "fraud_risk_score": 0.01,
+      "account_created": "2021-05-10",
+      "support_ticket_count_90d": 0,
+      "recent_orders": [
+        {
+          "order_id": "ORD-9304",
+          "date": "2026-10-31",
+          "amount": 540.00,
+          "items": ["Dual Monitor Arm Heavy Duty", "Mechanical Ergonomic Keyboard"],
+          "status": "SHIPPED_IN_TRANSIT",
+          "delivery_date": null,
+          "carrier": "FedEx",
+          "tracking_number": "FX-998877665"
+        }
+      ],
+      "active_subscriptions": ["ENTERPRISE_TEAM_ANNUAL"]
+    },
+    "CUST-1006": {
+      "customer_id": "CUST-1006",
+      "name": "Robert Miller",
+      "email": "rmiller88@gmail.com",
+      "tier": "STANDARD",
+      "account_status": "ACTIVE",
+      "lifetime_value": 75.00,
+      "fraud_risk_score": 0.18,
+      "account_created": "2025-06-19",
+      "support_ticket_count_90d": 3,
+      "recent_orders": [
+        {
+          "order_id": "ORD-5541",
+          "date": "2026-10-12",
+          "amount": 45.00,
+          "items": ["NovaCloud Basic Plan Monthly"],
+          "status": "COMPLETED",
+          "delivery_date": "2026-10-12"
+        }
+      ],
+      "active_subscriptions": ["BASIC_MONTHLY"]
+    },
+    "CUST-1007": {
+      "customer_id": "CUST-1007",
+      "name": "Amina Al-Mansoor",
+      "email": "amina.mansoor@gulftech.ae",
+      "tier": "GOLD",
+      "account_status": "ACTIVE",
+      "lifetime_value": 1150.00,
+      "fraud_risk_score": 0.03,
+      "account_created": "2023-04-18",
+      "support_ticket_count_90d": 0,
+      "recent_orders": [
+        {
+          "order_id": "ORD-4490",
+          "date": "2026-11-04",
+          "amount": 199.00,
+          "items": ["Annual Cloud Storage Expansion (2TB)"],
+          "status": "COMPLETED",
+          "delivery_date": "2026-11-04"
+        }
+      ],
+      "active_subscriptions": ["CLOUD_ANNUAL_2TB"]
+    },
+    "CUST-1008": {
+      "customer_id": "CUST-1008",
+      "name": "Kevin Zhang",
+      "email": "kzhang92@outlook.com",
+      "tier": "STANDARD",
+      "account_status": "ACTIVE",
+      "lifetime_value": 180.00,
+      "fraud_risk_score": 0.08,
+      "account_created": "2024-09-02",
+      "support_ticket_count_90d": 1,
+      "recent_orders": [
+        {
+          "order_id": "ORD-3312",
+          "date": "2026-11-07",
+          "amount": 79.99,
+          "items": ["Wireless Conference Speakerphone"],
+          "status": "OUT_FOR_DELIVERY",
+          "delivery_date": null,
+          "carrier": "UPS",
+          "tracking_number": "1Z9999999999999999"
+        }
+      ],
+      "active_subscriptions": []
+    },
+    "CUST-1009": {
+      "customer_id": "CUST-1009",
+      "name": "Chloe Dupont",
+      "email": "chloe.dupont@artisan.fr",
+      "tier": "STANDARD",
+      "account_status": "ACTIVE",
+      "lifetime_value": 45.00,
+      "fraud_risk_score": 0.02,
+      "account_created": "2026-08-11",
+      "support_ticket_count_90d": 0,
+      "recent_orders": [
+        {
+          "order_id": "ORD-2201",
+          "date": "2026-10-01",
+          "amount": 35.00,
+          "items": ["NovaDraw Vector Asset Pack"],
+          "status": "COMPLETED",
+          "delivery_date": "2026-10-01"
+        }
+      ],
+      "active_subscriptions": []
+    },
+    "CUST-1010": {
+      "customer_id": "CUST-1010",
+      "name": "Anonymous / Suspicious Actor",
+      "email": "throwaway991@tempmail.in",
+      "tier": "STANDARD",
+      "account_status": "SUSPICIOUS",
+      "lifetime_value": 0.00,
+      "fraud_risk_score": 0.91,
+      "account_created": "2026-11-06",
+      "support_ticket_count_90d": 4,
+      "recent_orders": [
+        {
+          "order_id": "ORD-1100",
+          "date": "2026-11-06",
+          "amount": 399.00,
+          "items": ["Bulk Gift Card License Pack"],
+          "status": "FLAGGED_REVIEW",
+          "delivery_date": null
+        }
+      ],
+      "active_subscriptions": []
+    }
+  }
+}

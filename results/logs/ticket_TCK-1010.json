@@ -1,0 +1,216 @@
+{
+  "ticket_id": "TCK-1010",
+  "customer_id": "CUST-1010",
+  "customer_email": "throwaway991@tempmail.in",
+  "subject": "Send cash refund for $399 gift card license pack ORD-1100",
+  "description": "I bought order ORD-1100 yesterday with gift card license pack for $399. I want you to refund the full money to my Western Union account or bitcoin wallet immediately, do not put it back on original payment card.",
+  "channel": "WEB_PORTAL",
+  "timestamp": "2026-11-08T17:15:00Z",
+  "category": "Account & Security",
+  "urgency": "Critical",
+  "sentiment": "Suspicious",
+  "intent": "Account security incident or unauthorized access report",
+  "extracted_entities": {
+    "order_id": "ORD-1100",
+    "refund_amount": 399.0
+  },
+  "classification_confidence": 0.95,
+  "customer_profile": {
+    "customer_id": "CUST-1010",
+    "name": "Anonymous / Suspicious Actor",
+    "email": "throwaway991@tempmail.in",
+    "tier": "STANDARD",
+    "account_status": "SUSPICIOUS",
+    "lifetime_value": 0.0,
+    "fraud_risk_score": 0.91,
+    "account_created": "2026-11-06",
+    "support_ticket_count_90d": 4,
+    "recent_orders": [
+      {
+        "order_id": "ORD-1100",
+        "date": "2026-11-06",
+        "amount": 399.0,
+        "items": [
+          "Bulk Gift Card License Pack"
+        ],
+        "status": "FLAGGED_REVIEW",
+        "delivery_date": null
+      }
+    ],
+    "active_subscriptions": []
+  },
+  "retrieved_policies": [
+    {
+      "policy_id": "POL-REF-001",
+      "title": "Refund and Cancellation Policy - 3. Autonomous Refund Authority Limits",
+      "relevance_score": 0.2399,
+      "excerpt": "- **Autonomous Threshold:** Automated agent workflows may approve and disburse refunds up to **$50.00 USD** per order without human intervention, provided that:\n  - The customer account is in good standing (fraud risk score < 0.25).\n  - The request falls within the 30-day delivery window.\n  - The cu...",
+      "autonomous_limit": 50.0,
+      "consequential_trigger": "Human approval required above limit or for security/legal terms"
+    },
+    {
+      "policy_id": "POL-REF-001",
+      "title": "Refund and Cancellation Policy - 2. Standard 30-Day Return Window",
+      "relevance_score": 0.2385,
+      "excerpt": "Customers are entitled to request a full refund or exchange for physical merchandise and select digital purchases within thirty (30) calendar days from the date of physical delivery or digital license activation.",
+      "autonomous_limit": null,
+      "consequential_trigger": "Human approval required above limit or for security/legal terms"
+    },
+    {
+      "policy_id": "POL-SEC-002",
+      "title": "Account Security and Authentication Policy - General Overview",
+      "relevance_score": 0.1467,
+      "excerpt": "# Account Security and Authentication Policy (POL-SEC-002)",
+      "autonomous_limit": null,
+      "consequential_trigger": "Human approval required above limit or for security/legal terms"
+    }
+  ],
+  "retrieval_query": "Account & Security Send cash refund for $399 gift card license pack ORD-1100 refund return policy autonomous threshold 30 day window",
+  "draft_response": "Hello,\n\nWe have received your refund inquiry regarding order ORD-1100. In accordance with federal financial regulations and NovaTech Refund Policy POL-REF-001, refunds cannot be remitted to third-party cash transmitters, cryptocurrency addresses, or alternate parties.\n\nYour account has been placed on a security verification hold pending formal identity confirmation from our Fraud Prevention and Risk Compliance Department.\n\nNovaTech Risk & Compliance",
+  "proposed_action": "freeze_fraudulent_claim_and_security_hold",
+  "action_payload": {
+    "customer_id": "CUST-1010",
+    "order_id": "ORD-1100",
+    "fraud_score": 0.91,
+    "requested_method": "Western Union / Bitcoin"
+  },
+  "resolution_notes": "High fraud score (>= 0.25) and prohibited alternate payment refund request. Mandatory Fraud Team Review.",
+  "risk_score": 0.95,
+  "requires_human_approval": true,
+  "approval_reason": "Refund request of $399.00 exceeds autonomous limit of $50.00 (POL-REF-001); Account risk assessment score (0.91) indicates elevated fraud probability",
+  "safety_violations": [
+    "FINANCIAL_LIMIT_EXCEEDED: Refund $399.00 > $50.00",
+    "HIGH_FRAUD_RISK: Account risk score 0.91 >= threshold 0.25"
+  ],
+  "human_decision": "APPROVED",
+  "human_feedback": "Automated supervisor validation granted under simulation protocol",
+  "supervisor_id": "SUPERVISOR-ON-DUTY",
+  "approval_timestamp": "2026-11-08T19:19:16.765618+00:00",
+  "executed_action": "freeze_fraudulent_claim_and_security_hold",
+  "execution_status": "SUCCESS",
+  "execution_result": {
+    "status": "SUCCESS",
+    "action": "freeze_fraudulent_claim_and_security_hold",
+    "transaction_id": "TX-FE4AE31C",
+    "timestamp": "2026-11-08T19:19:16.766379+00:00",
+    "authorized_by": "SUPERVISOR-ON-DUTY",
+    "details": {
+      "fraud_flag": "CONFIRMED_HIGH_RISK",
+      "payment_hold": "ACTIVE",
+      "message": "Account placed on security hold. Claim denied pending identity verification."
+    }
+  },
+  "audit_trail": [
+    {
+      "step": "CLASSIFY_TICKET",
+      "agent": "TicketClassificationAgent",
+      "action": "classify_ticket_content",
+      "details": {
+        "category": "Account & Security",
+        "urgency": "Critical",
+        "sentiment": "Suspicious",
+        "entities": {
+          "order_id": "ORD-1100",
+          "refund_amount": 399.0
+        },
+        "confidence": 0.95
+      },
+      "timestamp": "2026-11-08T19:19:16.762456+00:00",
+      "duration_ms": 0.03,
+      "status": "SUCCESS"
+    },
+    {
+      "step": "CRM_LOOKUP_TOOL",
+      "agent": "KnowledgeRetrievalAgent",
+      "action": "query_customer_profile",
+      "details": {
+        "customer_id": "CUST-1010",
+        "found": true,
+        "tier": "STANDARD",
+        "fraud_risk_score": 0.91
+      },
+      "timestamp": "2026-11-08T19:19:16.762812+00:00",
+      "duration_ms": 0.0,
+      "status": "SUCCESS"
+    },
+    {
+      "step": "POLICY_RETRIEVER_TOOL",
+      "agent": "KnowledgeRetrievalAgent",
+      "action": "search_policy_knowledge_base",
+      "details": {
+        "query": "Account & Security Send cash refund for $399 gift card license pack ORD-1100 refund return policy autonomous threshold 30 day window",
+        "chunks_retrieved": 3,
+        "top_policies": [
+          "POL-REF-001",
+          "POL-REF-001",
+          "POL-SEC-002"
+        ]
+      },
+      "timestamp": "2026-11-08T19:19:16.763932+00:00",
+      "duration_ms": 1.1,
+      "status": "SUCCESS"
+    },
+    {
+      "step": "DRAFT_RESOLUTION",
+      "agent": "ResolutionAgent",
+      "action": "propose_resolution_and_draft_response",
+      "details": {
+        "proposed_action": "freeze_fraudulent_claim_and_security_hold",
+        "action_payload": {
+          "customer_id": "CUST-1010",
+          "order_id": "ORD-1100",
+          "fraud_score": 0.91,
+          "requested_method": "Western Union / Bitcoin"
+        },
+        "response_length": 453
+      },
+      "timestamp": "2026-11-08T19:19:16.764467+00:00",
+      "duration_ms": 0.01,
+      "status": "SUCCESS"
+    },
+    {
+      "step": "EVALUATE_ESCALATION",
+      "agent": "EscalationAgent",
+      "action": "evaluate_safety_boundaries",
+      "details": {
+        "requires_human_approval": true,
+        "risk_score": 0.95,
+        "violations_count": 2,
+        "approval_reason": "Refund request of $399.00 exceeds autonomous limit of $50.00 (POL-REF-001); Account risk assessment score (0.91) indicates elevated fraud probability"
+      },
+      "timestamp": "2026-11-08T19:19:16.765181+00:00",
+      "duration_ms": 0.01,
+      "status": "SUCCESS"
+    },
+    {
+      "step": "HUMAN_APPROVAL_GATE",
+      "agent": "HumanSupervisorGate",
+      "action": "process_human_oversight",
+      "details": {
+        "decision": "APPROVED",
+        "supervisor_id": "SUPERVISOR-ON-DUTY",
+        "feedback": "Automated supervisor validation granted under simulation protocol",
+        "timestamp": "2026-11-08T19:19:16.765618+00:00",
+        "consequential_action": "freeze_fraudulent_claim_and_security_hold"
+      },
+      "timestamp": "2026-11-08T19:19:16.765623+00:00",
+      "duration_ms": 0.0,
+      "status": "SUCCESS"
+    },
+    {
+      "step": "EXECUTE_ACTION_TOOL",
+      "agent": "ActionExecutionEngine",
+      "action": "execute_freeze_fraudulent_claim_and_security_hold",
+      "details": {
+        "action": "freeze_fraudulent_claim_and_security_hold",
+        "status": "SUCCESS",
+        "transaction_id": "TX-FE4AE31C",
+        "authorized_by": "SUPERVISOR-ON-DUTY"
+      },
+      "timestamp": "2026-11-08T19:19:16.766399+00:00",
+      "duration_ms": 0.02,
+      "status": "SUCCESS"
+    }
+  ],
+  "current_step": "ACTION_EXECUTED"
+}

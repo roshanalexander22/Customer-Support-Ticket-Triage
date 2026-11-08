@@ -1,0 +1,202 @@
+[
+  {
+    "scenario_id": "SCENARIO-01",
+    "name": "Standard Autonomous Refund",
+    "ticket_id": "TCK-1001",
+    "customer_id": "CUST-1001",
+    "customer_email": "sarah.jenkins@example.com",
+    "subject": "Cable organizer arrived damaged - need refund",
+    "description": "Hi, I received order ORD-8821 two days ago, but the silicone clips are cracked and broken. The total was $28.50. I would like a refund to my original card please.",
+    "channel": "EMAIL",
+    "timestamp": "2026-11-08T09:15:00Z",
+    "expected": {
+      "category": "Billing & Refunds",
+      "urgency": "Medium",
+      "sentiment": "Neutral",
+      "requires_human_approval": false,
+      "expected_policy_id": "POL-REF-001",
+      "expected_action": "issue_refund",
+      "expected_outcome": "Autonomous refund approval and disbursement ($28.50) without human supervisor interrupt."
+    }
+  },
+  {
+    "scenario_id": "SCENARIO-02",
+    "name": "High-Value Hardware Return Exceeding Threshold",
+    "ticket_id": "TCK-1002",
+    "customer_id": "CUST-1002",
+    "customer_email": "marcus.vance@techcorp.io",
+    "subject": "Return request for NovaStudio 4K Webcam ($249.99)",
+    "description": "Hello, we purchased the NovaStudio 4K Webcam on order ORD-9940. It doesn't integrate with our legacy conference room codecs. The unit is in pristine condition. Please process a full refund of $249.99 and send a return label.",
+    "channel": "WEB_PORTAL",
+    "timestamp": "2026-11-08T10:30:00Z",
+    "expected": {
+      "category": "Billing & Refunds",
+      "urgency": "Medium",
+      "sentiment": "Neutral",
+      "requires_human_approval": true,
+      "expected_policy_id": "POL-REF-001",
+      "expected_action": "issue_refund",
+      "expected_outcome": "Human supervisor gate triggered because refund amount $249.99 exceeds $50.00 autonomous threshold."
+    }
+  },
+  {
+    "scenario_id": "SCENARIO-03",
+    "name": "Critical Account Compromise & 2FA Reset",
+    "ticket_id": "TCK-1003",
+    "customer_id": "CUST-1003",
+    "customer_email": "elena.rostova@cyberdyn.com",
+    "subject": "URGENT: Suspicious logins from overseas and locked out of 2FA",
+    "description": "EMERGENCY: I received three push alerts from Frankfurt and Moscow that I did not initiate. Now my authenticator app TOTP code is rejected. I need my 2FA reset immediately so I can regain access before unauthorized charges occur!",
+    "channel": "URGENT_CHAT",
+    "timestamp": "2026-11-08T11:05:00Z",
+    "expected": {
+      "category": "Account & Security",
+      "urgency": "Critical",
+      "sentiment": "Urgent/Distressed",
+      "requires_human_approval": true,
+      "expected_policy_id": "POL-SEC-002",
+      "expected_action": "escalate_security_and_freeze_sessions",
+      "expected_outcome": "Human supervisor security review required; autonomous 2FA resets strictly prohibited by POL-SEC-002."
+    }
+  },
+  {
+    "scenario_id": "SCENARIO-04",
+    "name": "P2 Technical Bug - Mobile Checkout Crash Loop",
+    "ticket_id": "TCK-1004",
+    "customer_id": "CUST-1004",
+    "customer_email": "david.cho@nexusdev.org",
+    "subject": "NovaCloud iOS App crashes immediately on payment submit",
+    "description": "Whenever I tap 'Confirm Payment' on iOS v4.2.1 build 109, the app instantly crashes to the home screen. Reproduced on iPhone 15 Pro running iOS 18.0. Cannot complete license renewal for my team.",
+    "channel": "IN_APP",
+    "timestamp": "2026-11-08T11:45:00Z",
+    "expected": {
+      "category": "Technical Support",
+      "urgency": "High",
+      "sentiment": "Frustrated",
+      "requires_human_approval": false,
+      "expected_policy_id": "POL-TECH-004",
+      "expected_action": "file_engineering_bug_and_workaround",
+      "expected_outcome": "Technical troubleshooting provided, P2 bug created for mobile team, web portal workaround offered."
+    }
+  },
+  {
+    "scenario_id": "SCENARIO-05",
+    "name": "VIP Platinum Delayed Courier Shipment",
+    "ticket_id": "TCK-1005",
+    "customer_id": "CUST-1005",
+    "customer_email": "v.sterling@luxegroup.co",
+    "subject": "Delayed delivery for critical executive equipment ORD-9304",
+    "description": "Our $540 dual monitor arm shipment ORD-9304 via FedEx FX-998877665 was supposed to arrive 4 days ago. Tracking hasn't updated since Memphis hub. This is severely stalling our boardroom setup. Please investigate immediately.",
+    "channel": "VIP_CONCIERGE",
+    "timestamp": "2026-11-08T13:20:00Z",
+    "expected": {
+      "category": "Shipping & Logistics",
+      "urgency": "High",
+      "sentiment": "Dissatisfied",
+      "requires_human_approval": true,
+      "expected_policy_id": "POL-LOG-003",
+      "expected_action": "expedited_courier_trace_and_credit",
+      "expected_outcome": "VIP priority routing, FedEx tracer opened, high value order replacement/compensation flagged for manager approval."
+    }
+  },
+  {
+    "scenario_id": "SCENARIO-06",
+    "name": "Hostile Customer Threatening Legal Action & Chargeback",
+    "ticket_id": "TCK-1006",
+    "customer_id": "CUST-1006",
+    "customer_email": "rmiller88@gmail.com",
+    "subject": "UNACCEPTABLE SCAM! REFUND ME OR I AM FILING CFPB AND CHARGEBACK TODAY",
+    "description": "Your service is an absolute rip off. I was charged $45 for another month of Basic without my permission! If I do not get a full refund into my bank within 24 hours I am filing a fraud claim with my bank and reporting NovaTech to the CFPB and FTC!",
+    "channel": "EMAIL",
+    "timestamp": "2026-11-08T14:10:00Z",
+    "expected": {
+      "category": "Billing & Refunds",
+      "urgency": "Critical",
+      "sentiment": "Hostile/Angry",
+      "requires_human_approval": true,
+      "expected_policy_id": "POL-BIL-005",
+      "expected_action": "escalate_to_senior_retention_and_legal",
+      "expected_outcome": "Immediate de-escalation tone, auto-escalation to Senior Retention & Risk Team due to legal/chargeback trigger."
+    }
+  },
+  {
+    "scenario_id": "SCENARIO-07",
+    "name": "Subscription Cancellation Past Grace Window",
+    "ticket_id": "TCK-1007",
+    "customer_id": "CUST-1007",
+    "customer_email": "amina.mansoor@gulftech.ae",
+    "subject": "Cancel annual 2TB storage subscription renewal ORD-4490",
+    "description": "Hello, my annual cloud storage renewed 4 days ago for $199.00. We transitioned our storage to an internal SAN and no longer require this subscription. Can you please cancel it and refund the annual fee?",
+    "channel": "WEB_PORTAL",
+    "timestamp": "2026-11-08T15:00:00Z",
+    "expected": {
+      "category": "Billing & Refunds",
+      "urgency": "Medium",
+      "sentiment": "Neutral",
+      "requires_human_approval": true,
+      "expected_policy_id": "POL-BIL-005",
+      "expected_action": "prorated_cancellation_approval",
+      "expected_outcome": "48-hr grace period elapsed; refund is $199.00 (> $50 limit); triggers Human Supervisor approval for prorated refund."
+    }
+  },
+  {
+    "scenario_id": "SCENARIO-08",
+    "name": "In-Transit Package Reroute Out-For-Delivery",
+    "ticket_id": "TCK-1008",
+    "customer_id": "CUST-1008",
+    "customer_email": "kzhang92@outlook.com",
+    "subject": "Change delivery address for ORD-3312 immediately",
+    "description": "Hi! My speakerphone package ORD-3312 is out for delivery today with UPS. I had an emergency and am staying at 742 Evergreen Terrace instead of my apartment. Please change the delivery address to the new address before the driver arrives!",
+    "channel": "LIVE_CHAT",
+    "timestamp": "2026-11-08T15:45:00Z",
+    "expected": {
+      "category": "Shipping & Logistics",
+      "urgency": "High",
+      "sentiment": "Urgent",
+      "requires_human_approval": true,
+      "expected_policy_id": "POL-LOG-003",
+      "expected_action": "carrier_intercept_dispatch_review",
+      "expected_outcome": "Package is out for delivery; carrier intercept incurs fee and security verification; requires human dispatch review."
+    }
+  },
+  {
+    "scenario_id": "SCENARIO-09",
+    "name": "General In-Scope Product Inquiry & Clarification",
+    "ticket_id": "TCK-1009",
+    "customer_id": "CUST-1009",
+    "customer_email": "chloe.dupont@artisan.fr",
+    "subject": "Inquiry about NovaDraw vector compatibility with Adobe Illustrator",
+    "description": "Bonjour, I purchased the NovaDraw vector asset pack (ORD-2201). Can you confirm if SVG assets can be exported with embedded Pantone color swatches in the upcoming version? Thank you!",
+    "channel": "EMAIL",
+    "timestamp": "2026-11-08T16:30:00Z",
+    "expected": {
+      "category": "Product Inquiry",
+      "urgency": "Low",
+      "sentiment": "Positive",
+      "requires_human_approval": false,
+      "expected_policy_id": "POL-TECH-004",
+      "expected_action": "provide_product_guidance",
+      "expected_outcome": "Autonomous informative guidance provided without consequential system state changes."
+    }
+  },
+  {
+    "scenario_id": "SCENARIO-10",
+    "name": "High Fraud Risk Suspicious Gift Card Refund",
+    "ticket_id": "TCK-1010",
+    "customer_id": "CUST-1010",
+    "customer_email": "throwaway991@tempmail.in",
+    "subject": "Send cash refund for $399 gift card license pack ORD-1100",
+    "description": "I bought order ORD-1100 yesterday with gift card license pack for $399. I want you to refund the full money to my Western Union account or bitcoin wallet immediately, do not put it back on original payment card.",
+    "channel": "WEB_PORTAL",
+    "timestamp": "2026-11-08T17:15:00Z",
+    "expected": {
+      "category": "Account & Security",
+      "urgency": "Critical",
+      "sentiment": "Suspicious",
+      "requires_human_approval": true,
+      "expected_policy_id": "POL-REF-001",
+      "expected_action": "freeze_fraudulent_claim_and_security_hold",
+      "expected_outcome": "High fraud risk score (0.91), gift card refund restriction, and alternative payment refund request trigger mandatory Human Security Approval."
+    }
+  }
+]

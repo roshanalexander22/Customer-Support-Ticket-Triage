@@ -1,0 +1,198 @@
+{
+  "ticket_id": "TCK-1001",
+  "customer_id": "CUST-1001",
+  "customer_email": "sarah.jenkins@example.com",
+  "subject": "Cable organizer arrived damaged - need refund",
+  "description": "Hi, I received order ORD-8821 two days ago, but the silicone clips are cracked and broken. The total was $28.50. I would like a refund to my original card please.",
+  "channel": "EMAIL",
+  "timestamp": "2026-11-08T09:15:00Z",
+  "category": "Billing & Refunds",
+  "urgency": "Medium",
+  "sentiment": "Neutral",
+  "intent": "Refund or subscription cancellation request",
+  "extracted_entities": {
+    "order_id": "ORD-8821",
+    "refund_amount": 28.5
+  },
+  "classification_confidence": 0.95,
+  "customer_profile": {
+    "customer_id": "CUST-1001",
+    "name": "Sarah Jenkins",
+    "email": "sarah.jenkins@example.com",
+    "tier": "STANDARD",
+    "account_status": "ACTIVE",
+    "lifetime_value": 145.5,
+    "fraud_risk_score": 0.04,
+    "account_created": "2024-03-12",
+    "support_ticket_count_90d": 1,
+    "recent_orders": [
+      {
+        "order_id": "ORD-8821",
+        "date": "2026-10-25",
+        "amount": 28.5,
+        "items": [
+          "Ergonomic Desk Cable Organizer"
+        ],
+        "status": "DELIVERED",
+        "delivery_date": "2026-10-29"
+      }
+    ],
+    "active_subscriptions": []
+  },
+  "retrieved_policies": [
+    {
+      "policy_id": "POL-REF-001",
+      "title": "Refund and Cancellation Policy - 3. Autonomous Refund Authority Limits",
+      "relevance_score": 0.3028,
+      "excerpt": "- **Autonomous Threshold:** Automated agent workflows may approve and disburse refunds up to **$50.00 USD** per order without human intervention, provided that:\n  - The customer account is in good standing (fraud risk score < 0.25).\n  - The request falls within the 30-day delivery window.\n  - The cu...",
+      "autonomous_limit": 50.0,
+      "consequential_trigger": "Human approval required above limit or for security/legal terms"
+    },
+    {
+      "policy_id": "POL-REF-001",
+      "title": "Refund and Cancellation Policy - 2. Standard 30-Day Return Window",
+      "relevance_score": 0.2527,
+      "excerpt": "Customers are entitled to request a full refund or exchange for physical merchandise and select digital purchases within thirty (30) calendar days from the date of physical delivery or digital license activation.",
+      "autonomous_limit": null,
+      "consequential_trigger": "Human approval required above limit or for security/legal terms"
+    },
+    {
+      "policy_id": "POL-LOG-003",
+      "title": "Shipping, Logistics and Return Policy - 5. Return Merchandise Authorization (RMA) Labels",
+      "relevance_score": 0.1647,
+      "excerpt": "- Automated agents are authorized to generate and email prepaid return shipping labels (RMA) for all valid return requests within the 30-day window.\n- Oversized or freight items (>50 lbs) require logistics scheduling and human specialist booking.",
+      "autonomous_limit": null,
+      "consequential_trigger": "Human approval required above limit or for security/legal terms"
+    }
+  ],
+  "retrieval_query": "Billing & Refunds Cable organizer arrived damaged - need refund refund return policy autonomous threshold 30 day window",
+  "draft_response": "Hello Sarah,\n\nThank you for contacting NovaTech Support. We are very sorry to hear that your items in order ORD-8821 arrived damaged. Under our 30-Day Customer Satisfaction Guarantee (POL-REF-001), I have processed a full refund of $28.50 back to your original payment method.\n\nPlease allow 3-5 business days for the credit to appear on your bank statement. There is no need to return the damaged item. We apologize for the inconvenience!\n\nBest regards,\nNovaTech Support Team",
+  "proposed_action": "issue_refund",
+  "action_payload": {
+    "customer_id": "CUST-1001",
+    "order_id": "ORD-8821",
+    "amount": 28.5,
+    "reason": "Damaged goods reimbursement under POL-REF-001"
+  },
+  "resolution_notes": "Refund is <= $50.00 autonomous threshold and within 30-day window. Autonomous approval recommended.",
+  "risk_score": 0.05,
+  "requires_human_approval": false,
+  "approval_reason": "No safety violations detected. Autonomous resolution approved.",
+  "safety_violations": [],
+  "human_decision": "NOT_REQUIRED",
+  "executed_action": "issue_refund",
+  "execution_status": "SUCCESS",
+  "execution_result": {
+    "status": "SUCCESS",
+    "action": "issue_refund",
+    "transaction_id": "TX-11B8D6B7",
+    "timestamp": "2026-11-08T19:19:16.690425+00:00",
+    "authorized_by": "SYSTEM_AUTONOMOUS",
+    "details": {
+      "customer_id": "CUST-1001",
+      "order_id": "ORD-8821",
+      "refunded_amount": 28.5,
+      "currency": "USD",
+      "refund_method": "ORIGINAL_PAYMENT_METHOD",
+      "message": "Successfully disbursed refund of $28.50 for order ORD-8821."
+    }
+  },
+  "audit_trail": [
+    {
+      "step": "CLASSIFY_TICKET",
+      "agent": "TicketClassificationAgent",
+      "action": "classify_ticket_content",
+      "details": {
+        "category": "Billing & Refunds",
+        "urgency": "Medium",
+        "sentiment": "Neutral",
+        "entities": {
+          "order_id": "ORD-8821",
+          "refund_amount": 28.5
+        },
+        "confidence": 0.95
+      },
+      "timestamp": "2026-11-08T19:19:16.685469+00:00",
+      "duration_ms": 0.46,
+      "status": "SUCCESS"
+    },
+    {
+      "step": "CRM_LOOKUP_TOOL",
+      "agent": "KnowledgeRetrievalAgent",
+      "action": "query_customer_profile",
+      "details": {
+        "customer_id": "CUST-1001",
+        "found": true,
+        "tier": "STANDARD",
+        "fraud_risk_score": 0.04
+      },
+      "timestamp": "2026-11-08T19:19:16.686564+00:00",
+      "duration_ms": 0.0,
+      "status": "SUCCESS"
+    },
+    {
+      "step": "POLICY_RETRIEVER_TOOL",
+      "agent": "KnowledgeRetrievalAgent",
+      "action": "search_policy_knowledge_base",
+      "details": {
+        "query": "Billing & Refunds Cable organizer arrived damaged - need refund refund return policy autonomous threshold 30 day window",
+        "chunks_retrieved": 3,
+        "top_policies": [
+          "POL-REF-001",
+          "POL-REF-001",
+          "POL-LOG-003"
+        ]
+      },
+      "timestamp": "2026-11-08T19:19:16.688065+00:00",
+      "duration_ms": 1.47,
+      "status": "SUCCESS"
+    },
+    {
+      "step": "DRAFT_RESOLUTION",
+      "agent": "ResolutionAgent",
+      "action": "propose_resolution_and_draft_response",
+      "details": {
+        "proposed_action": "issue_refund",
+        "action_payload": {
+          "customer_id": "CUST-1001",
+          "order_id": "ORD-8821",
+          "amount": 28.5,
+          "reason": "Damaged goods reimbursement under POL-REF-001"
+        },
+        "response_length": 475
+      },
+      "timestamp": "2026-11-08T19:19:16.688666+00:00",
+      "duration_ms": 0.01,
+      "status": "SUCCESS"
+    },
+    {
+      "step": "EVALUATE_ESCALATION",
+      "agent": "EscalationAgent",
+      "action": "evaluate_safety_boundaries",
+      "details": {
+        "requires_human_approval": false,
+        "risk_score": 0.05,
+        "violations_count": 0,
+        "approval_reason": "No safety violations detected. Autonomous resolution approved."
+      },
+      "timestamp": "2026-11-08T19:19:16.689672+00:00",
+      "duration_ms": 0.01,
+      "status": "SUCCESS"
+    },
+    {
+      "step": "EXECUTE_ACTION_TOOL",
+      "agent": "ActionExecutionEngine",
+      "action": "execute_issue_refund",
+      "details": {
+        "action": "issue_refund",
+        "status": "SUCCESS",
+        "transaction_id": "TX-11B8D6B7",
+        "authorized_by": "SYSTEM_AUTONOMOUS"
+      },
+      "timestamp": "2026-11-08T19:19:16.690465+00:00",
+      "duration_ms": 0.04,
+      "status": "SUCCESS"
+    }
+  ],
+  "current_step": "ACTION_EXECUTED"
+}

@@ -1,0 +1,217 @@
+{
+  "ticket_id": "TCK-1008",
+  "customer_id": "CUST-1008",
+  "customer_email": "kzhang92@outlook.com",
+  "subject": "Change delivery address for ORD-3312 immediately",
+  "description": "Hi! My speakerphone package ORD-3312 is out for delivery today with UPS. I had an emergency and am staying at 742 Evergreen Terrace instead of my apartment. Please change the delivery address to the new address before the driver arrives!",
+  "channel": "LIVE_CHAT",
+  "timestamp": "2026-11-08T15:45:00Z",
+  "category": "Shipping & Logistics",
+  "urgency": "High",
+  "sentiment": "Urgent",
+  "intent": "Shipment tracking inquiry or in-transit delivery adjustment",
+  "extracted_entities": {
+    "order_id": "ORD-3312"
+  },
+  "classification_confidence": 0.95,
+  "customer_profile": {
+    "customer_id": "CUST-1008",
+    "name": "Kevin Zhang",
+    "email": "kzhang92@outlook.com",
+    "tier": "STANDARD",
+    "account_status": "ACTIVE",
+    "lifetime_value": 180.0,
+    "fraud_risk_score": 0.08,
+    "account_created": "2024-09-02",
+    "support_ticket_count_90d": 1,
+    "recent_orders": [
+      {
+        "order_id": "ORD-3312",
+        "date": "2026-11-07",
+        "amount": 79.99,
+        "items": [
+          "Wireless Conference Speakerphone"
+        ],
+        "status": "OUT_FOR_DELIVERY",
+        "delivery_date": null,
+        "carrier": "UPS",
+        "tracking_number": "1Z9999999999999999"
+      }
+    ],
+    "active_subscriptions": []
+  },
+  "retrieved_policies": [
+    {
+      "policy_id": "POL-LOG-003",
+      "title": "Shipping, Logistics and Return Policy - General Overview",
+      "relevance_score": 0.3532,
+      "excerpt": "# Shipping, Logistics and Return Policy (POL-LOG-003)",
+      "autonomous_limit": null,
+      "consequential_trigger": "Human approval required above limit or for security/legal terms"
+    },
+    {
+      "policy_id": "POL-LOG-003",
+      "title": "Shipping, Logistics and Return Policy - 4. In-Transit Address Changes and Package Intercepts",
+      "relevance_score": 0.2932,
+      "excerpt": "- Package reroutes or address amendments requested after an order has reached carrier sortation hubs (Status: `In Transit` or `Out for Delivery`) cannot be executed autonomously.\n- Any carrier intercept action incurs a third-party fee ($17.50) and requires human authorization to confirm delivery sec...",
+      "autonomous_limit": 17.5,
+      "consequential_trigger": "Human approval required above limit or for security/legal terms"
+    },
+    {
+      "policy_id": "POL-LOG-003",
+      "title": "Shipping, Logistics and Return Policy - 1. Overview and Carrier Partners",
+      "relevance_score": 0.1909,
+      "excerpt": "NovaTech Solutions operates fulfillment through certified regional and national carriers (FedEx, UPS, DHL). Standard delivery SLA is 3 to 5 business days; expedited shipping SLA is 1 to 2 business days.",
+      "autonomous_limit": null,
+      "consequential_trigger": "Human approval required above limit or for security/legal terms"
+    }
+  ],
+  "retrieval_query": "Shipping & Logistics Change delivery address for ORD-3312 immediately shipping logistics courier carrier transit delay intercept",
+  "draft_response": "Hello Kevin,\n\nWe received your urgent address change request for order ORD-3312. Because this package is already in transit and designated 'Out for Delivery' with UPS, automated routing is restricted to ensure package safety (POL-LOG-003).\n\nOur Logistics Dispatch Team is contacting the local UPS carrier depot to request an urgent package intercept to 742 Evergreen Terrace. We will update you with confirmation shortly.\n\nBest regards,\nNovaTech Logistics Support",
+  "proposed_action": "carrier_intercept_dispatch_review",
+  "action_payload": {
+    "customer_id": "CUST-1008",
+    "order_id": "ORD-3312",
+    "requested_address": "742 Evergreen Terrace",
+    "carrier": "UPS",
+    "carrier_fee": 17.5
+  },
+  "resolution_notes": "In-transit package cannot be rerouted autonomously per POL-LOG-003. Requires Logistics Dispatch review.",
+  "risk_score": 0.65,
+  "requires_human_approval": true,
+  "approval_reason": "In-transit address rerouting incurs third-party courier fee and requires Dispatcher authorization (POL-LOG-003)",
+  "safety_violations": [
+    "PHYSICAL_LOGISTICS_INTERCEPT: Package in transit requires carrier dispatch fee approval"
+  ],
+  "human_decision": "APPROVED",
+  "human_feedback": "Automated supervisor validation granted under simulation protocol",
+  "supervisor_id": "SUPERVISOR-ON-DUTY",
+  "approval_timestamp": "2026-11-08T19:19:16.749261+00:00",
+  "executed_action": "carrier_intercept_dispatch_review",
+  "execution_status": "SUCCESS",
+  "execution_result": {
+    "status": "SUCCESS",
+    "action": "carrier_intercept_dispatch_review",
+    "transaction_id": "TX-25F348B7",
+    "timestamp": "2026-11-08T19:19:16.750074+00:00",
+    "authorized_by": "SUPERVISOR-ON-DUTY",
+    "details": {
+      "intercept_reference": "INT-BF3803",
+      "carrier_intercept_fee": 17.5,
+      "message": "Carrier intercept dispatch submitted with fee waiver authorization."
+    }
+  },
+  "audit_trail": [
+    {
+      "step": "CLASSIFY_TICKET",
+      "agent": "TicketClassificationAgent",
+      "action": "classify_ticket_content",
+      "details": {
+        "category": "Shipping & Logistics",
+        "urgency": "High",
+        "sentiment": "Urgent",
+        "entities": {
+          "order_id": "ORD-3312"
+        },
+        "confidence": 0.95
+      },
+      "timestamp": "2026-11-08T19:19:16.746511+00:00",
+      "duration_ms": 0.04,
+      "status": "SUCCESS"
+    },
+    {
+      "step": "CRM_LOOKUP_TOOL",
+      "agent": "KnowledgeRetrievalAgent",
+      "action": "query_customer_profile",
+      "details": {
+        "customer_id": "CUST-1008",
+        "found": true,
+        "tier": "STANDARD",
+        "fraud_risk_score": 0.08
+      },
+      "timestamp": "2026-11-08T19:19:16.746872+00:00",
+      "duration_ms": 0.0,
+      "status": "SUCCESS"
+    },
+    {
+      "step": "POLICY_RETRIEVER_TOOL",
+      "agent": "KnowledgeRetrievalAgent",
+      "action": "search_policy_knowledge_base",
+      "details": {
+        "query": "Shipping & Logistics Change delivery address for ORD-3312 immediately shipping logistics courier carrier transit delay intercept",
+        "chunks_retrieved": 3,
+        "top_policies": [
+          "POL-LOG-003",
+          "POL-LOG-003",
+          "POL-LOG-003"
+        ]
+      },
+      "timestamp": "2026-11-08T19:19:16.747837+00:00",
+      "duration_ms": 0.95,
+      "status": "SUCCESS"
+    },
+    {
+      "step": "DRAFT_RESOLUTION",
+      "agent": "ResolutionAgent",
+      "action": "propose_resolution_and_draft_response",
+      "details": {
+        "proposed_action": "carrier_intercept_dispatch_review",
+        "action_payload": {
+          "customer_id": "CUST-1008",
+          "order_id": "ORD-3312",
+          "requested_address": "742 Evergreen Terrace",
+          "carrier": "UPS",
+          "carrier_fee": 17.5
+        },
+        "response_length": 463
+      },
+      "timestamp": "2026-11-08T19:19:16.748209+00:00",
+      "duration_ms": 0.01,
+      "status": "SUCCESS"
+    },
+    {
+      "step": "EVALUATE_ESCALATION",
+      "agent": "EscalationAgent",
+      "action": "evaluate_safety_boundaries",
+      "details": {
+        "requires_human_approval": true,
+        "risk_score": 0.65,
+        "violations_count": 1,
+        "approval_reason": "In-transit address rerouting incurs third-party courier fee and requires Dispatcher authorization (POL-LOG-003)"
+      },
+      "timestamp": "2026-11-08T19:19:16.748829+00:00",
+      "duration_ms": 0.01,
+      "status": "SUCCESS"
+    },
+    {
+      "step": "HUMAN_APPROVAL_GATE",
+      "agent": "HumanSupervisorGate",
+      "action": "process_human_oversight",
+      "details": {
+        "decision": "APPROVED",
+        "supervisor_id": "SUPERVISOR-ON-DUTY",
+        "feedback": "Automated supervisor validation granted under simulation protocol",
+        "timestamp": "2026-11-08T19:19:16.749261+00:00",
+        "consequential_action": "carrier_intercept_dispatch_review"
+      },
+      "timestamp": "2026-11-08T19:19:16.749267+00:00",
+      "duration_ms": 0.0,
+      "status": "SUCCESS"
+    },
+    {
+      "step": "EXECUTE_ACTION_TOOL",
+      "agent": "ActionExecutionEngine",
+      "action": "execute_carrier_intercept_dispatch_review",
+      "details": {
+        "action": "carrier_intercept_dispatch_review",
+        "status": "SUCCESS",
+        "transaction_id": "TX-25F348B7",
+        "authorized_by": "SUPERVISOR-ON-DUTY"
+      },
+      "timestamp": "2026-11-08T19:19:16.750098+00:00",
+      "duration_ms": 0.02,
+      "status": "SUCCESS"
+    }
+  ],
+  "current_step": "ACTION_EXECUTED"
+}

@@ -1,0 +1,187 @@
+{
+  "ticket_id": "TCK-1009",
+  "customer_id": "CUST-1009",
+  "customer_email": "chloe.dupont@artisan.fr",
+  "subject": "Inquiry about NovaDraw vector compatibility with Adobe Illustrator",
+  "description": "Bonjour, I purchased the NovaDraw vector asset pack (ORD-2201). Can you confirm if SVG assets can be exported with embedded Pantone color swatches in the upcoming version? Thank you!",
+  "channel": "EMAIL",
+  "timestamp": "2026-11-08T16:30:00Z",
+  "category": "Product Inquiry",
+  "urgency": "Low",
+  "sentiment": "Positive",
+  "intent": "Product compatibility and feature roadmap inquiry",
+  "extracted_entities": {
+    "order_id": "ORD-2201"
+  },
+  "classification_confidence": 0.95,
+  "customer_profile": {
+    "customer_id": "CUST-1009",
+    "name": "Chloe Dupont",
+    "email": "chloe.dupont@artisan.fr",
+    "tier": "STANDARD",
+    "account_status": "ACTIVE",
+    "lifetime_value": 45.0,
+    "fraud_risk_score": 0.02,
+    "account_created": "2026-08-11",
+    "support_ticket_count_90d": 0,
+    "recent_orders": [
+      {
+        "order_id": "ORD-2201",
+        "date": "2026-10-01",
+        "amount": 35.0,
+        "items": [
+          "NovaDraw Vector Asset Pack"
+        ],
+        "status": "COMPLETED",
+        "delivery_date": "2026-10-01"
+      }
+    ],
+    "active_subscriptions": []
+  },
+  "retrieved_policies": [
+    {
+      "policy_id": "POL-TECH-004",
+      "title": "Technical Support and SLA Policy - General Overview",
+      "relevance_score": 0.3249,
+      "excerpt": "# Technical Support and SLA Policy (POL-TECH-004)",
+      "autonomous_limit": null,
+      "consequential_trigger": "Human approval required above limit or for security/legal terms"
+    },
+    {
+      "policy_id": "POL-TECH-004",
+      "title": "Technical Support and SLA Policy - 1. Incident Severity Definitions & Response SLAs",
+      "relevance_score": 0.1716,
+      "excerpt": "NovaTech Technical Support categorizes all software, API, and platform incidents into four severity levels:\n- **P1 - Critical Severity:** Complete production outage, system downtime, data corruption, or payment gateway failure affecting multiple users.\n  - Initial Response SLA: **1 Hour**\n  - Resolu...",
+      "autonomous_limit": null,
+      "consequential_trigger": "Human approval required above limit or for security/legal terms"
+    },
+    {
+      "policy_id": "POL-TECH-004",
+      "title": "Technical Support and SLA Policy - 2. Standard Troubleshooting Hierarchy",
+      "relevance_score": 0.134,
+      "excerpt": "1. Clear local application cache and browser cookies.\n2. Verify network connectivity and inspect WebSockets / CORS errors in developer console.\n3. Test on updated supported browser (Chrome 120+, Safari 17+, Firefox 122+).\n4. For mobile application crashes, capture device model, OS build number, and ...",
+      "autonomous_limit": null,
+      "consequential_trigger": "Human approval required above limit or for security/legal terms"
+    }
+  ],
+  "retrieval_query": "Product Inquiry Inquiry about NovaDraw vector compatibility with Adobe Illustrator technical support specifications software compatibility SLA troubleshooting",
+  "draft_response": "Bonjour Chloe,\n\nThank you for contacting NovaTech Creative Solutions! We are delighted that you are using the NovaDraw vector asset pack.\n\nTo answer your question: Yes, NovaDraw v4.3 supports full Pantone\u00ae Formula Guide color swatch embedding directly within standard SVG and EPS export profiles, ensuring 100% fidelity when importing into Adobe Illustrator.\n\nPlease let us know if you need any additional sample palettes or documentation!\n\nWarm regards,\nNovaTech Product Specialists",
+  "proposed_action": "provide_product_guidance",
+  "action_payload": {
+    "customer_id": "CUST-1009",
+    "inquiry_type": "Product Specifications"
+  },
+  "resolution_notes": "General product feature inquiry. Autonomous guidance provided.",
+  "risk_score": 0.05,
+  "requires_human_approval": false,
+  "approval_reason": "No safety violations detected. Autonomous resolution approved.",
+  "safety_violations": [],
+  "human_decision": "NOT_REQUIRED",
+  "executed_action": "provide_product_guidance",
+  "execution_status": "SUCCESS",
+  "execution_result": {
+    "status": "SUCCESS",
+    "action": "provide_product_guidance",
+    "transaction_id": "TX-96BE8AA7",
+    "timestamp": "2026-11-08T19:19:16.758322+00:00",
+    "authorized_by": "SYSTEM_AUTONOMOUS",
+    "details": {
+      "message": "Product documentation and architectural guidance dispatched to customer."
+    }
+  },
+  "audit_trail": [
+    {
+      "step": "CLASSIFY_TICKET",
+      "agent": "TicketClassificationAgent",
+      "action": "classify_ticket_content",
+      "details": {
+        "category": "Product Inquiry",
+        "urgency": "Low",
+        "sentiment": "Positive",
+        "entities": {
+          "order_id": "ORD-2201"
+        },
+        "confidence": 0.95
+      },
+      "timestamp": "2026-11-08T19:19:16.754857+00:00",
+      "duration_ms": 0.04,
+      "status": "SUCCESS"
+    },
+    {
+      "step": "CRM_LOOKUP_TOOL",
+      "agent": "KnowledgeRetrievalAgent",
+      "action": "query_customer_profile",
+      "details": {
+        "customer_id": "CUST-1009",
+        "found": true,
+        "tier": "STANDARD",
+        "fraud_risk_score": 0.02
+      },
+      "timestamp": "2026-11-08T19:19:16.755217+00:00",
+      "duration_ms": 0.0,
+      "status": "SUCCESS"
+    },
+    {
+      "step": "POLICY_RETRIEVER_TOOL",
+      "agent": "KnowledgeRetrievalAgent",
+      "action": "search_policy_knowledge_base",
+      "details": {
+        "query": "Product Inquiry Inquiry about NovaDraw vector compatibility with Adobe Illustrator technical support specifications software compatibility SLA troubleshooting",
+        "chunks_retrieved": 3,
+        "top_policies": [
+          "POL-TECH-004",
+          "POL-TECH-004",
+          "POL-TECH-004"
+        ]
+      },
+      "timestamp": "2026-11-08T19:19:16.756194+00:00",
+      "duration_ms": 0.96,
+      "status": "SUCCESS"
+    },
+    {
+      "step": "DRAFT_RESOLUTION",
+      "agent": "ResolutionAgent",
+      "action": "propose_resolution_and_draft_response",
+      "details": {
+        "proposed_action": "provide_product_guidance",
+        "action_payload": {
+          "customer_id": "CUST-1009",
+          "inquiry_type": "Product Specifications"
+        },
+        "response_length": 483
+      },
+      "timestamp": "2026-11-08T19:19:16.756858+00:00",
+      "duration_ms": 0.31,
+      "status": "SUCCESS"
+    },
+    {
+      "step": "EVALUATE_ESCALATION",
+      "agent": "EscalationAgent",
+      "action": "evaluate_safety_boundaries",
+      "details": {
+        "requires_human_approval": false,
+        "risk_score": 0.05,
+        "violations_count": 0,
+        "approval_reason": "No safety violations detected. Autonomous resolution approved."
+      },
+      "timestamp": "2026-11-08T19:19:16.757682+00:00",
+      "duration_ms": 0.01,
+      "status": "SUCCESS"
+    },
+    {
+      "step": "EXECUTE_ACTION_TOOL",
+      "agent": "ActionExecutionEngine",
+      "action": "execute_provide_product_guidance",
+      "details": {
+        "action": "provide_product_guidance",
+        "status": "SUCCESS",
+        "transaction_id": "TX-96BE8AA7",
+        "authorized_by": "SYSTEM_AUTONOMOUS"
+      },
+      "timestamp": "2026-11-08T19:19:16.758346+00:00",
+      "duration_ms": 0.02,
+      "status": "SUCCESS"
+    }
+  ],
+  "current_step": "ACTION_EXECUTED"
+}

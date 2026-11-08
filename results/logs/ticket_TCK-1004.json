@@ -1,0 +1,199 @@
+{
+  "ticket_id": "TCK-1004",
+  "customer_id": "CUST-1004",
+  "customer_email": "david.cho@nexusdev.org",
+  "subject": "NovaCloud iOS App crashes immediately on payment submit",
+  "description": "Whenever I tap 'Confirm Payment' on iOS v4.2.1 build 109, the app instantly crashes to the home screen. Reproduced on iPhone 15 Pro running iOS 18.0. Cannot complete license renewal for my team.",
+  "channel": "IN_APP",
+  "timestamp": "2026-11-08T11:45:00Z",
+  "category": "Technical Support",
+  "urgency": "High",
+  "sentiment": "Frustrated",
+  "intent": "Software defect report and troubleshooting request",
+  "extracted_entities": {
+    "device_info": "Apple iOS Mobile"
+  },
+  "classification_confidence": 0.95,
+  "customer_profile": {
+    "customer_id": "CUST-1004",
+    "name": "David Cho",
+    "email": "david.cho@nexusdev.org",
+    "tier": "GOLD",
+    "account_status": "ACTIVE",
+    "lifetime_value": 620.0,
+    "fraud_risk_score": 0.05,
+    "account_created": "2024-01-20",
+    "support_ticket_count_90d": 1,
+    "recent_orders": [
+      {
+        "order_id": "ORD-6510",
+        "date": "2026-09-15",
+        "amount": 89.0,
+        "items": [
+          "NovaCloud SDK Toolkit License"
+        ],
+        "status": "DELIVERED",
+        "delivery_date": "2026-09-15"
+      }
+    ],
+    "active_subscriptions": [
+      "PRO_ANNUAL"
+    ]
+  },
+  "retrieved_policies": [
+    {
+      "policy_id": "POL-TECH-004",
+      "title": "Technical Support and SLA Policy - General Overview",
+      "relevance_score": 0.2367,
+      "excerpt": "# Technical Support and SLA Policy (POL-TECH-004)",
+      "autonomous_limit": null,
+      "consequential_trigger": "Human approval required above limit or for security/legal terms"
+    },
+    {
+      "policy_id": "POL-BIL-005",
+      "title": "Billing and Subscription Management Policy - 5. Chargebacks, Disputes, and Hostile Escalations",
+      "relevance_score": 0.2076,
+      "excerpt": "- If a customer explicitly threatens legal action, payment processor dispute (Stripe/PayPal), or credit card chargeback, the ticket priority is elevated to **Critical** and escalated immediately to the **Senior Retention & Legal Risk Team**.\n- Agents must offer an empathetic, de-escalating tone, ack...",
+      "autonomous_limit": null,
+      "consequential_trigger": "Human approval required above limit or for security/legal terms"
+    },
+    {
+      "policy_id": "POL-BIL-005",
+      "title": "Billing and Subscription Management Policy - General Overview",
+      "relevance_score": 0.1914,
+      "excerpt": "# Billing and Subscription Management Policy (POL-BIL-005)",
+      "autonomous_limit": null,
+      "consequential_trigger": "Human approval required above limit or for security/legal terms"
+    }
+  ],
+  "retrieval_query": "Technical Support NovaCloud iOS App crashes immediately on payment submit billing subscription renewal chargeback dispute hostile escalation",
+  "draft_response": "Hello David,\n\nThank you for bringing this to our attention and providing clear device reproduction details. We have logged this incident as a High Priority (P2) defect with our iOS Mobile Engineering Team.\n\nWhile our engineers deploy a patch for build 109, you can immediately complete your team license renewal without disruption by logging into the NovaCloud Web Portal at https://app.novatech.io/checkout. We will notify you the moment the mobile update is live in the App Store.\n\nBest regards,\nNovaTech Technical Support",
+  "proposed_action": "file_engineering_bug_and_workaround",
+  "action_payload": {
+    "customer_id": "CUST-1004",
+    "severity": "P2",
+    "component": "iOS Mobile Checkout",
+    "device_info": "Apple iOS Mobile",
+    "reproduction_notes": "Immediate crash upon payment confirmation tap on iOS 18"
+  },
+  "resolution_notes": "P2 software defect logged under POL-TECH-004. Engineering issue filed; workaround provided.",
+  "risk_score": 0.05,
+  "requires_human_approval": false,
+  "approval_reason": "No safety violations detected. Autonomous resolution approved.",
+  "safety_violations": [],
+  "human_decision": "NOT_REQUIRED",
+  "executed_action": "file_engineering_bug_and_workaround",
+  "execution_status": "SUCCESS",
+  "execution_result": {
+    "status": "SUCCESS",
+    "action": "file_engineering_bug_and_workaround",
+    "transaction_id": "TX-2986C98E",
+    "timestamp": "2026-11-08T19:19:16.717228+00:00",
+    "authorized_by": "SYSTEM_AUTONOMOUS",
+    "details": {
+      "bug_ticket_id": "BUG-D2231A",
+      "severity": "P2",
+      "component": "iOS Mobile Checkout",
+      "jira_url": "https://jira.internal.novatech.io/browse/BUG-D2231A",
+      "message": "Incident logged under BUG-D2231A. Workaround instructions prepared."
+    }
+  },
+  "audit_trail": [
+    {
+      "step": "CLASSIFY_TICKET",
+      "agent": "TicketClassificationAgent",
+      "action": "classify_ticket_content",
+      "details": {
+        "category": "Technical Support",
+        "urgency": "High",
+        "sentiment": "Frustrated",
+        "entities": {
+          "device_info": "Apple iOS Mobile"
+        },
+        "confidence": 0.95
+      },
+      "timestamp": "2026-11-08T19:19:16.713760+00:00",
+      "duration_ms": 0.03,
+      "status": "SUCCESS"
+    },
+    {
+      "step": "CRM_LOOKUP_TOOL",
+      "agent": "KnowledgeRetrievalAgent",
+      "action": "query_customer_profile",
+      "details": {
+        "customer_id": "CUST-1004",
+        "found": true,
+        "tier": "GOLD",
+        "fraud_risk_score": 0.05
+      },
+      "timestamp": "2026-11-08T19:19:16.714158+00:00",
+      "duration_ms": 0.0,
+      "status": "SUCCESS"
+    },
+    {
+      "step": "POLICY_RETRIEVER_TOOL",
+      "agent": "KnowledgeRetrievalAgent",
+      "action": "search_policy_knowledge_base",
+      "details": {
+        "query": "Technical Support NovaCloud iOS App crashes immediately on payment submit billing subscription renewal chargeback dispute hostile escalation",
+        "chunks_retrieved": 3,
+        "top_policies": [
+          "POL-TECH-004",
+          "POL-BIL-005",
+          "POL-BIL-005"
+        ]
+      },
+      "timestamp": "2026-11-08T19:19:16.715255+00:00",
+      "duration_ms": 1.08,
+      "status": "SUCCESS"
+    },
+    {
+      "step": "DRAFT_RESOLUTION",
+      "agent": "ResolutionAgent",
+      "action": "propose_resolution_and_draft_response",
+      "details": {
+        "proposed_action": "file_engineering_bug_and_workaround",
+        "action_payload": {
+          "customer_id": "CUST-1004",
+          "severity": "P2",
+          "component": "iOS Mobile Checkout",
+          "device_info": "Apple iOS Mobile",
+          "reproduction_notes": "Immediate crash upon payment confirmation tap on iOS 18"
+        },
+        "response_length": 524
+      },
+      "timestamp": "2026-11-08T19:19:16.715793+00:00",
+      "duration_ms": 0.01,
+      "status": "SUCCESS"
+    },
+    {
+      "step": "EVALUATE_ESCALATION",
+      "agent": "EscalationAgent",
+      "action": "evaluate_safety_boundaries",
+      "details": {
+        "requires_human_approval": false,
+        "risk_score": 0.05,
+        "violations_count": 0,
+        "approval_reason": "No safety violations detected. Autonomous resolution approved."
+      },
+      "timestamp": "2026-11-08T19:19:16.716709+00:00",
+      "duration_ms": 0.01,
+      "status": "SUCCESS"
+    },
+    {
+      "step": "EXECUTE_ACTION_TOOL",
+      "agent": "ActionExecutionEngine",
+      "action": "execute_file_engineering_bug_and_workaround",
+      "details": {
+        "action": "file_engineering_bug_and_workaround",
+        "status": "SUCCESS",
+        "transaction_id": "TX-2986C98E",
+        "authorized_by": "SYSTEM_AUTONOMOUS"
+      },
+      "timestamp": "2026-11-08T19:19:16.717254+00:00",
+      "duration_ms": 0.03,
+      "status": "SUCCESS"
+    }
+  ],
+  "current_step": "ACTION_EXECUTED"
+}

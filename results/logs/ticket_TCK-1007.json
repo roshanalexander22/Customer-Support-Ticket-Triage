@@ -1,0 +1,218 @@
+{
+  "ticket_id": "TCK-1007",
+  "customer_id": "CUST-1007",
+  "customer_email": "amina.mansoor@gulftech.ae",
+  "subject": "Cancel annual 2TB storage subscription renewal ORD-4490",
+  "description": "Hello, my annual cloud storage renewed 4 days ago for $199.00. We transitioned our storage to an internal SAN and no longer require this subscription. Can you please cancel it and refund the annual fee?",
+  "channel": "WEB_PORTAL",
+  "timestamp": "2026-11-08T15:00:00Z",
+  "category": "Billing & Refunds",
+  "urgency": "Medium",
+  "sentiment": "Neutral",
+  "intent": "Refund or subscription cancellation request",
+  "extracted_entities": {
+    "order_id": "ORD-4490",
+    "refund_amount": 199.0
+  },
+  "classification_confidence": 0.95,
+  "customer_profile": {
+    "customer_id": "CUST-1007",
+    "name": "Amina Al-Mansoor",
+    "email": "amina.mansoor@gulftech.ae",
+    "tier": "GOLD",
+    "account_status": "ACTIVE",
+    "lifetime_value": 1150.0,
+    "fraud_risk_score": 0.03,
+    "account_created": "2023-04-18",
+    "support_ticket_count_90d": 0,
+    "recent_orders": [
+      {
+        "order_id": "ORD-4490",
+        "date": "2026-11-04",
+        "amount": 199.0,
+        "items": [
+          "Annual Cloud Storage Expansion (2TB)"
+        ],
+        "status": "COMPLETED",
+        "delivery_date": "2026-11-04"
+      }
+    ],
+    "active_subscriptions": [
+      "CLOUD_ANNUAL_2TB"
+    ]
+  },
+  "retrieved_policies": [
+    {
+      "policy_id": "POL-BIL-005",
+      "title": "Billing and Subscription Management Policy - General Overview",
+      "relevance_score": 0.2832,
+      "excerpt": "# Billing and Subscription Management Policy (POL-BIL-005)",
+      "autonomous_limit": null,
+      "consequential_trigger": "Human approval required above limit or for security/legal terms"
+    },
+    {
+      "policy_id": "POL-BIL-005",
+      "title": "Billing and Subscription Management Policy - 1. Overview and Billing Cycle",
+      "relevance_score": 0.2337,
+      "excerpt": "NovaTech Solutions offers monthly and annual recurring software licenses. Subscriptions automatically renew at the conclusion of each billing cycle unless cancelled prior to the renewal date.",
+      "autonomous_limit": null,
+      "consequential_trigger": "Human approval required above limit or for security/legal terms"
+    },
+    {
+      "policy_id": "POL-BIL-005",
+      "title": "Billing and Subscription Management Policy - 2. Accidental Renewals and 48-Hour Grace Period",
+      "relevance_score": 0.1688,
+      "excerpt": "- If a customer contacts support within forty-eight (48) hours of an unwanted automatic renewal and has not logged more than 5 platform actions, they are entitled to an immediate full refund.\n- Autonomous refund is permitted if renewal value <= $50.00 USD. If renewal value > $50.00 USD, human manage...",
+      "autonomous_limit": 50.0,
+      "consequential_trigger": "Human approval required above limit or for security/legal terms"
+    }
+  ],
+  "retrieval_query": "Billing & Refunds Cancel annual 2TB storage subscription renewal ORD-4490 billing subscription renewal chargeback dispute hostile escalation",
+  "draft_response": "Hello Amina,\n\nThank you for contacting NovaTech. We have received your request to cancel the 2TB Cloud Storage subscription renewal for order ORD-4490.\n\nIn accordance with our Billing & Subscription Policy (POL-BIL-005), annual subscriptions cancelled after the initial 48-hour window are eligible for a prorated refund of the unused term minus standard processing ($15.00). We have calculated your net prorated refund at $184.00, submitted for billing management sign-off.\n\nBest regards,\nNovaTech Billing Services",
+  "proposed_action": "prorated_cancellation_approval",
+  "action_payload": {
+    "customer_id": "CUST-1007",
+    "order_id": "ORD-4490",
+    "amount": 184.0,
+    "subscription_id": "CLOUD_ANNUAL_2TB"
+  },
+  "resolution_notes": "Grace period elapsed; refund value $184.00 exceeds $50.00 limit. Submitted for Managerial Approval.",
+  "risk_score": 0.7,
+  "requires_human_approval": true,
+  "approval_reason": "Refund request of $184.00 exceeds autonomous limit of $50.00 (POL-REF-001); Prorated cancellation fee waiver and high-value refund require Billing Manager authorization",
+  "safety_violations": [
+    "FINANCIAL_LIMIT_EXCEEDED: Refund $184.00 > $50.00",
+    "PRORATED_REFUND_OVERRIDE: Non-standard cancellation outside 48hr window"
+  ],
+  "human_decision": "APPROVED",
+  "human_feedback": "Automated supervisor validation granted under simulation protocol",
+  "supervisor_id": "SUPERVISOR-ON-DUTY",
+  "approval_timestamp": "2026-11-08T19:19:16.741875+00:00",
+  "executed_action": "prorated_cancellation_approval",
+  "execution_status": "SUCCESS",
+  "execution_result": {
+    "status": "SUCCESS",
+    "action": "prorated_cancellation_approval",
+    "transaction_id": "TX-113912C8",
+    "timestamp": "2026-11-08T19:19:16.742628+00:00",
+    "authorized_by": "SUPERVISOR-ON-DUTY",
+    "details": {
+      "refund_amount": 184.0,
+      "administrative_fee": 15.0,
+      "message": "Prorated refund approved minus standard administrative fee."
+    }
+  },
+  "audit_trail": [
+    {
+      "step": "CLASSIFY_TICKET",
+      "agent": "TicketClassificationAgent",
+      "action": "classify_ticket_content",
+      "details": {
+        "category": "Billing & Refunds",
+        "urgency": "Medium",
+        "sentiment": "Neutral",
+        "entities": {
+          "order_id": "ORD-4490",
+          "refund_amount": 199.0
+        },
+        "confidence": 0.95
+      },
+      "timestamp": "2026-11-08T19:19:16.738430+00:00",
+      "duration_ms": 0.04,
+      "status": "SUCCESS"
+    },
+    {
+      "step": "CRM_LOOKUP_TOOL",
+      "agent": "KnowledgeRetrievalAgent",
+      "action": "query_customer_profile",
+      "details": {
+        "customer_id": "CUST-1007",
+        "found": true,
+        "tier": "GOLD",
+        "fraud_risk_score": 0.03
+      },
+      "timestamp": "2026-11-08T19:19:16.738859+00:00",
+      "duration_ms": 0.0,
+      "status": "SUCCESS"
+    },
+    {
+      "step": "POLICY_RETRIEVER_TOOL",
+      "agent": "KnowledgeRetrievalAgent",
+      "action": "search_policy_knowledge_base",
+      "details": {
+        "query": "Billing & Refunds Cancel annual 2TB storage subscription renewal ORD-4490 billing subscription renewal chargeback dispute hostile escalation",
+        "chunks_retrieved": 3,
+        "top_policies": [
+          "POL-BIL-005",
+          "POL-BIL-005",
+          "POL-BIL-005"
+        ]
+      },
+      "timestamp": "2026-11-08T19:19:16.739957+00:00",
+      "duration_ms": 1.09,
+      "status": "SUCCESS"
+    },
+    {
+      "step": "DRAFT_RESOLUTION",
+      "agent": "ResolutionAgent",
+      "action": "propose_resolution_and_draft_response",
+      "details": {
+        "proposed_action": "prorated_cancellation_approval",
+        "action_payload": {
+          "customer_id": "CUST-1007",
+          "order_id": "ORD-4490",
+          "amount": 184.0,
+          "subscription_id": "CLOUD_ANNUAL_2TB"
+        },
+        "response_length": 514
+      },
+      "timestamp": "2026-11-08T19:19:16.740373+00:00",
+      "duration_ms": 0.01,
+      "status": "SUCCESS"
+    },
+    {
+      "step": "EVALUATE_ESCALATION",
+      "agent": "EscalationAgent",
+      "action": "evaluate_safety_boundaries",
+      "details": {
+        "requires_human_approval": true,
+        "risk_score": 0.7,
+        "violations_count": 2,
+        "approval_reason": "Refund request of $184.00 exceeds autonomous limit of $50.00 (POL-REF-001); Prorated cancellation fee waiver and high-value refund require Billing Manager authorization"
+      },
+      "timestamp": "2026-11-08T19:19:16.741289+00:00",
+      "duration_ms": 0.01,
+      "status": "SUCCESS"
+    },
+    {
+      "step": "HUMAN_APPROVAL_GATE",
+      "agent": "HumanSupervisorGate",
+      "action": "process_human_oversight",
+      "details": {
+        "decision": "APPROVED",
+        "supervisor_id": "SUPERVISOR-ON-DUTY",
+        "feedback": "Automated supervisor validation granted under simulation protocol",
+        "timestamp": "2026-11-08T19:19:16.741875+00:00",
+        "consequential_action": "prorated_cancellation_approval"
+      },
+      "timestamp": "2026-11-08T19:19:16.741881+00:00",
+      "duration_ms": 0.0,
+      "status": "SUCCESS"
+    },
+    {
+      "step": "EXECUTE_ACTION_TOOL",
+      "agent": "ActionExecutionEngine",
+      "action": "execute_prorated_cancellation_approval",
+      "details": {
+        "action": "prorated_cancellation_approval",
+        "status": "SUCCESS",
+        "transaction_id": "TX-113912C8",
+        "authorized_by": "SUPERVISOR-ON-DUTY"
+      },
+      "timestamp": "2026-11-08T19:19:16.742649+00:00",
+      "duration_ms": 0.02,
+      "status": "SUCCESS"
+    }
+  ],
+  "current_step": "ACTION_EXECUTED"
+}
