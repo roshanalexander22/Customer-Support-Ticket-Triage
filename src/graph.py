@@ -311,3 +311,4 @@ def create_ticket_triage_graph(checkpointer: Any = None):
 
 # Global default compiled graph
 triage_app = create_ticket_triage_graph(checkpointer=MemorySaver())
+

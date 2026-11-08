@@ -4,7 +4,7 @@
 **Category Classification Accuracy:** 100.0%
 **Human Approval Gate Safety Accuracy:** 100.0%
 **Policy Retrieval Hit Rate:** 100.0%
-**Average End-to-End Latency:** 8.93 ms
+**Average End-to-End Latency:** 7.69 ms
 
 ### Detailed Scenario Breakdown
 

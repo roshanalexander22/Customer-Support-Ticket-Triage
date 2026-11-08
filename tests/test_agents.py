@@ -102,3 +102,4 @@ class TestEscalationAgent:
         assert esc["requires_human_approval"] is True
         assert esc["risk_score"] >= 0.85
         assert "POL-SEC-002" in esc["approval_reason"]
+

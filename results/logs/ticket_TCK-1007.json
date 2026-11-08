@@ -87,14 +87,14 @@
   "human_decision": "APPROVED",
   "human_feedback": "Automated supervisor validation granted under simulation protocol",
   "supervisor_id": "SUPERVISOR-ON-DUTY",
-  "approval_timestamp": "2026-11-08T19:19:16.741875+00:00",
+  "approval_timestamp": "2026-11-08T19:30:29.745338+00:00",
   "executed_action": "prorated_cancellation_approval",
   "execution_status": "SUCCESS",
   "execution_result": {
     "status": "SUCCESS",
     "action": "prorated_cancellation_approval",
-    "transaction_id": "TX-113912C8",
-    "timestamp": "2026-11-08T19:19:16.742628+00:00",
+    "transaction_id": "TX-E591F556",
+    "timestamp": "2026-11-08T19:30:29.746150+00:00",
     "authorized_by": "SUPERVISOR-ON-DUTY",
     "details": {
       "refund_amount": 184.0,
@@ -117,7 +117,7 @@
         },
         "confidence": 0.95
       },
-      "timestamp": "2026-11-08T19:19:16.738430+00:00",
+      "timestamp": "2026-11-08T19:30:29.742416+00:00",
       "duration_ms": 0.04,
       "status": "SUCCESS"
     },
@@ -131,7 +131,7 @@
         "tier": "GOLD",
         "fraud_risk_score": 0.03
       },
-      "timestamp": "2026-11-08T19:19:16.738859+00:00",
+      "timestamp": "2026-11-08T19:30:29.742782+00:00",
       "duration_ms": 0.0,
       "status": "SUCCESS"
     },
@@ -148,8 +148,8 @@
           "POL-BIL-005"
         ]
       },
-      "timestamp": "2026-11-08T19:19:16.739957+00:00",
-      "duration_ms": 1.09,
+      "timestamp": "2026-11-08T19:30:29.743809+00:00",
+      "duration_ms": 1.02,
       "status": "SUCCESS"
     },
     {
@@ -166,7 +166,7 @@
         },
         "response_length": 514
       },
-      "timestamp": "2026-11-08T19:19:16.740373+00:00",
+      "timestamp": "2026-11-08T19:30:29.744193+00:00",
       "duration_ms": 0.01,
       "status": "SUCCESS"
     },
@@ -180,7 +180,7 @@
         "violations_count": 2,
         "approval_reason": "Refund request of $184.00 exceeds autonomous limit of $50.00 (POL-REF-001); Prorated cancellation fee waiver and high-value refund require Billing Manager authorization"
       },
-      "timestamp": "2026-11-08T19:19:16.741289+00:00",
+      "timestamp": "2026-11-08T19:30:29.744888+00:00",
       "duration_ms": 0.01,
       "status": "SUCCESS"
     },
@@ -192,10 +192,10 @@
         "decision": "APPROVED",
         "supervisor_id": "SUPERVISOR-ON-DUTY",
         "feedback": "Automated supervisor validation granted under simulation protocol",
-        "timestamp": "2026-11-08T19:19:16.741875+00:00",
+        "timestamp": "2026-11-08T19:30:29.745338+00:00",
         "consequential_action": "prorated_cancellation_approval"
       },
-      "timestamp": "2026-11-08T19:19:16.741881+00:00",
+      "timestamp": "2026-11-08T19:30:29.745343+00:00",
       "duration_ms": 0.0,
       "status": "SUCCESS"
     },
@@ -206,10 +206,10 @@
       "details": {
         "action": "prorated_cancellation_approval",
         "status": "SUCCESS",
-        "transaction_id": "TX-113912C8",
+        "transaction_id": "TX-E591F556",
         "authorized_by": "SUPERVISOR-ON-DUTY"
       },
-      "timestamp": "2026-11-08T19:19:16.742649+00:00",
+      "timestamp": "2026-11-08T19:30:29.746172+00:00",
       "duration_ms": 0.02,
       "status": "SUCCESS"
     }

@@ -63,3 +63,4 @@ class AuditLoggerTool:
 
 # Global singleton instance
 audit_logger_tool = AuditLoggerTool()
+

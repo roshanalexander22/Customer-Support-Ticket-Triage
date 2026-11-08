@@ -58,3 +58,4 @@ class CRMTool:
 
 # Global singleton instance
 crm_lookup_tool = CRMTool()
+

@@ -113,3 +113,4 @@ class EscalationOutput(BaseModel):
     requires_human_approval: bool = Field(description="True if consequential action")
     approval_reason: str = Field(description="Explicit policy rationale for escalation")
     safety_violations: List[str] = Field(default_factory=list)
+

@@ -10,7 +10,7 @@
     "policy_retrieval_hit_rate_pct": 100.0,
     "action_execution_alignment_pct": 100.0,
     "execution_success_rate_pct": 100.0,
-    "average_latency_ms": 8.93
+    "average_latency_ms": 7.69
   },
   "scenario_details": [
     {
@@ -36,7 +36,7 @@
       "action_match": true,
       "execution_status": "SUCCESS",
       "risk_score": 0.05,
-      "latency_ms": 14.51,
+      "latency_ms": 7.6,
       "scenario_passed": true
     },
     {
@@ -62,7 +62,7 @@
       "action_match": true,
       "execution_status": "SUCCESS",
       "risk_score": 0.6,
-      "latency_ms": 9.58,
+      "latency_ms": 7.79,
       "scenario_passed": true
     },
     {
@@ -88,7 +88,7 @@
       "action_match": true,
       "execution_status": "SUCCESS",
       "risk_score": 0.95,
-      "latency_ms": 8.88,
+      "latency_ms": 8.9,
       "scenario_passed": true
     },
     {
@@ -114,7 +114,7 @@
       "action_match": true,
       "execution_status": "SUCCESS",
       "risk_score": 0.05,
-      "latency_ms": 8.32,
+      "latency_ms": 7.33,
       "scenario_passed": true
     },
     {
@@ -140,7 +140,7 @@
       "action_match": true,
       "execution_status": "SUCCESS",
       "risk_score": 0.83,
-      "latency_ms": 7.43,
+      "latency_ms": 7.05,
       "scenario_passed": true
     },
     {
@@ -166,7 +166,7 @@
       "action_match": true,
       "execution_status": "SUCCESS",
       "risk_score": 0.85,
-      "latency_ms": 8.42,
+      "latency_ms": 7.26,
       "scenario_passed": true
     },
     {
@@ -192,7 +192,7 @@
       "action_match": true,
       "execution_status": "SUCCESS",
       "risk_score": 0.7,
-      "latency_ms": 8.17,
+      "latency_ms": 7.52,
       "scenario_passed": true
     },
     {
@@ -244,7 +244,7 @@
       "action_match": true,
       "execution_status": "SUCCESS",
       "risk_score": 0.05,
-      "latency_ms": 7.91,
+      "latency_ms": 7.49,
       "scenario_passed": true
     },
     {
@@ -270,7 +270,7 @@
       "action_match": true,
       "execution_status": "SUCCESS",
       "risk_score": 0.95,
-      "latency_ms": 8.34,
+      "latency_ms": 8.19,
       "scenario_passed": true
     }
   ]

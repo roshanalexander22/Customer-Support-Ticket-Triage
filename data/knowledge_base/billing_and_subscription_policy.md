@@ -17,3 +17,4 @@ NovaTech Solutions offers monthly and annual recurring software licenses. Subscr
 ## 5. Chargebacks, Disputes, and Hostile Escalations
 - If a customer explicitly threatens legal action, payment processor dispute (Stripe/PayPal), or credit card chargeback, the ticket priority is elevated to **Critical** and escalated immediately to the **Senior Retention & Legal Risk Team**.
 - Agents must offer an empathetic, de-escalating tone, acknowledge customer frustration, and avoid confrontational language.
+

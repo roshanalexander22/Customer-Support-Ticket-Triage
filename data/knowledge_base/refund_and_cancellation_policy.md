@@ -30,3 +30,4 @@ Human supervisor review and explicit authorization are strictly required for:
 ## 6. Cancellation of Annual Subscriptions
 - Annual SaaS plans cancelled within forty-eight (48) hours of purchase or automatic renewal are eligible for a 100% full refund.
 - Annual SaaS plans cancelled after 48 hours but within thirty (30) days are eligible for a prorated refund reflecting unused months minus an administrative processing fee of $15.00 USD.
+

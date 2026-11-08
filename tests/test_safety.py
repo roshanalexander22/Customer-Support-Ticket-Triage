@@ -64,3 +64,4 @@ def test_high_fraud_boundary():
     assert res["requires_human_approval"] is True
     assert res["risk_score"] >= 0.90
     assert any("HIGH_FRAUD_RISK" in v for v in res["safety_violations"])
+

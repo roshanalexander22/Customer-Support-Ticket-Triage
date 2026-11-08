@@ -92,3 +92,4 @@ class TestAuditLoggerTool:
         assert entry["step"] == "TEST_STEP"
         assert entry["agent"] == "TestAgent"
         assert entry["duration_ms"] == 12.5
+

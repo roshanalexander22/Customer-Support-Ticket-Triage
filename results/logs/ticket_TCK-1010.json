@@ -85,14 +85,14 @@
   "human_decision": "APPROVED",
   "human_feedback": "Automated supervisor validation granted under simulation protocol",
   "supervisor_id": "SUPERVISOR-ON-DUTY",
-  "approval_timestamp": "2026-11-08T19:19:16.765618+00:00",
+  "approval_timestamp": "2026-11-08T19:30:29.768525+00:00",
   "executed_action": "freeze_fraudulent_claim_and_security_hold",
   "execution_status": "SUCCESS",
   "execution_result": {
     "status": "SUCCESS",
     "action": "freeze_fraudulent_claim_and_security_hold",
-    "transaction_id": "TX-FE4AE31C",
-    "timestamp": "2026-11-08T19:19:16.766379+00:00",
+    "transaction_id": "TX-5634D17C",
+    "timestamp": "2026-11-08T19:30:29.769624+00:00",
     "authorized_by": "SUPERVISOR-ON-DUTY",
     "details": {
       "fraud_flag": "CONFIRMED_HIGH_RISK",
@@ -115,7 +115,7 @@
         },
         "confidence": 0.95
       },
-      "timestamp": "2026-11-08T19:19:16.762456+00:00",
+      "timestamp": "2026-11-08T19:30:29.765503+00:00",
       "duration_ms": 0.03,
       "status": "SUCCESS"
     },
@@ -129,7 +129,7 @@
         "tier": "STANDARD",
         "fraud_risk_score": 0.91
       },
-      "timestamp": "2026-11-08T19:19:16.762812+00:00",
+      "timestamp": "2026-11-08T19:30:29.765855+00:00",
       "duration_ms": 0.0,
       "status": "SUCCESS"
     },
@@ -146,8 +146,8 @@
           "POL-SEC-002"
         ]
       },
-      "timestamp": "2026-11-08T19:19:16.763932+00:00",
-      "duration_ms": 1.1,
+      "timestamp": "2026-11-08T19:30:29.766864+00:00",
+      "duration_ms": 0.99,
       "status": "SUCCESS"
     },
     {
@@ -164,7 +164,7 @@
         },
         "response_length": 453
       },
-      "timestamp": "2026-11-08T19:19:16.764467+00:00",
+      "timestamp": "2026-11-08T19:30:29.767236+00:00",
       "duration_ms": 0.01,
       "status": "SUCCESS"
     },
@@ -178,7 +178,7 @@
         "violations_count": 2,
         "approval_reason": "Refund request of $399.00 exceeds autonomous limit of $50.00 (POL-REF-001); Account risk assessment score (0.91) indicates elevated fraud probability"
       },
-      "timestamp": "2026-11-08T19:19:16.765181+00:00",
+      "timestamp": "2026-11-08T19:30:29.767820+00:00",
       "duration_ms": 0.01,
       "status": "SUCCESS"
     },
@@ -190,11 +190,11 @@
         "decision": "APPROVED",
         "supervisor_id": "SUPERVISOR-ON-DUTY",
         "feedback": "Automated supervisor validation granted under simulation protocol",
-        "timestamp": "2026-11-08T19:19:16.765618+00:00",
+        "timestamp": "2026-11-08T19:30:29.768525+00:00",
         "consequential_action": "freeze_fraudulent_claim_and_security_hold"
       },
-      "timestamp": "2026-11-08T19:19:16.765623+00:00",
-      "duration_ms": 0.0,
+      "timestamp": "2026-11-08T19:30:29.768530+00:00",
+      "duration_ms": 0.01,
       "status": "SUCCESS"
     },
     {
@@ -204,11 +204,11 @@
       "details": {
         "action": "freeze_fraudulent_claim_and_security_hold",
         "status": "SUCCESS",
-        "transaction_id": "TX-FE4AE31C",
+        "transaction_id": "TX-5634D17C",
         "authorized_by": "SUPERVISOR-ON-DUTY"
       },
-      "timestamp": "2026-11-08T19:19:16.766399+00:00",
-      "duration_ms": 0.02,
+      "timestamp": "2026-11-08T19:30:29.769655+00:00",
+      "duration_ms": 0.03,
       "status": "SUCCESS"
     }
   ],

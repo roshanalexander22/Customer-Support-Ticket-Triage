@@ -101,3 +101,4 @@ class PolicyKnowledgeRetriever:
 
 # Global singleton instance for easy import
 policy_retriever_tool = PolicyKnowledgeRetriever()
+

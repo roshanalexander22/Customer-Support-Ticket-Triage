@@ -25,3 +25,4 @@ This policy sets forth mandatory security and verification protocols for account
 
 ## 5. VIP & High-Value Account Safeguards
 - Accounts designated as `VIP_PLATINUM` or enterprise tier with LTV exceeding $1,000 USD require dual-tier verification prior to any administrative modification or email address change.
+

@@ -70,3 +70,4 @@ def test_full_consequential_workflow_rejected():
     # Action execution should have been bypassed/skipped
     assert result.get("execution_status") is None or result.get("execution_status") != "SUCCESS"
     assert "Administrative Note: The proposed adjustment was reviewed by supervisory staff and could not be authorized" in result["final_response"]
+

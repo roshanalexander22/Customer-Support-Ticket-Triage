@@ -26,3 +26,4 @@ NovaTech Technical Support categorizes all software, API, and platform incidents
 ## 3. Autonomous Diagnostics vs Engineering Escalation
 - Automated agents may provide verified knowledge-base troubleshooting steps, query system uptime status, and verify account feature flags autonomously.
 - Automated creation of Jira / GitHub Engineering bugs for P1/P2 incidents requires Human Lead confirmation if external incident declaration or customer status page modification is involved.
+

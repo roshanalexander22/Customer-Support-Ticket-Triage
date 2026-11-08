@@ -84,21 +84,21 @@
   "human_decision": "APPROVED",
   "human_feedback": "Automated supervisor validation granted under simulation protocol",
   "supervisor_id": "SUPERVISOR-ON-DUTY",
-  "approval_timestamp": "2026-11-08T19:19:16.732808+00:00",
+  "approval_timestamp": "2026-11-08T19:30:29.737710+00:00",
   "executed_action": "escalate_to_senior_retention_and_legal",
   "execution_status": "SUCCESS",
   "execution_result": {
     "status": "SUCCESS",
     "action": "escalate_to_senior_retention_and_legal",
-    "transaction_id": "TX-9BC1AF22",
-    "timestamp": "2026-11-08T19:19:16.733730+00:00",
+    "transaction_id": "TX-88904E2C",
+    "timestamp": "2026-11-08T19:30:29.738417+00:00",
     "authorized_by": "SUPERVISOR-ON-DUTY",
     "details": {
-      "escalation_ticket_id": "ESC-LEGAL-9D493D",
+      "escalation_ticket_id": "ESC-LEGAL-2A54EA",
       "risk_tier": "HIGH_LEGAL_RISK",
       "assigned_team": "Senior Retention & Risk Management",
       "sla_target_minutes": 30,
-      "message": "Ticket escalated to Senior Retention Team under ESC-LEGAL-9D493D."
+      "message": "Ticket escalated to Senior Retention Team under ESC-LEGAL-2A54EA."
     }
   },
   "audit_trail": [
@@ -115,7 +115,7 @@
         },
         "confidence": 0.95
       },
-      "timestamp": "2026-11-08T19:19:16.729626+00:00",
+      "timestamp": "2026-11-08T19:30:29.734743+00:00",
       "duration_ms": 0.04,
       "status": "SUCCESS"
     },
@@ -129,7 +129,7 @@
         "tier": "STANDARD",
         "fraud_risk_score": 0.18
       },
-      "timestamp": "2026-11-08T19:19:16.730035+00:00",
+      "timestamp": "2026-11-08T19:30:29.735096+00:00",
       "duration_ms": 0.0,
       "status": "SUCCESS"
     },
@@ -146,8 +146,8 @@
           "POL-BIL-005"
         ]
       },
-      "timestamp": "2026-11-08T19:19:16.731062+00:00",
-      "duration_ms": 1.02,
+      "timestamp": "2026-11-08T19:30:29.736076+00:00",
+      "duration_ms": 0.97,
       "status": "SUCCESS"
     },
     {
@@ -163,7 +163,7 @@
         },
         "response_length": 564
       },
-      "timestamp": "2026-11-08T19:19:16.731493+00:00",
+      "timestamp": "2026-11-08T19:30:29.736475+00:00",
       "duration_ms": 0.01,
       "status": "SUCCESS"
     },
@@ -177,8 +177,8 @@
         "violations_count": 1,
         "approval_reason": "Ticket involves formal chargeback or regulatory escalation risk (POL-BIL-005)"
       },
-      "timestamp": "2026-11-08T19:19:16.732339+00:00",
-      "duration_ms": 0.01,
+      "timestamp": "2026-11-08T19:30:29.737261+00:00",
+      "duration_ms": 0.0,
       "status": "SUCCESS"
     },
     {
@@ -189,10 +189,10 @@
         "decision": "APPROVED",
         "supervisor_id": "SUPERVISOR-ON-DUTY",
         "feedback": "Automated supervisor validation granted under simulation protocol",
-        "timestamp": "2026-11-08T19:19:16.732808+00:00",
+        "timestamp": "2026-11-08T19:30:29.737710+00:00",
         "consequential_action": "escalate_to_senior_retention_and_legal"
       },
-      "timestamp": "2026-11-08T19:19:16.732813+00:00",
+      "timestamp": "2026-11-08T19:30:29.737715+00:00",
       "duration_ms": 0.0,
       "status": "SUCCESS"
     },
@@ -203,11 +203,11 @@
       "details": {
         "action": "escalate_to_senior_retention_and_legal",
         "status": "SUCCESS",
-        "transaction_id": "TX-9BC1AF22",
+        "transaction_id": "TX-88904E2C",
         "authorized_by": "SUPERVISOR-ON-DUTY"
       },
-      "timestamp": "2026-11-08T19:19:16.733759+00:00",
-      "duration_ms": 0.04,
+      "timestamp": "2026-11-08T19:30:29.738442+00:00",
+      "duration_ms": 0.03,
       "status": "SUCCESS"
     }
   ],

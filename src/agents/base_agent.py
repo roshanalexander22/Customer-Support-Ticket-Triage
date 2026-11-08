@@ -44,3 +44,4 @@ class BaseAgent:
         except Exception as e:
             logger.warning(f"Agent {self.name} LLM call error: {e}. Utilizing fallback engine.")
             return None
+
