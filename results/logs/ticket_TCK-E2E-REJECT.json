@@ -85,7 +85,7 @@
   "human_decision": "REJECTED",
   "human_feedback": "Denied: Suspected fraud and violation of gift card AML policy.",
   "supervisor_id": "SECURITY-CHIEF",
-  "approval_timestamp": "2026-11-08T19:19:08.242349+00:00",
+  "approval_timestamp": "2026-11-08T19:35:56.725364+00:00",
   "audit_trail": [
     {
       "step": "CLASSIFY_TICKET",
@@ -101,8 +101,8 @@
         },
         "confidence": 0.95
       },
-      "timestamp": "2026-11-08T19:19:08.237775+00:00",
-      "duration_ms": 0.03,
+      "timestamp": "2026-11-08T19:35:56.722781+00:00",
+      "duration_ms": 0.02,
       "status": "SUCCESS"
     },
     {
@@ -115,7 +115,7 @@
         "tier": "STANDARD",
         "fraud_risk_score": 0.91
       },
-      "timestamp": "2026-11-08T19:19:08.238409+00:00",
+      "timestamp": "2026-11-08T19:35:56.723130+00:00",
       "duration_ms": 0.0,
       "status": "SUCCESS"
     },
@@ -132,8 +132,8 @@
           "POL-SEC-002"
         ]
       },
-      "timestamp": "2026-11-08T19:19:08.239672+00:00",
-      "duration_ms": 1.23,
+      "timestamp": "2026-11-08T19:35:56.724057+00:00",
+      "duration_ms": 0.91,
       "status": "SUCCESS"
     },
     {
@@ -150,7 +150,7 @@
         },
         "response_length": 453
       },
-      "timestamp": "2026-11-08T19:19:08.240287+00:00",
+      "timestamp": "2026-11-08T19:35:56.724413+00:00",
       "duration_ms": 0.01,
       "status": "SUCCESS"
     },
@@ -164,7 +164,7 @@
         "violations_count": 2,
         "approval_reason": "Refund request of $399.00 exceeds autonomous limit of $50.00 (POL-REF-001); Account risk assessment score (0.91) indicates elevated fraud probability"
       },
-      "timestamp": "2026-11-08T19:19:08.241570+00:00",
+      "timestamp": "2026-11-08T19:35:56.724950+00:00",
       "duration_ms": 0.01,
       "status": "SUCCESS"
     },
@@ -176,11 +176,11 @@
         "decision": "REJECTED",
         "supervisor_id": "SECURITY-CHIEF",
         "feedback": "Denied: Suspected fraud and violation of gift card AML policy.",
-        "timestamp": "2026-11-08T19:19:08.242349+00:00",
+        "timestamp": "2026-11-08T19:35:56.725364+00:00",
         "consequential_action": "freeze_fraudulent_claim_and_security_hold"
       },
-      "timestamp": "2026-11-08T19:19:08.242359+00:00",
-      "duration_ms": 0.01,
+      "timestamp": "2026-11-08T19:35:56.725368+00:00",
+      "duration_ms": 0.0,
       "status": "SUCCESS"
     }
   ],

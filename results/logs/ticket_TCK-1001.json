@@ -85,8 +85,8 @@
   "execution_result": {
     "status": "SUCCESS",
     "action": "issue_refund",
-    "transaction_id": "TX-E6CD9F26",
-    "timestamp": "2026-11-08T19:30:29.699423+00:00",
+    "transaction_id": "TX-BA6B6D2A",
+    "timestamp": "2026-11-08T19:35:14.708998+00:00",
     "authorized_by": "SYSTEM_AUTONOMOUS",
     "details": {
       "customer_id": "CUST-1001",
@@ -112,8 +112,8 @@
         },
         "confidence": 0.95
       },
-      "timestamp": "2026-11-08T19:30:29.695921+00:00",
-      "duration_ms": 0.05,
+      "timestamp": "2026-11-08T19:35:14.705058+00:00",
+      "duration_ms": 0.43,
       "status": "SUCCESS"
     },
     {
@@ -126,7 +126,7 @@
         "tier": "STANDARD",
         "fraud_risk_score": 0.04
       },
-      "timestamp": "2026-11-08T19:30:29.696455+00:00",
+      "timestamp": "2026-11-08T19:35:14.705892+00:00",
       "duration_ms": 0.0,
       "status": "SUCCESS"
     },
@@ -143,8 +143,8 @@
           "POL-LOG-003"
         ]
       },
-      "timestamp": "2026-11-08T19:30:29.697685+00:00",
-      "duration_ms": 1.21,
+      "timestamp": "2026-11-08T19:35:14.707114+00:00",
+      "duration_ms": 1.2,
       "status": "SUCCESS"
     },
     {
@@ -161,7 +161,7 @@
         },
         "response_length": 475
       },
-      "timestamp": "2026-11-08T19:30:29.698106+00:00",
+      "timestamp": "2026-11-08T19:35:14.707576+00:00",
       "duration_ms": 0.01,
       "status": "SUCCESS"
     },
@@ -175,7 +175,7 @@
         "violations_count": 0,
         "approval_reason": "No safety violations detected. Autonomous resolution approved."
       },
-      "timestamp": "2026-11-08T19:30:29.698923+00:00",
+      "timestamp": "2026-11-08T19:35:14.708459+00:00",
       "duration_ms": 0.01,
       "status": "SUCCESS"
     },
@@ -186,11 +186,11 @@
       "details": {
         "action": "issue_refund",
         "status": "SUCCESS",
-        "transaction_id": "TX-E6CD9F26",
+        "transaction_id": "TX-BA6B6D2A",
         "authorized_by": "SYSTEM_AUTONOMOUS"
       },
-      "timestamp": "2026-11-08T19:30:29.699445+00:00",
-      "duration_ms": 0.02,
+      "timestamp": "2026-11-08T19:35:14.709025+00:00",
+      "duration_ms": 0.03,
       "status": "SUCCESS"
     }
   ],

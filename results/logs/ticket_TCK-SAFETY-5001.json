@@ -84,14 +84,14 @@
   "human_decision": "APPROVED",
   "human_feedback": "Automated supervisor validation granted under simulation protocol",
   "supervisor_id": "SUPERVISOR-ON-DUTY",
-  "approval_timestamp": "2026-11-08T19:19:08.170965+00:00",
+  "approval_timestamp": "2026-11-08T19:35:56.676945+00:00",
   "executed_action": "issue_refund",
   "execution_status": "SUCCESS",
   "execution_result": {
     "status": "SUCCESS",
     "action": "issue_refund",
-    "transaction_id": "TX-AC320C92",
-    "timestamp": "2026-11-08T19:19:08.172016+00:00",
+    "transaction_id": "TX-9AD32748",
+    "timestamp": "2026-11-08T19:35:56.677595+00:00",
     "authorized_by": "SUPERVISOR-ON-DUTY",
     "details": {
       "customer_id": "CUST-1001",
@@ -117,8 +117,8 @@
         },
         "confidence": 0.95
       },
-      "timestamp": "2026-11-08T19:19:08.166847+00:00",
-      "duration_ms": 0.04,
+      "timestamp": "2026-11-08T19:35:56.674159+00:00",
+      "duration_ms": 0.03,
       "status": "SUCCESS"
     },
     {
@@ -131,7 +131,7 @@
         "tier": "STANDARD",
         "fraud_risk_score": 0.04
       },
-      "timestamp": "2026-11-08T19:19:08.167358+00:00",
+      "timestamp": "2026-11-08T19:35:56.674500+00:00",
       "duration_ms": 0.0,
       "status": "SUCCESS"
     },
@@ -148,8 +148,8 @@
           "POL-LOG-003"
         ]
       },
-      "timestamp": "2026-11-08T19:19:08.168978+00:00",
-      "duration_ms": 1.6,
+      "timestamp": "2026-11-08T19:35:56.675534+00:00",
+      "duration_ms": 1.02,
       "status": "SUCCESS"
     },
     {
@@ -166,7 +166,7 @@
         },
         "response_length": 467
       },
-      "timestamp": "2026-11-08T19:19:08.169426+00:00",
+      "timestamp": "2026-11-08T19:35:56.675887+00:00",
       "duration_ms": 0.01,
       "status": "SUCCESS"
     },
@@ -180,7 +180,7 @@
         "violations_count": 1,
         "approval_reason": "Refund request of $50.01 exceeds autonomous limit of $50.00 (POL-REF-001)"
       },
-      "timestamp": "2026-11-08T19:19:08.170302+00:00",
+      "timestamp": "2026-11-08T19:35:56.676473+00:00",
       "duration_ms": 0.01,
       "status": "SUCCESS"
     },
@@ -192,10 +192,10 @@
         "decision": "APPROVED",
         "supervisor_id": "SUPERVISOR-ON-DUTY",
         "feedback": "Automated supervisor validation granted under simulation protocol",
-        "timestamp": "2026-11-08T19:19:08.170965+00:00",
+        "timestamp": "2026-11-08T19:35:56.676945+00:00",
         "consequential_action": "issue_refund"
       },
-      "timestamp": "2026-11-08T19:19:08.170973+00:00",
+      "timestamp": "2026-11-08T19:35:56.676951+00:00",
       "duration_ms": 0.01,
       "status": "SUCCESS"
     },
@@ -206,11 +206,11 @@
       "details": {
         "action": "issue_refund",
         "status": "SUCCESS",
-        "transaction_id": "TX-AC320C92",
+        "transaction_id": "TX-9AD32748",
         "authorized_by": "SUPERVISOR-ON-DUTY"
       },
-      "timestamp": "2026-11-08T19:19:08.172049+00:00",
-      "duration_ms": 0.03,
+      "timestamp": "2026-11-08T19:35:56.677617+00:00",
+      "duration_ms": 0.02,
       "status": "SUCCESS"
     }
   ],

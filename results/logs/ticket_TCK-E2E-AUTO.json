@@ -85,8 +85,8 @@
   "execution_result": {
     "status": "SUCCESS",
     "action": "issue_refund",
-    "transaction_id": "TX-6192A99A",
-    "timestamp": "2026-11-08T19:19:08.219984+00:00",
+    "transaction_id": "TX-A159BF05",
+    "timestamp": "2026-11-08T19:35:56.709368+00:00",
     "authorized_by": "SYSTEM_AUTONOMOUS",
     "details": {
       "customer_id": "CUST-1001",
@@ -112,8 +112,8 @@
         },
         "confidence": 0.95
       },
-      "timestamp": "2026-11-08T19:19:08.216212+00:00",
-      "duration_ms": 0.04,
+      "timestamp": "2026-11-08T19:35:56.706621+00:00",
+      "duration_ms": 0.03,
       "status": "SUCCESS"
     },
     {
@@ -126,7 +126,7 @@
         "tier": "STANDARD",
         "fraud_risk_score": 0.04
       },
-      "timestamp": "2026-11-08T19:19:08.216713+00:00",
+      "timestamp": "2026-11-08T19:35:56.706997+00:00",
       "duration_ms": 0.0,
       "status": "SUCCESS"
     },
@@ -143,8 +143,8 @@
           "POL-LOG-003"
         ]
       },
-      "timestamp": "2026-11-08T19:19:08.218101+00:00",
-      "duration_ms": 1.37,
+      "timestamp": "2026-11-08T19:35:56.707848+00:00",
+      "duration_ms": 0.84,
       "status": "SUCCESS"
     },
     {
@@ -161,7 +161,7 @@
         },
         "response_length": 475
       },
-      "timestamp": "2026-11-08T19:19:08.218633+00:00",
+      "timestamp": "2026-11-08T19:35:56.708346+00:00",
       "duration_ms": 0.01,
       "status": "SUCCESS"
     },
@@ -175,8 +175,8 @@
         "violations_count": 0,
         "approval_reason": "No safety violations detected. Autonomous resolution approved."
       },
-      "timestamp": "2026-11-08T19:19:08.219504+00:00",
-      "duration_ms": 0.01,
+      "timestamp": "2026-11-08T19:35:56.708945+00:00",
+      "duration_ms": 0.0,
       "status": "SUCCESS"
     },
     {
@@ -186,11 +186,11 @@
       "details": {
         "action": "issue_refund",
         "status": "SUCCESS",
-        "transaction_id": "TX-6192A99A",
+        "transaction_id": "TX-A159BF05",
         "authorized_by": "SYSTEM_AUTONOMOUS"
       },
-      "timestamp": "2026-11-08T19:19:08.220008+00:00",
-      "duration_ms": 0.03,
+      "timestamp": "2026-11-08T19:35:56.709384+00:00",
+      "duration_ms": 0.02,
       "status": "SUCCESS"
     }
   ],

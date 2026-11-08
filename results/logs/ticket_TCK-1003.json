@@ -83,14 +83,14 @@
   "human_decision": "APPROVED",
   "human_feedback": "Automated supervisor validation granted under simulation protocol",
   "supervisor_id": "SUPERVISOR-ON-DUTY",
-  "approval_timestamp": "2026-11-08T19:30:29.713757+00:00",
+  "approval_timestamp": "2026-11-08T19:35:14.715906+00:00",
   "executed_action": "escalate_security_and_freeze_sessions",
   "execution_status": "SUCCESS",
   "execution_result": {
     "status": "SUCCESS",
     "action": "escalate_security_and_freeze_sessions",
-    "transaction_id": "TX-7DF761C1",
-    "timestamp": "2026-11-08T19:30:29.714618+00:00",
+    "transaction_id": "TX-424404E6",
+    "timestamp": "2026-11-08T19:35:14.716922+00:00",
     "authorized_by": "SUPERVISOR-ON-DUTY",
     "details": {
       "customer_id": "CUST-1003",
@@ -111,7 +111,7 @@
         "entities": {},
         "confidence": 0.95
       },
-      "timestamp": "2026-11-08T19:30:29.711077+00:00",
+      "timestamp": "2026-11-08T19:35:14.713026+00:00",
       "duration_ms": 0.03,
       "status": "SUCCESS"
     },
@@ -125,7 +125,7 @@
         "tier": "GOLD",
         "fraud_risk_score": 0.72
       },
-      "timestamp": "2026-11-08T19:30:29.711439+00:00",
+      "timestamp": "2026-11-08T19:35:14.713392+00:00",
       "duration_ms": 0.0,
       "status": "SUCCESS"
     },
@@ -142,8 +142,8 @@
           "POL-SEC-002"
         ]
       },
-      "timestamp": "2026-11-08T19:30:29.712324+00:00",
-      "duration_ms": 0.87,
+      "timestamp": "2026-11-08T19:35:14.714419+00:00",
+      "duration_ms": 1.01,
       "status": "SUCCESS"
     },
     {
@@ -159,7 +159,7 @@
         },
         "response_length": 500
       },
-      "timestamp": "2026-11-08T19:30:29.712682+00:00",
+      "timestamp": "2026-11-08T19:35:14.714789+00:00",
       "duration_ms": 0.01,
       "status": "SUCCESS"
     },
@@ -173,7 +173,7 @@
         "violations_count": 2,
         "approval_reason": "Two-Factor Authentication (2FA) credential changes require mandatory Human Security Supervisor verification (POL-SEC-002); Account risk assessment score (0.72) indicates elevated fraud probability"
       },
-      "timestamp": "2026-11-08T19:30:29.713317+00:00",
+      "timestamp": "2026-11-08T19:35:14.715438+00:00",
       "duration_ms": 0.01,
       "status": "SUCCESS"
     },
@@ -185,11 +185,11 @@
         "decision": "APPROVED",
         "supervisor_id": "SUPERVISOR-ON-DUTY",
         "feedback": "Automated supervisor validation granted under simulation protocol",
-        "timestamp": "2026-11-08T19:30:29.713757+00:00",
+        "timestamp": "2026-11-08T19:35:14.715906+00:00",
         "consequential_action": "escalate_security_and_freeze_sessions"
       },
-      "timestamp": "2026-11-08T19:30:29.713762+00:00",
-      "duration_ms": 0.0,
+      "timestamp": "2026-11-08T19:35:14.715911+00:00",
+      "duration_ms": 0.01,
       "status": "SUCCESS"
     },
     {
@@ -199,11 +199,11 @@
       "details": {
         "action": "escalate_security_and_freeze_sessions",
         "status": "SUCCESS",
-        "transaction_id": "TX-7DF761C1",
+        "transaction_id": "TX-424404E6",
         "authorized_by": "SUPERVISOR-ON-DUTY"
       },
-      "timestamp": "2026-11-08T19:30:29.714643+00:00",
-      "duration_ms": 0.03,
+      "timestamp": "2026-11-08T19:35:14.716961+00:00",
+      "duration_ms": 0.04,
       "status": "SUCCESS"
     }
   ],

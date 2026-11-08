@@ -5,7 +5,7 @@
   "subject": "Return request for NovaStudio 4K Webcam ($249.99)",
   "description": "Hello, we purchased the NovaStudio 4K Webcam on order ORD-9940. It doesn't integrate with our legacy conference room codecs. The unit is in pristine condition. Please process a full refund of $249.99 and send a return label.",
   "channel": "WEB_PORTAL",
-  "timestamp": "2026-11-08T10:30:00Z",
+  "timestamp": "2026-11-08T19:33:28.988241+00:00",
   "category": "Billing & Refunds",
   "urgency": "Medium",
   "sentiment": "Neutral",
@@ -86,14 +86,14 @@
   "human_decision": "APPROVED",
   "human_feedback": "Automated supervisor validation granted under simulation protocol",
   "supervisor_id": "SUPERVISOR-ON-DUTY",
-  "approval_timestamp": "2026-11-08T19:30:29.706576+00:00",
+  "approval_timestamp": "2026-11-08T19:33:29.002997+00:00",
   "executed_action": "issue_refund",
   "execution_status": "SUCCESS",
   "execution_result": {
     "status": "SUCCESS",
     "action": "issue_refund",
-    "transaction_id": "TX-713239F3",
-    "timestamp": "2026-11-08T19:30:29.707434+00:00",
+    "transaction_id": "TX-0F5A98AB",
+    "timestamp": "2026-11-08T19:33:29.004321+00:00",
     "authorized_by": "SUPERVISOR-ON-DUTY",
     "details": {
       "customer_id": "CUST-1002",
@@ -119,8 +119,8 @@
         },
         "confidence": 0.95
       },
-      "timestamp": "2026-11-08T19:30:29.703289+00:00",
-      "duration_ms": 0.04,
+      "timestamp": "2026-11-08T19:33:28.998102+00:00",
+      "duration_ms": 0.48,
       "status": "SUCCESS"
     },
     {
@@ -133,7 +133,7 @@
         "tier": "VIP_PLATINUM",
         "fraud_risk_score": 0.02
       },
-      "timestamp": "2026-11-08T19:30:29.703676+00:00",
+      "timestamp": "2026-11-08T19:33:28.998968+00:00",
       "duration_ms": 0.0,
       "status": "SUCCESS"
     },
@@ -150,8 +150,8 @@
           "POL-LOG-003"
         ]
       },
-      "timestamp": "2026-11-08T19:30:29.704782+00:00",
-      "duration_ms": 1.09,
+      "timestamp": "2026-11-08T19:33:29.000444+00:00",
+      "duration_ms": 1.44,
       "status": "SUCCESS"
     },
     {
@@ -168,8 +168,8 @@
         },
         "response_length": 469
       },
-      "timestamp": "2026-11-08T19:30:29.705150+00:00",
-      "duration_ms": 0.01,
+      "timestamp": "2026-11-08T19:33:29.001104+00:00",
+      "duration_ms": 0.02,
       "status": "SUCCESS"
     },
     {
@@ -182,7 +182,7 @@
         "violations_count": 1,
         "approval_reason": "Refund request of $249.99 exceeds autonomous limit of $50.00 (POL-REF-001)"
       },
-      "timestamp": "2026-11-08T19:30:29.706039+00:00",
+      "timestamp": "2026-11-08T19:33:29.002255+00:00",
       "duration_ms": 0.02,
       "status": "SUCCESS"
     },
@@ -194,10 +194,10 @@
         "decision": "APPROVED",
         "supervisor_id": "SUPERVISOR-ON-DUTY",
         "feedback": "Automated supervisor validation granted under simulation protocol",
-        "timestamp": "2026-11-08T19:30:29.706576+00:00",
+        "timestamp": "2026-11-08T19:33:29.002997+00:00",
         "consequential_action": "issue_refund"
       },
-      "timestamp": "2026-11-08T19:30:29.706581+00:00",
+      "timestamp": "2026-11-08T19:33:29.003005+00:00",
       "duration_ms": 0.01,
       "status": "SUCCESS"
     },
@@ -208,10 +208,10 @@
       "details": {
         "action": "issue_refund",
         "status": "SUCCESS",
-        "transaction_id": "TX-713239F3",
+        "transaction_id": "TX-0F5A98AB",
         "authorized_by": "SUPERVISOR-ON-DUTY"
       },
-      "timestamp": "2026-11-08T19:30:29.707462+00:00",
+      "timestamp": "2026-11-08T19:33:29.004350+00:00",
       "duration_ms": 0.03,
       "status": "SUCCESS"
     }

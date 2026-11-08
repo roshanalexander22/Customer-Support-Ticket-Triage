@@ -86,14 +86,14 @@
   "human_decision": "APPROVED",
   "human_feedback": "Human supervisor verified and marked as APPROVED",
   "supervisor_id": "SUPERVISOR-ALEX",
-  "approval_timestamp": "2026-11-08T19:19:08.231803+00:00",
+  "approval_timestamp": "2026-11-08T19:35:56.717596+00:00",
   "executed_action": "issue_refund",
   "execution_status": "SUCCESS",
   "execution_result": {
     "status": "SUCCESS",
     "action": "issue_refund",
-    "transaction_id": "TX-C1DC2157",
-    "timestamp": "2026-11-08T19:19:08.232631+00:00",
+    "transaction_id": "TX-8551DEE6",
+    "timestamp": "2026-11-08T19:35:56.718273+00:00",
     "authorized_by": "SUPERVISOR-ALEX",
     "details": {
       "customer_id": "CUST-1002",
@@ -119,8 +119,8 @@
         },
         "confidence": 0.95
       },
-      "timestamp": "2026-11-08T19:19:08.228096+00:00",
-      "duration_ms": 0.05,
+      "timestamp": "2026-11-08T19:35:56.714329+00:00",
+      "duration_ms": 0.04,
       "status": "SUCCESS"
     },
     {
@@ -133,7 +133,7 @@
         "tier": "VIP_PLATINUM",
         "fraud_risk_score": 0.02
       },
-      "timestamp": "2026-11-08T19:19:08.228642+00:00",
+      "timestamp": "2026-11-08T19:35:56.714763+00:00",
       "duration_ms": 0.0,
       "status": "SUCCESS"
     },
@@ -150,8 +150,8 @@
           "POL-LOG-003"
         ]
       },
-      "timestamp": "2026-11-08T19:19:08.230087+00:00",
-      "duration_ms": 1.42,
+      "timestamp": "2026-11-08T19:35:56.716001+00:00",
+      "duration_ms": 1.22,
       "status": "SUCCESS"
     },
     {
@@ -168,7 +168,7 @@
         },
         "response_length": 469
       },
-      "timestamp": "2026-11-08T19:19:08.230532+00:00",
+      "timestamp": "2026-11-08T19:35:56.716505+00:00",
       "duration_ms": 0.01,
       "status": "SUCCESS"
     },
@@ -182,7 +182,7 @@
         "violations_count": 1,
         "approval_reason": "Refund request of $249.99 exceeds autonomous limit of $50.00 (POL-REF-001)"
       },
-      "timestamp": "2026-11-08T19:19:08.231311+00:00",
+      "timestamp": "2026-11-08T19:35:56.717173+00:00",
       "duration_ms": 0.01,
       "status": "SUCCESS"
     },
@@ -194,11 +194,11 @@
         "decision": "APPROVED",
         "supervisor_id": "SUPERVISOR-ALEX",
         "feedback": "Human supervisor verified and marked as APPROVED",
-        "timestamp": "2026-11-08T19:19:08.231803+00:00",
+        "timestamp": "2026-11-08T19:35:56.717596+00:00",
         "consequential_action": "issue_refund"
       },
-      "timestamp": "2026-11-08T19:19:08.231808+00:00",
-      "duration_ms": 0.01,
+      "timestamp": "2026-11-08T19:35:56.717601+00:00",
+      "duration_ms": 0.0,
       "status": "SUCCESS"
     },
     {
@@ -208,11 +208,11 @@
       "details": {
         "action": "issue_refund",
         "status": "SUCCESS",
-        "transaction_id": "TX-C1DC2157",
+        "transaction_id": "TX-8551DEE6",
         "authorized_by": "SUPERVISOR-ALEX"
       },
-      "timestamp": "2026-11-08T19:19:08.232655+00:00",
-      "duration_ms": 0.03,
+      "timestamp": "2026-11-08T19:35:56.718297+00:00",
+      "duration_ms": 0.02,
       "status": "SUCCESS"
     }
   ],
